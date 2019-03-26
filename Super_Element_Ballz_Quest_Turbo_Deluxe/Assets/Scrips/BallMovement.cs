@@ -4,51 +4,41 @@ using UnityEngine;
 public class BallMovement : MonoBehaviour
 {
     [SerializeField]
-    public float moveSpeed = 50000f;
+    public float moveSpeed;
+    public float maxSpeed = 15f;
 
-    Vector3 forward, right;
+    //public static bool FireBall = false;
+
+    private Rigidbody rb;
+
+    public GameObject target; // target is the object you will take the rotations from
 
     private void Start()
     {
-        forward = Camera.main.transform.forward;
-        forward.y = 0;
-
-        right = Quaternion.Euler(new Vector3(0,90, 0)) * forward;
-
-        
+        rb = GetComponent<Rigidbody>();
     }
 
     private void Update()
     {
 
-        //if (Input.anyKey)
-        //    Move();
+        float xSpeed = Input.GetAxis("Horizontal");
+        float ySpeed = Input.GetAxis("Vertical");
 
-        float xSpeed = Input.GetAxis("Horizontal");/* * right * moveSpeed * Time.deltaTime;*/
-        float ySpeed = Input.GetAxis("Vertical"); /** forward * moveSpeed * Time.deltaTime;*/
-
-        //transform.position += xSpeed;
-        //transform.position += ySpeed;
-
-        Rigidbody body = GetComponent<Rigidbody>();
-        body.AddForce(new Vector3(xSpeed, 0, ySpeed) * moveSpeed * Time.deltaTime);
+        rb.AddForce(xSpeed * target.transform.right * moveSpeed);
+        rb.AddForce(ySpeed * target.transform.forward * moveSpeed);
+        rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed); // <-- Ska sätta en speedCap på bollen men funkar typ bara uppåt.
     }
 
-    //void Move()
+    //private void FixedUpdate()
     //{
-    //    Vector3 direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-    //    Vector3 upMovement = forward * moveSpeed * Time.deltaTime * Input.GetAxis("Horizontal");
-    //    Vector3 rightMovement = right * moveSpeed * Time.deltaTime * Input.GetAxis("Vertical");
 
-    //    //Vector3 heading = Vector3.Normalize(rightMovement + upMovement);
-
-    //    //transform.forward = heading;    //rotation
-
-    //    Rigidbody body = GetComponent<Rigidbody>();
-    //    body.AddTorque(rightMovement + upMovement);
-
-    //    //transform.position += rightMovement;
-    //    //transform.position += upMovement;
     //}
+
+    private void OnGUI()
+    {
+        GUI.Label(new Rect(20, 20, 300, 300), "rigidbody velocity: " + rb.velocity);
+    }
+
+
 
 }
