@@ -4,7 +4,7 @@ using UnityEngine;
 public class BallMovement : MonoBehaviour
 {
     [SerializeField]
-    public float moveSpeed = 5000f;
+    public float moveSpeed = 50000f;
 
     Vector3 forward, right;
 
@@ -24,14 +24,14 @@ public class BallMovement : MonoBehaviour
         //if (Input.anyKey)
         //    Move();
 
-        Vector3 xSpeed = Input.GetAxis("Horizontal") * right * moveSpeed * Time.deltaTime;
-        Vector3 ySpeed = Input.GetAxis("Vertical") * forward * moveSpeed * Time.deltaTime;
+        float xSpeed = Input.GetAxis("Horizontal");/* * right * moveSpeed * Time.deltaTime;*/
+        float ySpeed = Input.GetAxis("Vertical"); /** forward * moveSpeed * Time.deltaTime;*/
 
-        transform.position += xSpeed;
-        transform.position += ySpeed;
+        //transform.position += xSpeed;
+        //transform.position += ySpeed;
 
-        //Rigidbody body = GetComponent<Rigidbody>();
-        //body.AddTorque(new Vector3(xSpeed, 0, ySpeed) * moveSpeed * Time.deltaTime);
+        Rigidbody body = GetComponent<Rigidbody>();
+        body.AddForce(new Vector3(xSpeed, 0, ySpeed) * moveSpeed * Time.deltaTime);
     }
 
     //void Move()
