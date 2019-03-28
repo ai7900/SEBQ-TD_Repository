@@ -20,6 +20,7 @@ public class BallMovement : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        target = GameObject.FindWithTag("Target Camera");
     }
 
     private void Update()
@@ -29,7 +30,8 @@ public class BallMovement : MonoBehaviour
 
         rb.AddForce(xSpeed * target.transform.right * moveSpeed);
         rb.AddForce(ySpeed * target.transform.forward * moveSpeed);
-        rb.AddForce(ySpeed * target.transform.up * moveSpeed);
+        rb.AddForce(ySpeed * (target.transform.up * moveSpeed));
+
         rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
 
         SpawnCheckpoint();
