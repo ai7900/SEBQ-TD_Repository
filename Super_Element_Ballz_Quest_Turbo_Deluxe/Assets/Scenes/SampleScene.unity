@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -186,12 +186,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: f1de62fbecfac764e93f67a2e83790fa,
     type: 3}
   m_PrefabInstance: {fileID: 1863645553}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &206804451 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5231837126253139234, guid: b6c1aa7ec2eebc141b57c525c9587a3a,
-    type: 3}
-  m_PrefabInstance: {fileID: 5231837126191431873}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &240438719
 GameObject:
@@ -903,8 +897,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2112842709}
-  m_LocalRotation: {x: 0, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.1, y: 2.83, z: 6.15}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1211967558}
@@ -943,7 +937,7 @@ Camera:
   near clip plane: 0.01
   far clip plane: 300
   field of view: 60
-  orthographic: 1
+  orthographic: 0
   orthographic size: 15
   m_Depth: 0
   m_CullingMask:
@@ -972,8 +966,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aeb70e5cd0930d4aa742f1c7b46386a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 206804451}
-  smoothing: 2
+  followDistance: 15
+  followHeight: 10
+  smoothedFollow: 0
+  smoothSpeed: 5
+  useFixedLookDirection: 0
+  fixedLookDirection: {x: 1, y: 1, z: 1}
 --- !u!95 &404111658662086190
 Animator:
   serializedVersion: 3

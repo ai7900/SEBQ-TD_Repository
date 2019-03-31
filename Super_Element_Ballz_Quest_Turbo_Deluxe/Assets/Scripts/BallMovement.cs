@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BallMovement : MonoBehaviour
 {
@@ -9,6 +10,12 @@ public class BallMovement : MonoBehaviour
 
     float xSpeed;
     float ySpeed;
+
+    public enum MovementType { Force,Torque}
+    public MovementType movementType = MovementType.Torque;
+    private Vector3 forward=Vector3.zero;
+    private Vector3 movement = Vector3.zero;
+    
     
     //public static bool FireBall = false;
 
@@ -20,13 +27,26 @@ public class BallMovement : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        target = GameObject.FindWithTag("Target Camera");
+        target = GameObject.FindWithTag("MainCamera");
     }
 
     private void Update()
     {
         xSpeed = Input.GetAxis("Horizontal");
         ySpeed = Input.GetAxis("Vertical");
+
+        forward = Vector3.Scale(target.transform.forward, new Vector3(1, 0, 1)).normalized;
+        movement = (ySpeed * forward + xSpeed * target.transform.right).normalized;
+
+        //if(movementType==MovementType.Force)
+        //{
+        //    rb.AddForce(movement*moveSpeed);
+        //}
+        //if(movementType==MovementType.Torque)
+        //{
+        //    rb.AddTorque(new Vector3(movement.z, 0, -movement.x) * moveSpeed);
+        //}
+
 
         rb.AddForce(xSpeed * target.transform.right * moveSpeed);
         rb.AddForce(ySpeed * target.transform.forward * moveSpeed);
