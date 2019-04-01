@@ -5,7 +5,7 @@ using UnityEngine;
 public class Wind : MonoBehaviour
 {
     public float windForce;
-    public bool  isFacingLeft;
+    public bool  isFacingLeft,isFacingRight,isFacingUp;
     private Vector3 pushback;
     float distance;
     
@@ -40,7 +40,15 @@ public class Wind : MonoBehaviour
         {
             pushback = new Vector3(-1, 0, 0);
         }
-       
+        if (isFacingRight)
+        {
+            pushback = new Vector3(1, 0, 0);
+        }
+        if (isFacingUp)
+        {
+            pushback = new Vector3(0, 1, 0);
+        }
+
         Debug.Log(pushback);
         
         other.attachedRigidbody.AddForce(pushback * windForce, ForceMode.Acceleration);
