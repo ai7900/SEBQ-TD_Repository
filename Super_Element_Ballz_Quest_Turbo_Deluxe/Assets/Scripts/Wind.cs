@@ -12,7 +12,12 @@ public class Wind : MonoBehaviour
     void Start()
     {
         transform.localPosition = new Vector3(0, 6, 0);
+        
+        
+        
     }
+
+    
 
     // Update is called once per frame
     void Update()
