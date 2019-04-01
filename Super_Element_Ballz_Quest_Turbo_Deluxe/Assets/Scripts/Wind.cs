@@ -5,9 +5,11 @@ using UnityEngine;
 public class Wind : MonoBehaviour
 {
     public float windForce;
-
+    public bool  isFacingLeft;
     private Vector3 pushback;
     float distance;
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,9 +29,21 @@ public class Wind : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+       
         Debug.Log("Object is within trigger");
         distance = Vector3.Distance(transform.position, other.transform.position);
+        pushback = transform.eulerAngles;
+      
+        pushback.Normalize();
 
-        other.attachedRigidbody.AddForce(Vector3.left * windForce/(Mathf.Pow(distance,2)), ForceMode.Acceleration);
+        if(isFacingLeft)
+        {
+            pushback = new Vector3(-1, 0, 0);
+        }
+       
+        Debug.Log(pushback);
+        
+        other.attachedRigidbody.AddForce(pushback * windForce, ForceMode.Acceleration);
+        //
     }
 }

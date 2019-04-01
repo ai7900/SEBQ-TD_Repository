@@ -5,7 +5,7 @@ using UnityEngine;
 public class TurbineRotation : MonoBehaviour
 {
 
-
+    public Transform child;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,5 +16,6 @@ public class TurbineRotation : MonoBehaviour
     void Update()
     {
         transform.Rotate(new Vector3(0, 150, 0) * Time.deltaTime);
+        //child.transform.rotation = Quaternion.Euler(gameObject.transform.rotation.x , gameObject.transform.rotation.y , gameObject.transform.rotation.z);
     }
 }
