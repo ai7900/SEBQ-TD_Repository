@@ -30,7 +30,7 @@ public class BallMovement : MonoBehaviour
         target = GameObject.FindWithTag("MainCamera");
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         xSpeed = Input.GetAxis("Horizontal");
         ySpeed = Input.GetAxis("Vertical");
