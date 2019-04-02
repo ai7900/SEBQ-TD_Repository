@@ -15,8 +15,6 @@ public class Wind : MonoBehaviour
     {
         transform.localPosition = new Vector3(0, 6, 0);
         
-        
-        
     }
 
     
@@ -36,18 +34,20 @@ public class Wind : MonoBehaviour
       
         pushback.Normalize();
 
-        if(isFacingLeft)
-        {
-            pushback = new Vector3(-1, 0, 0);
-        }
-        if (isFacingRight)
-        {
-            pushback = new Vector3(1, 0, 0);
-        }
-        if (isFacingUp)
-        {
-            pushback = new Vector3(0, 1, 0);
-        }
+        //if(isFacingLeft)
+        //{
+        //    pushback = new Vector3(-1, 0, 0);
+        //}
+        //if (isFacingRight)
+        //{
+        //    pushback = new Vector3(1, 0, 0);
+        //}
+        //if (isFacingUp)
+        //{
+        //    pushback = new Vector3(0, 1, 0);
+        //}
+
+        pushback = transform.up;
 
         Debug.Log(pushback);
         
