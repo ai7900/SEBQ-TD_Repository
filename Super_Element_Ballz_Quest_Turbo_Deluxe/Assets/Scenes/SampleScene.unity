@@ -413,7 +413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4d77f66a598c094cb0f39c37d7abe99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  child: {fileID: 1114170256}
+  rotationSpeed: 150
 --- !u!64 &576330723
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -487,7 +487,7 @@ GameObject:
   - component: {fileID: 688742999}
   - component: {fileID: 688742998}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: WindArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -658,7 +658,7 @@ GameObject:
   - component: {fileID: 1114170258}
   - component: {fileID: 1114170257}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: WindArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1130,7 +1130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4d77f66a598c094cb0f39c37d7abe99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  child: {fileID: 688742997}
+  rotationSpeed: 150
 --- !u!64 &1940558547
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1237,7 +1237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4d77f66a598c094cb0f39c37d7abe99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  child: {fileID: 2044574906}
+  rotationSpeed: 150
 --- !u!64 &1962803952
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1356,7 +1356,7 @@ GameObject:
   - component: {fileID: 2044574908}
   - component: {fileID: 2044574907}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: WindArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
