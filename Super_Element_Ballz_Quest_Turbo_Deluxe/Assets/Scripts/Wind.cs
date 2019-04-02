@@ -6,52 +6,25 @@ public class Wind : MonoBehaviour
 {
     public float windForce;
     public bool  isFacingLeft,isFacingRight,isFacingUp;
-    private Vector3 pushback;
-    float distance;
-    
+    private Vector3 windDirection;
 
     // Start is called before the first frame update
     void Start()
     {
-        transform.localPosition = new Vector3(0, 6, 0);
-        
+        //Sets windarea position in front of turbine
+        transform.localPosition = new Vector3(0, 6, 0);       
     }
 
-    
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerStay(Collider other)
     {
        
         Debug.Log("Object is within trigger");
-        distance = Vector3.Distance(transform.position, other.transform.position);
-        pushback = transform.eulerAngles;
-      
-        pushback.Normalize();
+        windDirection = transform.up;
 
-        //if(isFacingLeft)
-        //{
-        //    pushback = new Vector3(-1, 0, 0);
-        //}
-        //if (isFacingRight)
-        //{
-        //    pushback = new Vector3(1, 0, 0);
-        //}
-        //if (isFacingUp)
-        //{
-        //    pushback = new Vector3(0, 1, 0);
-        //}
-
-        pushback = transform.up;
-
-        Debug.Log(pushback);
+        Debug.Log(windDirection);
         
-        other.attachedRigidbody.AddForce(pushback * windForce, ForceMode.Acceleration);
-        //
+        other.attachedRigidbody.AddForce(windDirection * windForce, ForceMode.Acceleration);
+        
     }
 }
