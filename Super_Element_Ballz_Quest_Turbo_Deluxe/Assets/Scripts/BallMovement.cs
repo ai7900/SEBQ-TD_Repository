@@ -5,17 +5,15 @@ using UnityEngine.UI;
 public class BallMovement : MonoBehaviour
 {
     [SerializeField]
-    public float moveSpeed;
+    public float forceFactor;
     public float maxSpeed = 20f;
 
-    float xSpeed;
-    float ySpeed;
+    private float xSpeed;
+    private float ySpeed;
+    private int abyssLevel = -30;
 
-    private Vector3 forward=Vector3.zero;
+    private Vector3 forward = Vector3.zero;
     private Vector3 movement = Vector3.zero;
-    
-    
-    //public static bool FireBall = false;
 
     private Rigidbody rb;
 
@@ -25,20 +23,15 @@ public class BallMovement : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        target = GameObject.FindWithTag("MainCamera");
+        target = GameObject.FindWithTag("CameraTarget");
+        spawnPoint = GameObject.FindWithTag("Spawnpoint");
     }
 
     private void FixedUpdate()
     {
         xSpeed = Input.GetAxis("Horizontal");
         ySpeed = Input.GetAxis("Vertical");
-
-        rb.AddForce(xSpeed * target.transform.right * moveSpeed);
-        rb.AddForce(ySpeed * target.transform.forward * moveSpeed);
-        rb.AddForce(ySpeed * (target.transform.up * moveSpeed));
-
-        rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
-
+        PerspectiveCameraMovement();
         SpawnCheckpoint();
     }
 
@@ -49,13 +42,22 @@ public class BallMovement : MonoBehaviour
         GUI.Label(new Rect(20, 40, 300, 300), "xSpeed = " + xSpeed + "\nySpeed = " + ySpeed);
     }
 
+    //Denna metoden ska skicka tillbaka spelaren till startpunkten för nivån när denne faller av banan.
     private void SpawnCheckpoint()
     {
-        if(transform.position.y < -30)
+        if(transform.position.y < abyssLevel)
         {
             transform.position = spawnPoint.transform.position;
-            rb.velocity = new Vector3(0, 20, 0);
+            rb.velocity = new Vector3(0, -1, 0);
         }
+    }
+
+    //Denna metod ska ta hand om krafterna som läggs på bollen när den spelaren använder perspektiv kamera och inte en isometrisk kamera
+    private void PerspectiveCameraMovement()
+    {
+        rb.AddForce(xSpeed* target.transform.right* forceFactor);
+        rb.AddForce(ySpeed* target.transform.forward* forceFactor);
+        rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
     }
 
 

@@ -122,9 +122,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9807edff7f0a1ac42a447cb3e6686e58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 7
+  forceFactor: 11
   maxSpeed: 15
-  movementType: 1
   target: {fileID: 0}
   spawnPoint: {fileID: 0}
 --- !u!114 &3257336175173787072
