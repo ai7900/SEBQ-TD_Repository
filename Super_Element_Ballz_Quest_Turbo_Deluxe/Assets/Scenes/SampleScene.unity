@@ -931,8 +931,8 @@ MonoBehaviour:
   views:
   - {fileID: 1489515946}
   - {fileID: 922662401}
-  transitionSpeed: 0.5
-  rotationSpeed: 10
+  transitionSpeed: 2
+  rotationSpeed: 3
 --- !u!81 &2039691036
 AudioListener:
   m_ObjectHideFlags: 0
@@ -950,8 +950,8 @@ Camera:
   m_GameObject: {fileID: 2039691034}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.04432181, g: 0.070816316, b: 0.11320752, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -990,8 +990,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2039691034}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -27.56, y: 8.02, z: -7.48}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -27.67, y: 10.3, z: -12.96}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

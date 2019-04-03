@@ -11,9 +11,9 @@ public class CameraController : MonoBehaviour
     private Transform currentView;
     private Vector3 currentAngle;
 
-    private Vector3 viewOffset = new Vector3(5f, 5f, 2f);
+    private Vector3 viewOffset = new Vector3(10f, 10f, 3f);
 
-    public float rotationSpeed = 10f;
+    public float rotationSpeed = 1f;
 
     private Vector2 input;
 
