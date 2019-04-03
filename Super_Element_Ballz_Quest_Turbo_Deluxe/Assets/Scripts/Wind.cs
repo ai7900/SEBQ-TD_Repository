@@ -7,7 +7,7 @@ public class Wind : MonoBehaviour
     public float windForce;
     public bool  isFacingLeft,isFacingRight,isFacingUp;
     private Vector3 windDirection;
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -23,8 +23,9 @@ public class Wind : MonoBehaviour
         windDirection = transform.up;
 
         Debug.Log(windDirection);
-        
-        other.attachedRigidbody.AddForce(windDirection * windForce, ForceMode.Acceleration);
+
+       
+        other.attachedRigidbody.AddForce(windDirection * windForce, ForceMode.Force);
         
     }
 }

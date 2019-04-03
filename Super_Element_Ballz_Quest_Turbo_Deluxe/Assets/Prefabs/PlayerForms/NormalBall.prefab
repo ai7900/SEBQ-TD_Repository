@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 70
-  maxSpeed: 15
+  maxSpeed: 50
   target: {fileID: 0}
   spawnPoint: {fileID: 0}
 --- !u!114 &3257336175173787072
