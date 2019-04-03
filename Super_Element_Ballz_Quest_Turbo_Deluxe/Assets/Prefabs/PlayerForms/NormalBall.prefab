@@ -124,6 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 70
   maxSpeed: 15
+  movementType: 1
   target: {fileID: 0}
   spawnPoint: {fileID: 0}
 --- !u!114 &3257336175173787072

@@ -27,7 +27,6 @@ public class BallMovement : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        target = GameObject.FindWithTag("MainCamera");
     }
 
     private void Update()
