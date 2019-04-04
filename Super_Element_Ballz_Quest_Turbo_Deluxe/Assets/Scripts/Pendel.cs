@@ -6,8 +6,6 @@ public class Pendel : MonoBehaviour
 {
     Quaternion start, end;
     [SerializeField]
-    Rigidbody rb;
-    [SerializeField]
     private float angle = 90.0f;
     [SerializeField]
     private float speed = 2.0f;
@@ -41,14 +39,5 @@ public class Pendel : MonoBehaviour
     {
         startTime += Time.deltaTime;
         transform.rotation = Quaternion.Lerp(start, end, (Mathf.Sin(startTime * speed * Mathf.PI / 2) + 1.0f)/2.0f);
-    }
-    //private void OnTriggerStay(Collider other)
-    //{
-    //    other.attachedRigidbody.AddForce(rb.velocity, ForceMode.Force);
-    //}
-
-    private void OnGUI()
-    {
-        GUI.Label(new Rect(20, 80, 300, 300), "pendulum velocity: " + rb.velocity);
     }
 }
