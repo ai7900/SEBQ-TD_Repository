@@ -5,34 +5,50 @@ using UnityEngine;
 //Kan användas till main menu också
 public class CameraController : MonoBehaviour
 {
+    [Header("Camera Settings")]
+    public Camera adjustCamera;
 
-    public Transform[] views;
-    public float transitionSpeed;
-    private Transform currentView;
-    private Vector3 currentAngle;
+    [Range(0.01f, 10f)]
+    public float transitionSpeedIsometric;
 
-    private Vector3 viewOffset = new Vector3(10f, 10f, 3f);
-
+    [Range(0.01f, 10f)]
+    public float transitionSpeedThridPerson;
     public float rotationSpeed = 1f;
 
-    private Vector2 input;
+    [Header("Checkpoints for camera")]
+    public Transform[] views;
+
+    private Transform currentView;
+    private Vector3 currentAngle;
+    private Vector3 viewOffset = new Vector3(10f, 10f, 3f);
 
     private void Start()
     {
         currentView = views[1];
+        adjustCamera.orthographic = true;
+        adjustCamera.orthographicSize = 20;
     }
 
     private void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             currentView = views[0]; //thirdperson
-            
+            adjustCamera.orthographic = false;
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             currentView = views[1]; //isometric
+            adjustCamera.orthographic = true;
+            adjustCamera.orthographicSize = 20;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            currentView = views[2]; //SpecialView
+            adjustCamera.orthographic = false;
         }
 
 
@@ -43,11 +59,12 @@ public class CameraController : MonoBehaviour
         //Lerp position
         if(currentView == views[0])
         {
-            transform.position = Vector3.Lerp(transform.position, currentView.position + viewOffset, transitionSpeed * Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, currentView.position + viewOffset, transitionSpeedThridPerson * Time.deltaTime);
         }
-        else
+
+        if(currentView == views[1] || currentView == views[2])
         {
-            transform.position = Vector3.Lerp(transform.position, currentView.position, transitionSpeed * Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, currentView.position, transitionSpeedIsometric * Time.deltaTime);
         }
 
         CameraRotation();
@@ -59,25 +76,19 @@ public class CameraController : MonoBehaviour
     {
         if (currentView == views[0])
         {
-            //input += new Vector2(Input.GetAxis("Mouse X") * rotationSpeed, Input.GetAxis("Mouse Y") * rotationSpeed);
-
-            //transform.localRotation = Quaternion.Euler(input.y, input.x, 0);
-            //transform.localPosition = currentView.position - (transform.localRotation * Vector3.forward * 3f);
-
             Quaternion XcamTurnAngle = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * rotationSpeed, Vector3.up);
-            //Quaternion YcamTurnAngle = Quaternion.AngleAxis(Input.GetAxis("Keyboard_Vertical") * rotationSpeed, Vector3.left);
+            Quaternion YcamTurnAngle = Quaternion.AngleAxis(Input.GetAxis("Mouse Y") * rotationSpeed, Vector3.left);
 
             viewOffset = XcamTurnAngle * viewOffset;
-            //viewOffset = YcamTurnAngle * viewOffset;
-
+            viewOffset = YcamTurnAngle * viewOffset;
         }
 
-        if (currentView == views[1])
+        if (currentView == views[1] || currentView == views[2])
         {
             currentAngle = new Vector3(
-                    Mathf.LerpAngle(transform.rotation.eulerAngles.x, currentView.transform.eulerAngles.x, Time.deltaTime * transitionSpeed),
-                    Mathf.LerpAngle(transform.rotation.eulerAngles.y, currentView.transform.eulerAngles.y, Time.deltaTime * transitionSpeed),
-                    Mathf.LerpAngle(transform.rotation.eulerAngles.z, currentView.transform.eulerAngles.z, Time.deltaTime * transitionSpeed));
+                    Mathf.LerpAngle(transform.rotation.eulerAngles.x, currentView.transform.eulerAngles.x, Time.deltaTime * transitionSpeedIsometric),
+                    Mathf.LerpAngle(transform.rotation.eulerAngles.y, currentView.transform.eulerAngles.y, Time.deltaTime * transitionSpeedIsometric),
+                    Mathf.LerpAngle(transform.rotation.eulerAngles.z, currentView.transform.eulerAngles.z, Time.deltaTime * transitionSpeedIsometric));
         }
 
         transform.eulerAngles = currentAngle;

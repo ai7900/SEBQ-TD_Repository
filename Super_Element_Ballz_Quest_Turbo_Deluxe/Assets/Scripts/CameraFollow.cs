@@ -11,13 +11,13 @@ public class CameraFollow : MonoBehaviour
     [Header("Target")]
     public string targetTag;
 
-    private Vector3 cameraOffset;
-
     [Range(0.01f, 1.0f)]
     public float smoothFactor = 0.5f;
 
     [Header("Camera view")]
     public bool lookAtTarget;
+
+    private Vector3 cameraOffset;
 
     private void Start()
     {
