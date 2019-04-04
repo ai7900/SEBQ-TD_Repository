@@ -187,42 +187,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1863645553}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &204693466 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8081667000505062556, guid: 209ba99e30d1db340a9ef179df7f91e4,
-    type: 3}
-  m_PrefabInstance: {fileID: 1691224781}
-  m_PrefabAsset: {fileID: 0}
---- !u!138 &204693472
-FixedJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 204693466}
-  m_ConnectedBody: {fileID: 928577874}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
---- !u!54 &204693473
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 204693466}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &240438719
 GameObject:
   m_ObjectHideFlags: 0
@@ -750,12 +714,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1afbf488f96fd8a48975c77c1a0c54fb, type: 3}
---- !u!54 &928577874 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 7735108101348966636, guid: 209ba99e30d1db340a9ef179df7f91e4,
-    type: 3}
-  m_PrefabInstance: {fileID: 1691224781}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1114170255
 GameObject:
   m_ObjectHideFlags: 0
@@ -960,100 +918,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1691224781
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1000237449813124, guid: 209ba99e30d1db340a9ef179df7f91e4, type: 3}
-      propertyPath: rb
-      value: 
-      objectReference: {fileID: 928577874}
-    - target: {fileID: 7735108101348966636, guid: 209ba99e30d1db340a9ef179df7f91e4,
-        type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7735108101348966636, guid: 209ba99e30d1db340a9ef179df7f91e4,
-        type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7735108101348966636, guid: 209ba99e30d1db340a9ef179df7f91e4,
-        type: 3}
-      propertyPath: m_Mass
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7735108101348966636, guid: 209ba99e30d1db340a9ef179df7f91e4,
-        type: 3}
-      propertyPath: m_CollisionDetection
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8081667000505062556, guid: 209ba99e30d1db340a9ef179df7f91e4,
-        type: 3}
-      propertyPath: m_Name
-      value: Pendel
-      objectReference: {fileID: 0}
-    - target: {fileID: 8081667000505062557, guid: 209ba99e30d1db340a9ef179df7f91e4,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -27.21
-      objectReference: {fileID: 0}
-    - target: {fileID: 8081667000505062557, guid: 209ba99e30d1db340a9ef179df7f91e4,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 9.98
-      objectReference: {fileID: 0}
-    - target: {fileID: 8081667000505062557, guid: 209ba99e30d1db340a9ef179df7f91e4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -7.58
-      objectReference: {fileID: 0}
-    - target: {fileID: 8081667000505062557, guid: 209ba99e30d1db340a9ef179df7f91e4,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8081667000505062557, guid: 209ba99e30d1db340a9ef179df7f91e4,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8081667000505062557, guid: 209ba99e30d1db340a9ef179df7f91e4,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8081667000505062557, guid: 209ba99e30d1db340a9ef179df7f91e4,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8081667000505062557, guid: 209ba99e30d1db340a9ef179df7f91e4,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8081667000505062557, guid: 209ba99e30d1db340a9ef179df7f91e4,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8081667000505062557, guid: 209ba99e30d1db340a9ef179df7f91e4,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8081667000505062557, guid: 209ba99e30d1db340a9ef179df7f91e4,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4605543406504769018, guid: 209ba99e30d1db340a9ef179df7f91e4, type: 3}
-  m_SourcePrefab: {fileID: 100100000, guid: 209ba99e30d1db340a9ef179df7f91e4, type: 3}
 --- !u!1001 &1831980962
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2172,6 +2036,16 @@ PrefabInstance:
     - target: {fileID: 5231837126253139234, guid: b6c1aa7ec2eebc141b57c525c9587a3a,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5231837126253139236, guid: b6c1aa7ec2eebc141b57c525c9587a3a,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5231837126253139236, guid: b6c1aa7ec2eebc141b57c525c9587a3a,
+        type: 3}
+      propertyPath: m_IsKinematic
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5231837126253139237, guid: b6c1aa7ec2eebc141b57c525c9587a3a,

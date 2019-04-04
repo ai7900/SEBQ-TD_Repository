@@ -42,8 +42,13 @@ public class Pendel : MonoBehaviour
         startTime += Time.deltaTime;
         transform.rotation = Quaternion.Lerp(start, end, (Mathf.Sin(startTime * speed * Mathf.PI / 2) + 1.0f)/2.0f);
     }
-    private void OnTriggerStay(Collider other)
+    //private void OnTriggerStay(Collider other)
+    //{
+    //    other.attachedRigidbody.AddForce(rb.velocity, ForceMode.Force);
+    //}
+
+    private void OnGUI()
     {
-        other.attachedRigidbody.AddForce(rb.velocity, ForceMode.Force);
+        GUI.Label(new Rect(20, 80, 300, 300), "pendulum velocity: " + rb.velocity);
     }
 }
