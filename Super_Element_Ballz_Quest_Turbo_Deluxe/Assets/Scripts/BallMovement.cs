@@ -5,12 +5,20 @@ using UnityEngine.UI;
 public class BallMovement : MonoBehaviour
 {
     [SerializeField]
-    public float forceFactor;
-    public float maxSpeed = 20f;
+    float groundForceFactor;
 
+    [SerializeField]
+    float maxSpeed = 20f;
+
+    [SerializeField]
+    float airborneForceFactor;
+
+    private float forceFactor;
     private float xSpeed;
     private float ySpeed;
     private int abyssLevel = -30;
+    private bool isAirborne;
+    
 
     private Vector3 forward = Vector3.zero;
     private Vector3 movement = Vector3.zero;
@@ -25,13 +33,23 @@ public class BallMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         target = GameObject.FindWithTag("CameraTarget");
         spawnPoint = GameObject.FindWithTag("Spawnpoint");
+        forceFactor = airborneForceFactor;
+        isAirborne = true;
     }
 
     private void FixedUpdate()
     {
         xSpeed = Input.GetAxis("Horizontal");
         ySpeed = Input.GetAxis("Vertical");
-        PerspectiveCameraMovement();
+        ApplyForce();
+
+        if(!isAirborne)
+        {
+            if (rb.velocity.magnitude > maxSpeed)
+            {
+                rb.velocity = rb.velocity.normalized * maxSpeed;
+            }
+        }
         SpawnCheckpoint();
     }
 
@@ -40,6 +58,7 @@ public class BallMovement : MonoBehaviour
     {
         GUI.Label(new Rect(20, 20, 300, 300), "rigidbody velocity: " + rb.velocity);
         GUI.Label(new Rect(20, 40, 300, 300), "xSpeed = " + xSpeed + "\nySpeed = " + ySpeed);
+        GUI.Label(new Rect(20, 80, 300, 300), "It is " + isAirborne + " that the player is airborne");
     }
 
     //Denna metoden ska skicka tillbaka spelaren till startpunkten för nivån när denne faller av banan.
@@ -53,13 +72,27 @@ public class BallMovement : MonoBehaviour
     }
 
     //Denna metod ska ta hand om krafterna som läggs på bollen när den spelaren använder perspektiv kamera och inte en isometrisk kamera
-    private void PerspectiveCameraMovement()
+    private void ApplyForce()
     {
-        rb.AddForce(xSpeed* target.transform.right* forceFactor);
-        rb.AddForce(ySpeed* target.transform.forward* forceFactor);
-        rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
+        rb.AddForce(xSpeed * target.transform.right * forceFactor);
+        rb.AddForce(ySpeed * target.transform.forward * forceFactor);
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag != "Trap")
+        {
+            isAirborne = false;
+            forceFactor = groundForceFactor;
+        }
+    }
 
-
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag != "Trap")
+        {
+            isAirborne = true;
+            forceFactor = airborneForceFactor;
+        }
+    }
 }

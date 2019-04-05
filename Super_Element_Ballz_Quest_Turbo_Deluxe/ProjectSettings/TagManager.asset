@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Spawnpoint
   - CameraTarget
+  - Environment
+  - Trap
   layers:
   - Default
   - TransparentFX
