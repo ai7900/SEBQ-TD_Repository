@@ -5,15 +5,24 @@ using UnityEngine;
 //Kan användas till main menu också
 public class CameraController : MonoBehaviour
 {
+    [SerializeField]
+    [Header("ChildFollow")]
+    private GameObject child;
+
+    [SerializeField]
     [Header("Camera Settings")]
-    public Camera adjustCamera;
+    private Camera adjustCamera;
 
+    [SerializeField]
     [Range(0.01f, 10f)]
-    public float transitionSpeedIsometric;
+    private float transitionSpeedIsometric;
 
+    [SerializeField]
     [Range(0.01f, 10f)]
-    public float transitionSpeedThridPerson;
-    public float rotationSpeed = 1f;
+    private float transitionSpeedThridPerson;
+
+    [SerializeField]
+    private float rotationSpeed = 1f;
 
     [Header("Checkpoints for camera")]
     public Transform[] views;
@@ -24,9 +33,9 @@ public class CameraController : MonoBehaviour
 
     private void Start()
     {
-        currentView = views[1];
-        adjustCamera.orthographic = true;
-        adjustCamera.orthographicSize = 20;
+        currentView = views[0];
+        //adjustCamera.orthographic = true;
+        //adjustCamera.orthographicSize = 20;
     }
 
     private void Update()
@@ -51,7 +60,7 @@ public class CameraController : MonoBehaviour
             adjustCamera.orthographic = false;
         }
 
-
+        ChildRotation();
     }
 
     private void LateUpdate()
@@ -97,6 +106,11 @@ public class CameraController : MonoBehaviour
         {
             transform.LookAt(currentView);
         }
+    }
+
+    private void ChildRotation()
+    {
+        
     }
 
 
