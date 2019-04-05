@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 //Kan användas till main menu också
 public class CameraController : MonoBehaviour
@@ -31,6 +32,8 @@ public class CameraController : MonoBehaviour
     private Vector3 currentAngle;
     private Vector3 viewOffset = new Vector3(10f, 10f, 3f);
 
+
+
     private void Start()
     {
         currentView = views[0];
@@ -60,7 +63,6 @@ public class CameraController : MonoBehaviour
             adjustCamera.orthographic = false;
         }
 
-        ChildRotation();
     }
 
     private void LateUpdate()
@@ -77,8 +79,8 @@ public class CameraController : MonoBehaviour
         }
 
         CameraRotation();
+        ChildRotation();
 
-        
     }
 
     private void CameraRotation()
@@ -110,8 +112,19 @@ public class CameraController : MonoBehaviour
 
     private void ChildRotation()
     {
-        
+        //child.transform.localRotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, transform.rotation.z);
+        ////child.transform.rotation = Quaternion.Euler(0.0f, ground.transform.rotation.y, transform.rotation.z);
+        //Vector3 targetPos = new Vector3(transform.position.x, child.transform.position.y, transform.position.z);
+        //child.transform.LookAt(targetPos);
+        ////child.transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, transform.rotation.z);
     }
+
+    private void OnGUI()
+    {
+        GUI.Label(new Rect(20, 150, 300, 300), "Camera rotation " + child.transform.rotation);
+    }
+
+
 
 
 }

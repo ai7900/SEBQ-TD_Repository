@@ -32,7 +32,6 @@ public class BallMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         target = GameObject.FindWithTag("CameraTarget");
-        spawnPoint = GameObject.FindWithTag("Spawnpoint");
         forceFactor = airborneForceFactor;
         isAirborne = true;
     }
