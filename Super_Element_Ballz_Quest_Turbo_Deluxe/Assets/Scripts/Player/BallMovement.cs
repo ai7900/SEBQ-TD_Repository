@@ -5,15 +5,15 @@ using UnityEngine.UI;
 public class BallMovement : MonoBehaviour
 {
     [SerializeField]
-    float groundForceFactor;
+    float groundForceFactor = 0;
 
     [SerializeField]
     float maxSpeed = 20f;
 
     [SerializeField]
-    float airborneForceFactor;
+    float airborneForceFactor = 0;
 
-    private float forceFactor;
+    private float forceFactor = 0;
     private float xSpeed;
     private float ySpeed;
     private int abyssLevel = -30;
