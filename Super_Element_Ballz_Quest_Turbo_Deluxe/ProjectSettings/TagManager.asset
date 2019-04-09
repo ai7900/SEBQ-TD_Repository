@@ -8,6 +8,7 @@ TagManager:
   - CameraTarget
   - Environment
   - Trap
+  - Goal
   - PlayerDirection
   layers:
   - Default

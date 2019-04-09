@@ -312,7 +312,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82935d11dc5b2a648b5f23aa245a13f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  child: {fileID: 0}
   adjustCamera: {fileID: 284886203}
   transitionSpeedIsometric: 3
   transitionSpeedThridPerson: 7
@@ -1721,6 +1720,10 @@ PrefabInstance:
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 305980026}
+    - target: {fileID: 1942412240, guid: b6c1aa7ec2eebc141b57c525c9587a3a, type: 3}
+      propertyPath: m_TagString
+      value: PlayerDirection
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6c1aa7ec2eebc141b57c525c9587a3a, type: 3}
 --- !u!1 &2035723614
