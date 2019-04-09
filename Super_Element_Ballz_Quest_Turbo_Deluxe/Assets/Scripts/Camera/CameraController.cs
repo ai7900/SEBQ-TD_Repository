@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 //Kan användas till main menu också
 public class CameraController : MonoBehaviour
 {
+    [SerializeField]
+    [Header("ChildFollow")]
+    private GameObject child;
+
     [SerializeField]
     [Header("Camera Settings")]
     private Camera adjustCamera;
@@ -27,8 +30,6 @@ public class CameraController : MonoBehaviour
     private Transform currentView;
     private Vector3 currentAngle;
     private Vector3 viewOffset = new Vector3(10f, 10f, 3f);
-
-
 
     private void Start()
     {
@@ -59,6 +60,7 @@ public class CameraController : MonoBehaviour
             adjustCamera.orthographic = false;
         }
 
+        ChildRotation();
     }
 
     private void LateUpdate()
@@ -75,6 +77,8 @@ public class CameraController : MonoBehaviour
         }
 
         CameraRotation();
+
+        
     }
 
     private void CameraRotation()
@@ -103,4 +107,11 @@ public class CameraController : MonoBehaviour
             transform.LookAt(currentView);
         }
     }
+
+    private void ChildRotation()
+    {
+        
+    }
+
+
 }
