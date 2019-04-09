@@ -22,7 +22,6 @@ public class CameraFollow : MonoBehaviour
     private void Start()
     {
         targetTransform = GameObject.FindGameObjectWithTag(targetTag).transform;
-        cameraOffset = transform.position - targetTransform.position;
     }
 
     private void FixedUpdate()
@@ -34,7 +33,7 @@ public class CameraFollow : MonoBehaviour
     private void LateUpdate()
     {
         AssignNewCameraTarget();
-        Vector3 newPos = targetTransform.position + cameraOffset;
+        Vector3 newPos = targetTransform.position;
 
         transform.position = Vector3.Slerp(transform.position, newPos, smoothFactor * Time.deltaTime);
 
