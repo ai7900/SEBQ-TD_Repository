@@ -28,6 +28,9 @@ public class CameraController : MonoBehaviour
     private Vector3 currentAngle;
     private Vector3 viewOffset = new Vector3(10f, 10f, 3f);
 
+    private float minRotationX = 1;
+    private float maxRotationX = 180;
+
 
 
     private void Start()
@@ -86,6 +89,7 @@ public class CameraController : MonoBehaviour
 
             viewOffset = XcamTurnAngle * viewOffset;
             viewOffset = YcamTurnAngle * viewOffset;
+
         }
 
         if (currentView == views[1] || currentView == views[2])
@@ -97,7 +101,7 @@ public class CameraController : MonoBehaviour
         }
 
         transform.eulerAngles = currentAngle;
-
+        
         if (currentView == views[0])
         {
             transform.LookAt(currentView);

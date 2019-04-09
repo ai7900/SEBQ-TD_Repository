@@ -1334,6 +1334,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 394781450ec4d584bad1d67086491987, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showMouseCursor: 1
+  lockMouseCursor: 0
 --- !u!4 &1477216955
 Transform:
   m_ObjectHideFlags: 0
@@ -1585,6 +1587,8 @@ MonoBehaviour:
   targetTag: Player
   smoothFactor: 0.898
   lookAtTarget: 1
+  IsometricFollow: 0
+  cameraOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &1829445196
 GameObject:
   m_ObjectHideFlags: 0
@@ -1993,3 +1997,5 @@ MonoBehaviour:
   targetTag: Player
   smoothFactor: 0.833
   lookAtTarget: 0
+  IsometricFollow: 1
+  cameraOffset: {x: 15, y: 15, z: -10}

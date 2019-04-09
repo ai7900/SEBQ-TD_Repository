@@ -15,18 +15,18 @@ public class CameraFollow : MonoBehaviour
     public float smoothFactor = 0.5f;
 
     [Header("Camera view")]
-    public bool lookAtTarget;
-
+    [SerializeField]
+    private bool lookAtTarget;
+    [SerializeField]
+    private bool IsometricFollow;
+    [SerializeField]
     private Vector3 cameraOffset;
+
+
 
     private void Start()
     {
         targetTransform = GameObject.FindGameObjectWithTag(targetTag).transform;
-    }
-
-    private void FixedUpdate()
-    {
-            
     }
 
     // LateUpdate is called after Update methods
@@ -35,7 +35,15 @@ public class CameraFollow : MonoBehaviour
         AssignNewCameraTarget();
         Vector3 newPos = targetTransform.position;
 
-        transform.position = Vector3.Slerp(transform.position, newPos, smoothFactor * Time.deltaTime);
+        if(IsometricFollow == false)
+        {
+            transform.position = Vector3.Slerp(transform.position, newPos, smoothFactor * Time.deltaTime);
+        }
+        else
+        {
+            transform.position = Vector3.Slerp(transform.position, newPos + cameraOffset, smoothFactor * Time.deltaTime);
+        }
+        
 
         if (lookAtTarget)
         {
