@@ -279,8 +279,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 82935d11dc5b2a648b5f23aa245a13f6, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   child: {fileID: 2127336647}
   adjustCamera: {fileID: 284886203}
   transitionSpeedIsometric: 3
@@ -1200,7 +1200,7 @@ PrefabInstance:
     - target: {fileID: 4186604033336610547, guid: 95e02d9539b19ca4e9db321288b65af2,
         type: 3}
       propertyPath: m_Material
-      value:
+      value: 
       objectReference: {fileID: 13400000, guid: ea08b06639cd5d849b7b06506f58d459,
         type: 2}
     m_RemovedComponents: []
@@ -1301,8 +1301,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 394781450ec4d584bad1d67086491987, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   showMouseCursor: 0
 --- !u!4 &1477216955
 Transform:
@@ -1543,8 +1543,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1aeb70e5cd0930d4aa742f1c7b46386a, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTransform: {fileID: 0}
   targetTag: Player
   smoothFactor: 0.898
@@ -1682,17 +1682,13 @@ PrefabInstance:
     - target: {fileID: 5231837126253139237, guid: b6c1aa7ec2eebc141b57c525c9587a3a,
         type: 3}
       propertyPath: target
-      value:
+      value: 
       objectReference: {fileID: 2127336647}
     - target: {fileID: 5231837126253139237, guid: b6c1aa7ec2eebc141b57c525c9587a3a,
         type: 3}
       propertyPath: spawnPoint
-      value:
+      value: 
       objectReference: {fileID: 305980026}
-    - target: {fileID: 1942412240, guid: b6c1aa7ec2eebc141b57c525c9587a3a, type: 3}
-      propertyPath: m_TagString
-      value: PlayerDirection
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6c1aa7ec2eebc141b57c525c9587a3a, type: 3}
 --- !u!1 &2035723614
@@ -1743,7 +1739,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
-  m_WarningMessage:
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
@@ -1956,8 +1952,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1aeb70e5cd0930d4aa742f1c7b46386a, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTransform: {fileID: 0}
   targetTag: Player
   smoothFactor: 0.833
