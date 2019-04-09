@@ -7,10 +7,6 @@ using UnityEngine.UI;
 public class CameraController : MonoBehaviour
 {
     [SerializeField]
-    [Header("ChildFollow")]
-    private GameObject child;
-
-    [SerializeField]
     [Header("Camera Settings")]
     private Camera adjustCamera;
 
@@ -79,8 +75,6 @@ public class CameraController : MonoBehaviour
         }
 
         CameraRotation();
-        ChildRotation();
-
     }
 
     private void CameraRotation()
@@ -109,22 +103,4 @@ public class CameraController : MonoBehaviour
             transform.LookAt(currentView);
         }
     }
-
-    private void ChildRotation()
-    {
-        //child.transform.localRotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, transform.rotation.z);
-        ////child.transform.rotation = Quaternion.Euler(0.0f, ground.transform.rotation.y, transform.rotation.z);
-        //Vector3 targetPos = new Vector3(transform.position.x, child.transform.position.y, transform.position.z);
-        //child.transform.LookAt(targetPos);
-        ////child.transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, transform.rotation.z);
-    }
-
-    private void OnGUI()
-    {
-        GUI.Label(new Rect(20, 150, 300, 300), "Camera rotation " + child.transform.rotation);
-    }
-
-
-
-
 }
