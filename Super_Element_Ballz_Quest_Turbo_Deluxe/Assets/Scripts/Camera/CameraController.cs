@@ -31,14 +31,9 @@ public class CameraController : MonoBehaviour
     private Vector3 currentAngle;
     private Vector3 viewOffset = new Vector3(10f, 10f, 3f);
 
-<<<<<<< HEAD
-=======
     private float minRotationX = 1;
     private float maxRotationX = 180;
 
-
-
->>>>>>> PlayerMovementCameraFix
     private void Start()
     {
         currentView = views[0];
@@ -67,12 +62,11 @@ public class CameraController : MonoBehaviour
             currentView = views[2]; //SpecialView
             adjustCamera.orthographic = false;
         }
-
-        ChildRotation();
     }
 
     private void LateUpdate()
     {
+
         //Lerp position
         if(currentView == views[0])
         {
@@ -85,8 +79,6 @@ public class CameraController : MonoBehaviour
         }
 
         CameraRotation();
-
-        
     }
 
     private void CameraRotation()
@@ -116,11 +108,4 @@ public class CameraController : MonoBehaviour
             transform.LookAt(currentView);
         }
     }
-
-    private void ChildRotation()
-    {
-        
-    }
-
-
 }

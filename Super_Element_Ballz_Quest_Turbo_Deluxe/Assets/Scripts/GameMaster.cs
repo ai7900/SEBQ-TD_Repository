@@ -6,38 +6,28 @@ public class GameMaster : MonoBehaviour
 {
     [Header("Mouse settings")]
     public bool showMouseCursor = false;
-<<<<<<< HEAD
 
     [SerializeField]
     GameObject levelWonUI;
-=======
     public bool lockMouseCursor = false;
->>>>>>> PlayerMovementCameraFix
 
     // Start is called before the first frame update
     private void Start()
     {
-<<<<<<< HEAD
         Cursor.lockState = CursorLockMode.Locked;
-=======
-
-        
->>>>>>> PlayerMovementCameraFix
     }
 
     // Update is called once per frame
     private void Update()
     {
-<<<<<<< HEAD
         Cursor.visible = showMouseCursor;
     }
 
+    //Denna metoden ska hantera vad som händer när nivån klaras av
     public void LevelCompleted()
     {
         levelWonUI.SetActive(true);
-=======
         MouseSettings();
-
     }
 
     private void MouseSettings()
@@ -52,6 +42,5 @@ public class GameMaster : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.None;
         }
->>>>>>> PlayerMovementCameraFix
     }
 }

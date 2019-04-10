@@ -22,27 +22,36 @@ public class CameraFollow : MonoBehaviour
     [SerializeField]
     private Vector3 cameraOffset;
 
+    private Vector3 newPosIso;
+
+    [SerializeField]
+    private int isoOffset = 20;
 
 
     private void Start()
     {
         targetTransform = GameObject.FindGameObjectWithTag(targetTag).transform;
         cameraOffset = transform.position - targetTransform.position;
+        newPosIso = targetTransform.position + cameraOffset;
     }
 
     // LateUpdate is called after Update methods
     private void LateUpdate()
     {
         AssignNewCameraTarget();
-        Vector3 newPos = targetTransform.position + cameraOffset;
 
-        if(IsometricFollow == false)
+        Vector3 newPos = targetTransform.position;
+        //Denna variablen hanterar offsetten för den isometriska kameran
+        newPosIso = new Vector3(targetTransform.position.x + isoOffset, isoOffset, targetTransform.position.z - isoOffset);
+
+
+        if (IsometricFollow == false)
         {
             transform.position = Vector3.Slerp(transform.position, newPos, smoothFactor * Time.deltaTime);
         }
         else
         {
-            transform.position = Vector3.Slerp(transform.position, newPos + cameraOffset, smoothFactor * Time.deltaTime);
+            transform.position = Vector3.Slerp(transform.position, newPosIso, smoothFactor * Time.deltaTime);
         }
         
 

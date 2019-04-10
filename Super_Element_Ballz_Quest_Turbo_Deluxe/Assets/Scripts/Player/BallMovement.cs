@@ -31,7 +31,7 @@ public class BallMovement : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        target = GameObject.FindWithTag("CameraTarget");
+        target = GameObject.FindWithTag("PlayerDirection");
         spawnPoint = GameObject.FindWithTag("Spawnpoint");
         forceFactor = airborneForceFactor;
         isAirborne = true;
@@ -39,6 +39,8 @@ public class BallMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        FindDirectionHelper();
+
         xSpeed = Input.GetAxis("Horizontal");
         ySpeed = Input.GetAxis("Vertical");
         ApplyForce();
@@ -93,6 +95,14 @@ public class BallMovement : MonoBehaviour
         {
             isAirborne = true;
             forceFactor = airborneForceFactor;
+        }
+    }
+
+    private void FindDirectionHelper()
+    {
+        if(!target)
+        {
+            target = GameObject.FindWithTag("PlayerDirection");
         }
     }
 }
