@@ -8,6 +8,9 @@ public class MenuHandler : MonoBehaviour
     public MenuCamera menuCamera;
 
     [SerializeField]
+    private SceneFader sceneFader;
+
+    [SerializeField]
     private string firstLevel;
 
 
@@ -28,10 +31,8 @@ public class MenuHandler : MonoBehaviour
             {
                 case MenuCamera.MenuState.Play:
                     {
-                        //Vi använder sceneFader här sen!
-                        SceneManager.LoadScene(firstLevel);
+                        sceneFader.FadeTo(firstLevel);
                     }
-                    
                     break;
 
                 case MenuCamera.MenuState.Continue:
@@ -60,34 +61,5 @@ public class MenuHandler : MonoBehaviour
                     break;
             }
         }
-            
-
-        //if(Input.GetKeyDown(KeyCode.Return))
-        //{
-        //    if(menuCamera.CurrentMenuState == MenuCamera.MenuState.Play)
-        //    {
-                
-        //    }
-
-        //    else if (menuCamera.CurrentMenuState == MenuCamera.MenuState.Continue)
-        //    {
-
-        //    }
-
-        //    else if (menuCamera.CurrentMenuState == MenuCamera.MenuState.Level_Select)
-        //    {
-
-        //    }
-
-        //    else if (menuCamera.CurrentMenuState == MenuCamera.MenuState.Options)
-        //    {
-
-        //    }
-
-        //    else if (menuCamera.CurrentMenuState == MenuCamera.MenuState.Quit)
-        //    {
-
-        //    }
-        //}
     }
 }
