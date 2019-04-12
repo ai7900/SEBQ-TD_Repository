@@ -146,7 +146,9 @@ MonoBehaviour:
   heavyBallPrefab: {fileID: 5231837126253139230, guid: 0f3dd5a9b5fafa842b55b80e8d5c2ab4,
     type: 3}
   lightBallPrefab: {fileID: 5231837126253139230}
-  FireBallPrefab: {fileID: 3325169681584383846, guid: c9342562e09f403438bde28b8d5b80ad,
+  fireBallPrefab: {fileID: 3325169681584383846, guid: c9342562e09f403438bde28b8d5b80ad,
+    type: 3}
+  iceCubePrefab: {fileID: 6346841100233949423, guid: bf62b88fdd2f639419a9c5b4d976b446,
     type: 3}
 --- !u!135 &8487433477871012772
 SphereCollider:

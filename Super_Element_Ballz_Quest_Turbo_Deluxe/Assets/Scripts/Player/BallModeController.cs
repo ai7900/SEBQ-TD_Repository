@@ -10,9 +10,12 @@ public class BallModeController : MonoBehaviour
     public GameObject normalBallPrefab;
     public GameObject heavyBallPrefab;
     public GameObject lightBallPrefab;
-    public GameObject FireBallPrefab;
+    public GameObject fireBallPrefab;
+    public GameObject iceCubePrefab;
 
     private GameObject newObject;
+
+    private Quaternion iceCubeRotation = Quaternion.Euler(0,0,0);
  
 
     void Update()
@@ -42,7 +45,14 @@ public class BallModeController : MonoBehaviour
 
         else if (Input.GetKeyDown(KeyCode.Keypad4))
         {
-            newObject = Instantiate(FireBallPrefab, gameObject.transform.position, gameObject.transform.rotation);
+            newObject = Instantiate(fireBallPrefab, gameObject.transform.position, gameObject.transform.rotation);
+            newObject.GetComponent<Rigidbody>().velocity = gameObject.GetComponent<Rigidbody>().velocity;
+            Destroy(gameObject);
+        }
+
+        else if (Input.GetKeyDown(KeyCode.Keypad5))
+        {
+            newObject = Instantiate(iceCubePrefab, gameObject.transform.position, iceCubeRotation);
             newObject.GetComponent<Rigidbody>().velocity = gameObject.GetComponent<Rigidbody>().velocity;
             Destroy(gameObject);
         }

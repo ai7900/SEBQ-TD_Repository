@@ -14365,7 +14365,9 @@ MonoBehaviour:
     type: 3}
   lightBallPrefab: {fileID: 5231837126253139230, guid: 001fbdc2ba115074ba7bddfb643c7d0a,
     type: 3}
-  FireBallPrefab: {fileID: 3325169681584383846}
+  fireBallPrefab: {fileID: 3325169681584383846}
+  iceCubePrefab: {fileID: 6346841100233949423, guid: bf62b88fdd2f639419a9c5b4d976b446,
+    type: 3}
 --- !u!135 &312291151534088850
 SphereCollider:
   m_ObjectHideFlags: 0
