@@ -31,8 +31,8 @@ public class CameraController : MonoBehaviour
     private Vector3 currentAngle;
     private Vector3 viewOffset = new Vector3(10f, 10f, 3f);
 
-    private float minRotationX = 1;
-    private float maxRotationX = 180;
+    //private float minRotationX = 1;
+    //private float maxRotationX = 180;
 
     private void Start()
     {
