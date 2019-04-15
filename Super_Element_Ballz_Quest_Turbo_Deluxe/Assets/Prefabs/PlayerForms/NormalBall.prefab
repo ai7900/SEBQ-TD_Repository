@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 5231837126253139232}
   - component: {fileID: 5231837126253139233}
   - component: {fileID: 5231837126253139236}
+  - component: {fileID: 8024315857165605104}
   - component: {fileID: 5231837126253139237}
   - component: {fileID: 3257336175173787072}
   - component: {fileID: 9012671247297050012}
@@ -156,6 +157,22 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8024315857165605104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5231837126253139230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ba70111cd3ec86429c2d3c03a50072a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 5231837126253139236}
+  waterLevel: 20
+  floatHeight: 2
+  bounceDamp: 0.05
 --- !u!114 &5231837126253139237
 MonoBehaviour:
   m_ObjectHideFlags: 0
