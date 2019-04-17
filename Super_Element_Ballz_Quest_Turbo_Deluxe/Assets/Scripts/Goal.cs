@@ -5,7 +5,7 @@ using UnityEngine;
 public class Goal : MonoBehaviour
 {
     [SerializeField]
-    GameMaster gameMaster;
+    private GameMaster gameMaster;
 
     private void OnTriggerEnter(Collider other)
     {

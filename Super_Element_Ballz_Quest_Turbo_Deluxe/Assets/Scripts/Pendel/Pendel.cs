@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Pendel : MonoBehaviour
 {
-    Quaternion start, end;
+    private Quaternion start, end;
     [SerializeField]
     private float angle = 90.0f;
     [SerializeField]
@@ -22,6 +22,7 @@ public class Pendel : MonoBehaviour
         startTime = 0.0f;
         
     }
+
     Quaternion PendulumRotation(float angle)
     {
         var pendulumRotation = transform.rotation;

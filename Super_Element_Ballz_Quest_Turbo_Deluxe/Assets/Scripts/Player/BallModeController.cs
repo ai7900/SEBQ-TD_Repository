@@ -24,7 +24,7 @@ public class BallModeController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Keypad1))
         {
             
-            newObject=Instantiate(normalBallPrefab, gameObject.transform.position, gameObject.transform.rotation);
+            newObject = Instantiate(normalBallPrefab, gameObject.transform.position, gameObject.transform.rotation);
             newObject.GetComponent<Rigidbody>().velocity = gameObject.GetComponent<Rigidbody>().velocity;
             Destroy(gameObject);
         }
