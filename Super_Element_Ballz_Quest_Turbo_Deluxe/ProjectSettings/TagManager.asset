@@ -9,6 +9,8 @@ TagManager:
   - Environment
   - Trap
   - Goal
+  - PlayerDirection
+  - Water
   layers:
   - Default
   - TransparentFX

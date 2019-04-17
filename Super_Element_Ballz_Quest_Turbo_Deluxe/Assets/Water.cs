@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Float : MonoBehaviour
+public class Water : MonoBehaviour
 {
     [SerializeField]
     Rigidbody rb;
-    public float waterLevel = 4;
+    [SerializeField]
+    private float waterLevel;
     public float floatHeight = 2;
     public float bounceDamp = 0.05f;
     Vector3 bouyancyCenterOffset;
@@ -15,7 +16,14 @@ public class Float : MonoBehaviour
     private Vector3 actionPoint;
     private Vector3 upLift;
 
-    void Update()
+    RectTransform rt;
+
+    void Start()
+    {
+        waterLevel = transform.position.y + rt.rect.height;
+    }
+
+    void OnCollisionStay(Collision collision)
     {
         actionPoint = transform.position + transform.TransformDirection(bouyancyCenterOffset);
         forceFactor = 1f - ((actionPoint.y - waterLevel) / floatHeight);
@@ -24,6 +32,8 @@ public class Float : MonoBehaviour
             upLift = -Physics.gravity * (forceFactor - rb.velocity.y * bounceDamp);
             rb.AddForceAtPosition(upLift, actionPoint);
         }
+
     }
+
 
 }
