@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6052145716032164342}
   - component: {fileID: 8146714888473191887}
   - component: {fileID: 7432553298903495980}
+  - component: {fileID: 8341045624421573372}
   m_Layer: 0
   m_Name: FenceSolid
   m_TagString: Untagged
@@ -68,6 +69,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destroyedVersion: {fileID: 147331540802864723, guid: 169759c6c6c9fd946962cc26933af027,
     type: 3}
+--- !u!65 &8341045624421573372
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648164651182794558}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.9, y: 1.22, z: 0.13}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &908116353603438416
 GameObject:
   m_ObjectHideFlags: 0
@@ -81,7 +95,6 @@ GameObject:
   - component: {fileID: 908116353605638544}
   - component: {fileID: 7596837529495716924}
   - component: {fileID: 7596837529495716919}
-  - component: {fileID: 8551969185478923416}
   m_Layer: 0
   m_Name: pCube3
   m_TagString: Untagged
@@ -177,19 +190,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0000002, y: 1.0000001, z: 1}
   m_Center: {x: -0.0000009536743, y: 0, z: 0}
---- !u!114 &8551969185478923416
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 908116353603438416}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 197cb93896e70df479a5c05d96a7d467, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destroyedVersion: {fileID: 0}
 --- !u!1 &908116353603438418
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,7 +203,6 @@ GameObject:
   - component: {fileID: 908116353605638546}
   - component: {fileID: 7596837529495716926}
   - component: {fileID: 7596837529495716918}
-  - component: {fileID: 8265946320869265925}
   m_Layer: 0
   m_Name: pCube2
   m_TagString: Untagged
@@ -299,19 +298,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0000004, y: 1.0000006, z: 1}
   m_Center: {x: -0.0000009536743, y: 0.00000011920929, z: -0.0000019073486}
---- !u!114 &8265946320869265925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 908116353603438418}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 197cb93896e70df479a5c05d96a7d467, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destroyedVersion: {fileID: 0}
 --- !u!1 &908116353603438420
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,7 +311,6 @@ GameObject:
   - component: {fileID: 908116353605638548}
   - component: {fileID: 7596837529495716917}
   - component: {fileID: 7596837529495716916}
-  - component: {fileID: 5638064942627268652}
   m_Layer: 0
   m_Name: pCube1
   m_TagString: Untagged
@@ -421,19 +406,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0000004, y: 1.0000006, z: 1}
   m_Center: {x: 0.00000064074993, y: 0.00000008940697, z: -0.0000019073486}
---- !u!114 &5638064942627268652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 908116353603438420}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 197cb93896e70df479a5c05d96a7d467, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destroyedVersion: {fileID: 0}
 --- !u!1 &908116353603438422
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,7 +419,6 @@ GameObject:
   - component: {fileID: 908116353605638550}
   - component: {fileID: 7596837529495716922}
   - component: {fileID: 7596837529495716920}
-  - component: {fileID: 1540273731379694489}
   m_Layer: 0
   m_Name: pCube6
   m_TagString: Untagged
@@ -543,19 +514,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0000002, y: 1.0000001, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1540273731379694489
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 908116353603438422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 197cb93896e70df479a5c05d96a7d467, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destroyedVersion: {fileID: 0}
 --- !u!1 &908116353603438428
 GameObject:
   m_ObjectHideFlags: 0
@@ -569,7 +527,6 @@ GameObject:
   - component: {fileID: 908116353605638556}
   - component: {fileID: 7596837529495716912}
   - component: {fileID: 7596837529495716911}
-  - component: {fileID: 7004174297081865716}
   m_Layer: 0
   m_Name: pCube5
   m_TagString: Untagged
@@ -665,19 +622,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0000002, y: 1.0000001, z: 1}
   m_Center: {x: -0.00000023841858, y: 0, z: 0}
---- !u!114 &7004174297081865716
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 908116353603438428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 197cb93896e70df479a5c05d96a7d467, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destroyedVersion: {fileID: 0}
 --- !u!1 &908116353603438430
 GameObject:
   m_ObjectHideFlags: 0
@@ -691,7 +635,6 @@ GameObject:
   - component: {fileID: 908116353605638558}
   - component: {fileID: 7596837529495716914}
   - component: {fileID: 7596837529495716910}
-  - component: {fileID: 3507659459210691995}
   m_Layer: 0
   m_Name: pCube4
   m_TagString: Untagged
@@ -787,16 +730,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0000002, y: 1.0000001, z: 1}
   m_Center: {x: -0.0000009536743, y: 0, z: 0}
---- !u!114 &3507659459210691995
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 908116353603438430}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 197cb93896e70df479a5c05d96a7d467, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destroyedVersion: {fileID: 0}

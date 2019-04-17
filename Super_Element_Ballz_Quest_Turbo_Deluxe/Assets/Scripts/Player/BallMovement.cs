@@ -45,6 +45,8 @@ public class BallMovement : MonoBehaviour
         ySpeed = Input.GetAxis("Vertical");
         ApplyForce();
 
+
+        //Funkar inte så bra med pendel. Måste omarbetas omgående.
         if(!isAirborne)
         {
             if (rb.velocity.magnitude > maxSpeed)
