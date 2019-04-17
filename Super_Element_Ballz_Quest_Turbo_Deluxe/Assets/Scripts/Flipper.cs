@@ -21,7 +21,6 @@ public class Flipper : MonoBehaviour
     private Renderer rend;
     private int onFlipperTimer = 0;
 
-    // Start is called before the first frame update
     void Start()
     {
         hinge = GetComponent<HingeJoint>();
@@ -31,18 +30,12 @@ public class Flipper : MonoBehaviour
         rend.material.color=color;
     }
 
-    // Update is called once per frame
-    void Update()
-    {  
-    }
-
     private void OnTriggerStay(Collider other)
     {
         
         onFlipperTimer++;
         color.r += colorChange;
         color.g -= colorChange;      
-        Debug.Log("Flipper collide");
 
         if (onFlipperTimer > 100)
         {

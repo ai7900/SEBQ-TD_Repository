@@ -5,7 +5,7 @@ using UnityEngine;
 public class Wind : MonoBehaviour
 {
     public float windForce;
-    public bool  isFacingLeft,isFacingRight,isFacingUp;
+    //public bool  isFacingLeft,isFacingRight,isFacingUp;
     private Vector3 windDirection;
     
     // Start is called before the first frame update
@@ -18,13 +18,10 @@ public class Wind : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-       
-        Debug.Log("Object is within trigger");
+        //Debug.Log("Object is within trigger");
         windDirection = transform.up;
 
-        Debug.Log(windDirection);
-
-       
+        //Debug.Log(windDirection);
         other.attachedRigidbody.AddForce(windDirection * windForce, ForceMode.Force);
         
     }

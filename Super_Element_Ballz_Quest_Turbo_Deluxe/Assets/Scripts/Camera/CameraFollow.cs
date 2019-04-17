@@ -41,6 +41,7 @@ public class CameraFollow : MonoBehaviour
         AssignNewCameraTarget();
 
         Vector3 newPos = targetTransform.position;
+
         //Denna variablen hanterar offsetten för den isometriska kameran
         newPosIso = new Vector3(targetTransform.position.x + isoOffset, isoOffset, targetTransform.position.z - isoOffset);
 

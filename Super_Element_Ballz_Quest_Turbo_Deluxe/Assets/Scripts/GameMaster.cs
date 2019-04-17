@@ -20,14 +20,13 @@ public class GameMaster : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        Cursor.visible = showMouseCursor;
+        MouseSettings();
     }
 
     //Denna metoden ska hantera vad som händer när nivån klaras av
     public void LevelCompleted()
     {
         levelWonUI.SetActive(true);
-        MouseSettings();
     }
 
     private void MouseSettings()

@@ -5,9 +5,6 @@ using UnityEngine;
 //Kan användas till main menu också
 public class CameraController : MonoBehaviour
 {
-    [SerializeField]
-    [Header("ChildFollow")]
-    private GameObject child;
 
     [SerializeField]
     [Header("Camera Settings")]
@@ -19,7 +16,7 @@ public class CameraController : MonoBehaviour
 
     [SerializeField]
     [Range(0.01f, 10f)]
-    private float transitionSpeedThridPerson;
+    private float transitionSpeedThirdPerson;
 
     [SerializeField]
     private float rotationSpeed = 1f;
@@ -31,14 +28,10 @@ public class CameraController : MonoBehaviour
     private Vector3 currentAngle;
     private Vector3 viewOffset = new Vector3(10f, 10f, 3f);
 
-    //private float minRotationX = 1;
-    //private float maxRotationX = 180;
 
     private void Start()
     {
         currentView = views[0];
-        //adjustCamera.orthographic = true;
-        //adjustCamera.orthographicSize = 20;
     }
 
     private void Update()
@@ -50,14 +43,14 @@ public class CameraController : MonoBehaviour
             adjustCamera.orthographic = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             currentView = views[1]; //isometric
             adjustCamera.orthographic = true;
             adjustCamera.orthographicSize = 20;
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             currentView = views[2]; //SpecialView
             adjustCamera.orthographic = false;
@@ -70,10 +63,10 @@ public class CameraController : MonoBehaviour
         //Lerp position
         if(currentView == views[0])
         {
-            transform.position = Vector3.Lerp(transform.position, currentView.position + viewOffset, transitionSpeedThridPerson * Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, currentView.position + viewOffset, transitionSpeedThirdPerson * Time.deltaTime);
         }
 
-        if(currentView == views[1] || currentView == views[2])
+        else if(currentView == views[1] || currentView == views[2])
         {
             transform.position = Vector3.Lerp(transform.position, currentView.position, transitionSpeedIsometric * Time.deltaTime);
         }
@@ -93,7 +86,7 @@ public class CameraController : MonoBehaviour
 
         }
 
-        if (currentView == views[1] || currentView == views[2])
+        else if (currentView == views[1] || currentView == views[2])
         {
             currentAngle = new Vector3(
                     Mathf.LerpAngle(transform.rotation.eulerAngles.x, currentView.transform.eulerAngles.x, Time.deltaTime * transitionSpeedIsometric),

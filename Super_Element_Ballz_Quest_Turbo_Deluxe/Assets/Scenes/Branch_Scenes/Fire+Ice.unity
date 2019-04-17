@@ -1192,10 +1192,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82935d11dc5b2a648b5f23aa245a13f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  child: {fileID: 0}
   adjustCamera: {fileID: 1155934402}
   transitionSpeedIsometric: 3
-  transitionSpeedThridPerson: 7
+  transitionSpeedThirdPerson: 0
   rotationSpeed: 3
   views:
   - {fileID: 1525735870}
