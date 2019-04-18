@@ -16,6 +16,9 @@ public class BallModeController : MonoBehaviour
     private GameObject newObject;
 
     private Quaternion iceCubeRotation = Quaternion.Euler(0,0,0);
+
+    [SerializeField]
+    private int iceInitialSpeedBoost = 70;
  
 
     void Update()
@@ -53,7 +56,11 @@ public class BallModeController : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Keypad5))
         {
             newObject = Instantiate(iceCubePrefab, gameObject.transform.position, iceCubeRotation);
-            newObject.GetComponent<Rigidbody>().velocity = gameObject.GetComponent<Rigidbody>().velocity;
+            Rigidbody rb = newObject.GetComponent<Rigidbody>();
+            rb.velocity = gameObject.GetComponent<Rigidbody>().velocity;
+
+            //Detta kanske borde göras i Start() i BallMovement istället(?)
+            rb.AddForce(newObject.GetComponent<Rigidbody>().velocity.normalized * iceInitialSpeedBoost, ForceMode.Impulse);
             Destroy(gameObject);
         }
 

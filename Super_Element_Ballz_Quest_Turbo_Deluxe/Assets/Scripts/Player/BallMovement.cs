@@ -43,17 +43,13 @@ public class BallMovement : MonoBehaviour
 
         xSpeed = Input.GetAxis("Horizontal");
         ySpeed = Input.GetAxis("Vertical");
-        ApplyForce();
 
-
-        //Funkar inte så bra med pendel. Måste omarbetas omgående.
-        if(!isAirborne)
+        if (rb.velocity.magnitude > maxSpeed == false)
         {
-            if (rb.velocity.magnitude > maxSpeed)
-            {
-                rb.velocity = rb.velocity.normalized * maxSpeed;
-            }
+            ApplyForce();
         }
+        
+
         SpawnCheckpoint();
     }
 
@@ -75,7 +71,7 @@ public class BallMovement : MonoBehaviour
         }
     }
 
-    //Denna metod ska ta hand om krafterna som läggs på bollen när den spelaren använder perspektiv kamera och inte en isometrisk kamera
+    //Denna metod ska ta hand om krafterna som läggs på bollen
     private void ApplyForce()
     {
         rb.AddForce(xSpeed * target.transform.right * forceFactor);

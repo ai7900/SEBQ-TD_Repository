@@ -149,8 +149,8 @@ Rigidbody:
   m_GameObject: {fileID: 5231837126253139230}
   serializedVersion: 2
   m_Mass: 300
-  m_Drag: 0.15
-  m_AngularDrag: 0.025
+  m_Drag: 0.01
+  m_AngularDrag: 0.2
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
@@ -168,9 +168,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9807edff7f0a1ac42a447cb3e6686e58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundForceFactor: 1800
+  groundForceFactor: 10000
   maxSpeed: 10
-  airborneForceFactor: 200
+  airborneForceFactor: 250
   target: {fileID: 2958754340975342473}
   spawnPoint: {fileID: 0}
 --- !u!114 &1046135444422554209
@@ -194,6 +194,7 @@ MonoBehaviour:
     type: 3}
   iceCubePrefab: {fileID: 6346841100233949423, guid: bf62b88fdd2f639419a9c5b4d976b446,
     type: 3}
+  iceInitialSpeedBoost: 70
 --- !u!135 &4768339096954244879
 SphereCollider:
   m_ObjectHideFlags: 0
