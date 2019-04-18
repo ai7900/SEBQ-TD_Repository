@@ -5,10 +5,21 @@ using UnityEngine;
 public class Destruction : MonoBehaviour
 {
     public GameObject destroyedVersion;
+    [SerializeField]
+    private float objectStrength;
+    private Rigidbody playerRb;
 
     void OnCollisionEnter(Collision collision)
     {
-        Instantiate(destroyedVersion, transform.position, transform.rotation);
-        Destroy(gameObject);
+        if (collision.gameObject.tag == "Player")
+        {
+            playerRb = collision.gameObject.GetComponent<Rigidbody>();
+            if (playerRb.mass * playerRb.velocity.magnitude > objectStrength)
+            {
+                Instantiate(destroyedVersion, transform.position, transform.rotation);
+                Destroy(gameObject);
+            }
+        }
+        
     }
 }
