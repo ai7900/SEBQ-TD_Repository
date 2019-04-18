@@ -4,25 +4,23 @@ using UnityEngine;
 
 public class Wind : MonoBehaviour
 {
-    public float windForce;
-    //public bool  isFacingLeft,isFacingRight,isFacingUp;
+    [SerializeField]
+    private float windForce;
+
     private Vector3 windDirection;
+    private Vector3 windPosition = new Vector3(0, 6, 0);
     
     // Start is called before the first frame update
     void Start()
     {
         //Sets windarea position in front of turbine
-        transform.localPosition = new Vector3(0, 6, 0);       
+        transform.localPosition = windPosition;       
     }
 
 
     private void OnTriggerStay(Collider other)
     {
-        //Debug.Log("Object is within trigger");
         windDirection = transform.up;
-
-        //Debug.Log(windDirection);
-        other.attachedRigidbody.AddForce(windDirection * windForce, ForceMode.Force);
-        
+        other.attachedRigidbody.AddForce(windDirection * windForce, ForceMode.Force);       
     }
 }
