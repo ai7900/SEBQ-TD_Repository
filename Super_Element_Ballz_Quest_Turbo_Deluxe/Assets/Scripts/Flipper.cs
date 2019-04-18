@@ -4,22 +4,28 @@ using UnityEngine;
 
 public class Flipper : MonoBehaviour
 {
-    public float restPosition = 0f;
-    public float activePosition = 90f;
-    public float hitStrength = 10000f;
-    public float flipperDamper = 150f;
+    [SerializeField]
+    private float restPosition = 0f;
+    [SerializeField]
+    private float activePosition = 90f;
+    [SerializeField]
+    private float hitStrength = 10000f;
+    [SerializeField]
+    private float flipperDamper = 150f;
+
     private Vector3 flipDirection;
     private float flipForce = 500;
 
-    JointSpring spring;
+    private JointSpring spring;
+    private HingeJoint hinge;
 
-    HingeJoint hinge;
-    Color color;
-    Color startColor = new Color(0,1,0,1);
-    float colorChange = 0.01f;
+    private Color color;
+    private Color startColor = new Color(0,1,0,1);
+    private float maxColorValue = 1.0f;
+    private float flipInterval = 1.0f;
     
     private Renderer rend;
-    private int onFlipperTimer = 0;
+    private float onFlipperTimer = 0;
 
     void Start()
     {
@@ -31,13 +37,15 @@ public class Flipper : MonoBehaviour
     }
 
     private void OnTriggerStay(Collider other)
-    {
+    {     
         
-        onFlipperTimer++;
-        color.r += colorChange;
-        color.g -= colorChange;      
-
-        if (onFlipperTimer > 100)
+        onFlipperTimer += Time.deltaTime;
+        //Red color increases with time
+        color.r = maxColorValue * onFlipperTimer;
+        //Green color decreases with time
+        color.g = maxColorValue - (maxColorValue*onFlipperTimer);
+        //When 1 second has passed the flipper will flip
+        if (onFlipperTimer > flipInterval)
         {
             RunSpring();
             spring.targetPosition = activePosition;
