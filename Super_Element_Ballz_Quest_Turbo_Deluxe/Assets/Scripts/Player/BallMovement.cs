@@ -53,7 +53,6 @@ public class BallMovement : MonoBehaviour
         SpawnCheckpoint();
     }
 
-
     private void OnGUI()
     {
         GUI.Label(new Rect(20, 20, 300, 300), "rigidbody velocity: " + rb.velocity);
@@ -76,6 +75,15 @@ public class BallMovement : MonoBehaviour
     {
         rb.AddForce(xSpeed * target.transform.right * forceFactor);
         rb.AddForce(ySpeed * target.transform.forward * forceFactor);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Collectible")
+        {
+            PlayerStats.CollectiblesPickedUp++;
+            Destroy(other.gameObject);
+        }
     }
 
     private void OnTriggerStay(Collider other)
