@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.45137662, g: 0.50041103, b: 0.56987894, a: 1}
+  m_IndirectSpecularColor: {r: 0.4513762, g: 0.5004104, b: 0.56987816, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -366,10 +366,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82935d11dc5b2a648b5f23aa245a13f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  child: {fileID: 0}
   adjustCamera: {fileID: 284886203}
   transitionSpeedIsometric: 3
-  transitionSpeedThridPerson: 7
+  transitionSpeedThirdPerson: 0
   rotationSpeed: 3
   views:
   - {fileID: 1756251245}
@@ -792,6 +791,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5761709010173884327, guid: 94353d1cf46b8454991fadc5ff254bad,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94353d1cf46b8454991fadc5ff254bad, type: 3}
