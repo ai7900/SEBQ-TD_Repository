@@ -14342,7 +14342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9807edff7f0a1ac42a447cb3e6686e58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundForceFactor: 175
+  groundForceFactor: 100
   maxSpeed: 30
   airborneForceFactor: 20
   target: {fileID: 4790399529980003454}
