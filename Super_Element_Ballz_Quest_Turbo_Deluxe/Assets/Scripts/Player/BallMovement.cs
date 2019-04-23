@@ -32,7 +32,7 @@ public class BallMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         target = GameObject.FindWithTag("PlayerDirection");
-        spawnPoint = GameObject.FindWithTag("Spawnpoint");
+        spawnPoint = GameObject.FindWithTag("Spawn");
         forceFactor = airborneForceFactor;
         isAirborne = true;
     }
@@ -73,8 +73,8 @@ public class BallMovement : MonoBehaviour
     //Denna metod ska ta hand om krafterna som läggs på bollen
     private void ApplyForce()
     {
-        rb.AddForce(xSpeed * target.transform.right * forceFactor);
-        rb.AddForce(ySpeed * target.transform.forward * forceFactor);
+        rb.AddForce(xSpeed * target.transform.right * forceFactor * rb.mass);
+        rb.AddForce(ySpeed * target.transform.forward * forceFactor * rb.mass);
     }
 
     private void OnTriggerEnter(Collider other)
