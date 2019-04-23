@@ -60,7 +60,7 @@ public class BallModeController : MonoBehaviour
             rb.velocity = gameObject.GetComponent<Rigidbody>().velocity;
 
             //Detta kanske borde göras i Start() i BallMovement istället(?)
-            rb.AddForce(newObject.GetComponent<Rigidbody>().velocity.normalized * iceInitialSpeedBoost, ForceMode.Impulse);
+            //rb.AddForce(newObject.GetComponent<Rigidbody>().velocity.normalized * iceInitialSpeedBoost, ForceMode.Impulse);
             Destroy(gameObject);
         }
 

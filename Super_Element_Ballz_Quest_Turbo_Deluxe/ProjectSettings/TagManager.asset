@@ -9,6 +9,9 @@ TagManager:
   - Environment
   - Trap
   - Goal
+  - PlayerDirection
+  - Collectible
+  - Spawn
   layers:
   - Default
   - TransparentFX

@@ -73,8 +73,8 @@ public class BallMovement : MonoBehaviour
     //Denna metod ska ta hand om krafterna som läggs på bollen
     private void ApplyForce()
     {
-        rb.AddForce(xSpeed * target.transform.right * forceFactor * rb.mass);
-        rb.AddForce(ySpeed * target.transform.forward * forceFactor * rb.mass);
+        rb.AddForce(xSpeed * target.transform.right * forceFactor);
+        rb.AddForce(ySpeed * target.transform.forward * forceFactor);
     }
 
     private void OnTriggerEnter(Collider other)

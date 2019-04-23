@@ -168,8 +168,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9807edff7f0a1ac42a447cb3e6686e58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundForceFactor: 5
-  maxSpeed: 10
+  groundForceFactor: 240
+  maxSpeed: 15
   airborneForceFactor: 250
   target: {fileID: 2958754340975342473}
   spawnPoint: {fileID: 0}
