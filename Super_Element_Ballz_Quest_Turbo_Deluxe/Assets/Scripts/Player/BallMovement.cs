@@ -15,7 +15,7 @@ public class BallMovement : MonoBehaviour
 
     private float forceFactor = 0;
     private float xSpeed;
-    private float ySpeed;
+    private float zSpeed;
     private int abyssLevel = -30;
     private bool isAirborne;
     
@@ -42,31 +42,32 @@ public class BallMovement : MonoBehaviour
         FindDirectionHelper();
 
         xSpeed = Input.GetAxis("Horizontal");
-        ySpeed = Input.GetAxis("Vertical");
+        zSpeed = Input.GetAxis("Vertical");
 
-        if (rb.velocity.magnitude > maxSpeed == false)
+        if (CanAccelerate())
         {
             ApplyForce();
         }
-        
 
-        SpawnCheckpoint();
+        RespawnPlayer();
     }
 
     private void OnGUI()
     {
         GUI.Label(new Rect(20, 20, 300, 300), "rigidbody velocity: " + rb.velocity);
-        GUI.Label(new Rect(20, 40, 300, 300), "xSpeed = " + xSpeed + "\nySpeed = " + ySpeed);
-        GUI.Label(new Rect(20, 80, 300, 300), "It is " + isAirborne + " that the player is airborne");
+        GUI.Label(new Rect(20, 40, 300, 300), "xSpeed = " + xSpeed + "\nzSpeed = " + zSpeed);
+        GUI.Label(new Rect(20, 80, 800, 800), "normalized velocity: " + rb.velocity.normalized + "more: " + transform.forward.normalized + " " + transform.right
+            .normalized);
     }
 
     //Denna metoden ska skicka tillbaka spelaren till startpunkten för nivån när denne faller av banan.
-    private void SpawnCheckpoint()
+    private void RespawnPlayer()
     {
         if(transform.position.y < abyssLevel)
         {
             transform.position = spawnPoint.transform.position;
             rb.velocity = new Vector3(0, -1, 0);
+            PlayerStats.deathCount++;
         }
     }
 
@@ -74,21 +75,21 @@ public class BallMovement : MonoBehaviour
     private void ApplyForce()
     {
         rb.AddForce(xSpeed * target.transform.right * forceFactor);
-        rb.AddForce(ySpeed * target.transform.forward * forceFactor);
+        rb.AddForce(zSpeed * target.transform.forward * forceFactor);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Collectible")
+        if(other.CompareTag("Collectible"))
         {
-            PlayerStats.CollectiblesPickedUp++;
+            PlayerStats.collectiblesPickedUp++;
             Destroy(other.gameObject);
         }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag != "Trap")
+        if (!other.CompareTag("Trap"))
         {
             isAirborne = false;
             forceFactor = groundForceFactor;
@@ -97,7 +98,7 @@ public class BallMovement : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag != "Trap")
+        if (other.CompareTag("Trap"))
         {
             isAirborne = true;
             forceFactor = airborneForceFactor;
@@ -110,5 +111,14 @@ public class BallMovement : MonoBehaviour
         {
             target = GameObject.FindWithTag("PlayerDirection");
         }
+    }
+
+    private bool CanAccelerate()
+    {
+        if (rb.velocity.magnitude + xSpeed + zSpeed > maxSpeed)
+        {
+            return false;
+        }
+        else return true;
     }
 }

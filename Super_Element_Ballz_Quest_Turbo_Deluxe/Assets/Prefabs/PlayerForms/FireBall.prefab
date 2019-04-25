@@ -14343,7 +14343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groundForceFactor: 100
-  maxSpeed: 30
+  maxSpeed: 15
   airborneForceFactor: 20
   target: {fileID: 4790399529980003454}
   spawnPoint: {fileID: 0}
