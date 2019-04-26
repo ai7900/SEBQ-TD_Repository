@@ -11,7 +11,7 @@ public class PlayerStats : MonoBehaviour
 
     private void OnGUI()
     {
-        GUI.Label(new Rect(20, 100, 100, 100), "Collectibles picked up " + collectiblesPickedUp);
+        GUI.Label(new Rect(20, 100, 400, 400), "Collectibles picked up " + collectiblesPickedUp);
         GUI.Label(new Rect(20, 120, 100, 100), "Death count: " + deathCount);
     }
 }

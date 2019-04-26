@@ -14,17 +14,18 @@ public class BallMovement : MonoBehaviour
     private float airborneForceFactor = 0;
 
     private float forceFactor = 0;
-    private float xSpeed;
-    private float zSpeed;
+    private float xSpeed = 0;
+    private float zSpeed = 0;
     private int abyssLevel = -30;
-    private bool isAirborne;
-    
+    private bool isAirborne = true;
 
-    private Vector3 forward = Vector3.zero;
-    private Vector3 movement = Vector3.zero;
+    //Borde vara ett värde mellan 1.5 och 1.9, högre värde gör det lättare för spelaren att accelerera ytterligare när denne redan är i toppfart.
+    private double accelerationTolerance = 1.8; 
+    
+    private Vector3 xMovement = Vector3.zero;
+    private Vector3 zMovement = Vector3.zero;
 
     private Rigidbody rb;
-
     public GameObject target; // target is the object you will take the rotations from
     public GameObject spawnPoint;
 
@@ -34,7 +35,6 @@ public class BallMovement : MonoBehaviour
         target = GameObject.FindWithTag("PlayerDirection");
         spawnPoint = GameObject.FindWithTag("Spawn");
         forceFactor = airborneForceFactor;
-        isAirborne = true;
     }
 
     private void FixedUpdate()
@@ -43,8 +43,10 @@ public class BallMovement : MonoBehaviour
 
         xSpeed = Input.GetAxis("Horizontal");
         zSpeed = Input.GetAxis("Vertical");
+        xMovement = target.transform.right * xSpeed;
+        zMovement = target.transform.forward * zSpeed;
 
-        if (CanAccelerate())
+        if(CanAccelerate())
         {
             ApplyForce();
         }
@@ -55,9 +57,9 @@ public class BallMovement : MonoBehaviour
     private void OnGUI()
     {
         GUI.Label(new Rect(20, 20, 300, 300), "rigidbody velocity: " + rb.velocity);
-        GUI.Label(new Rect(20, 40, 300, 300), "xSpeed = " + xSpeed + "\nzSpeed = " + zSpeed);
-        GUI.Label(new Rect(20, 80, 800, 800), "normalized velocity: " + rb.velocity.normalized + "more: " + transform.forward.normalized + " " + transform.right
-            .normalized);
+        GUI.Label(new Rect(20, 40, 300, 300), "xSpeed + zSpeed: " + xSpeed * forceFactor + zSpeed * forceFactor);
+        GUI.Label(new Rect(20, 80, 800, 800), "velocity: " + rb.velocity.magnitude + " more: " 
+            + (rb.velocity.normalized + zMovement).magnitude + " more testing: " + ((rb.velocity.normalized + zMovement).magnitude > accelerationTolerance));
     }
 
     //Denna metoden ska skicka tillbaka spelaren till startpunkten för nivån när denne faller av banan.
@@ -71,11 +73,33 @@ public class BallMovement : MonoBehaviour
         }
     }
 
-    //Denna metod ska ta hand om krafterna som läggs på bollen
+    //Tar hand om krafterna som läggs till på bollen
     private void ApplyForce()
     {
-        rb.AddForce(xSpeed * target.transform.right * forceFactor);
-        rb.AddForce(zSpeed * target.transform.forward * forceFactor);
+        rb.AddForce(xMovement * forceFactor);
+        rb.AddForce(zMovement * forceFactor);
+    }
+
+    private void FindDirectionHelper()
+    {
+        if (!target)
+        {
+            target = GameObject.FindWithTag("PlayerDirection");
+        }
+    }
+
+    //Metoden kontrollerar om spelaren har nått toppfarten och försöker accelerera ytterligare i riktningen som denne är påväg i redan.
+    private bool CanAccelerate()
+    {
+        if (rb.velocity.magnitude > maxSpeed)
+        {
+            if ((rb.velocity.normalized + zMovement).magnitude > accelerationTolerance)
+            {
+                return false;
+            }
+            else return true;
+        }
+        else return true;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -103,22 +127,5 @@ public class BallMovement : MonoBehaviour
             isAirborne = true;
             forceFactor = airborneForceFactor;
         }
-    }
-
-    private void FindDirectionHelper()
-    {
-        if(!target)
-        {
-            target = GameObject.FindWithTag("PlayerDirection");
-        }
-    }
-
-    private bool CanAccelerate()
-    {
-        if (rb.velocity.magnitude + xSpeed + zSpeed > maxSpeed)
-        {
-            return false;
-        }
-        else return true;
     }
 }

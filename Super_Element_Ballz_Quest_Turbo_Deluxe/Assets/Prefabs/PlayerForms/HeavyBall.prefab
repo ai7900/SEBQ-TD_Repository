@@ -148,7 +148,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5231837126253139230}
   serializedVersion: 2
-  m_Mass: 60
+  m_Mass: 50
   m_Drag: 0.005
   m_AngularDrag: 0.2
   m_UseGravity: 1
@@ -168,8 +168,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9807edff7f0a1ac42a447cb3e6686e58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundForceFactor: 1000
-  maxSpeed: 8
+  groundForceFactor: 200
+  maxSpeed: 7.5
   airborneForceFactor: 250
   target: {fileID: 2958754340975342473}
   spawnPoint: {fileID: 0}
