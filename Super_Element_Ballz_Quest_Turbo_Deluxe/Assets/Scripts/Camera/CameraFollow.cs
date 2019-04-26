@@ -11,7 +11,7 @@ public class CameraFollow : MonoBehaviour
     [Header("Target")]
     public string targetTag;
 
-    [Range(0.01f, 1.0f)]
+    [Range(0.01f, 10.0f)]
     public float smoothFactor = 0.5f;
 
     [Header("Camera view")]

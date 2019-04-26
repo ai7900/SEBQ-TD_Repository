@@ -69,7 +69,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destroyedVersion: {fileID: 8828697791125706734, guid: 9bd71be8349dd7b4484d6e9eb74d3af4,
     type: 3}
-  objectStrength: 300
+  objectStrength: 80
 --- !u!65 &8341045624421573372
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -81,8 +81,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.9, y: 1.22, z: 0.13}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.93, y: 1.2, z: 0.2}
+  m_Center: {x: 0, y: -0.06, z: -0.01}
 --- !u!1 &908116353603438416
 GameObject:
   m_ObjectHideFlags: 0

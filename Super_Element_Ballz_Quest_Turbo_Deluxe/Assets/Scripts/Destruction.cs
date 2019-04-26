@@ -9,11 +9,11 @@ public class Destruction : MonoBehaviour
     private float objectStrength;
     private Rigidbody playerRb;
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collider)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collider.gameObject.CompareTag("Player"))
         {
-            playerRb = collision.gameObject.GetComponent<Rigidbody>();
+            playerRb = collider.gameObject.GetComponent<Rigidbody>();
             if (playerRb.mass * playerRb.velocity.magnitude > objectStrength)
             {
                 Instantiate(destroyedVersion, transform.position, transform.rotation);

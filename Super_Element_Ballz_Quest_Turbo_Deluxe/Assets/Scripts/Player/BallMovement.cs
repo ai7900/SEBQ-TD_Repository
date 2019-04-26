@@ -59,9 +59,9 @@ public class BallMovement : MonoBehaviour
         GUI.Label(new Rect(20, 20, 300, 300), "rigidbody velocity: " + rb.velocity);
         GUI.Label(new Rect(20, 40, 300, 300), "xSpeed + zSpeed: " + xSpeed * forceFactor + zSpeed * forceFactor);
         GUI.Label(new Rect(20, 80, 800, 800), "velocity: " + rb.velocity.magnitude + " more: " 
-            + (rb.velocity.normalized + zMovement).magnitude + " more testing: " + ((rb.velocity.normalized + zMovement).magnitude > accelerationTolerance));
+            + (rb.velocity.normalized + zMovement + xMovement).magnitude + " more testing: " + ((rb.velocity.normalized + zMovement).magnitude > accelerationTolerance));
     }
-
+    
     //Denna metoden ska skicka tillbaka spelaren till startpunkten för nivån när denne faller av banan.
     private void RespawnPlayer()
     {
@@ -93,7 +93,7 @@ public class BallMovement : MonoBehaviour
     {
         if (rb.velocity.magnitude > maxSpeed)
         {
-            if ((rb.velocity.normalized + zMovement).magnitude > accelerationTolerance)
+            if ((rb.velocity.normalized + zMovement + xMovement).magnitude > accelerationTolerance)
             {
                 return false;
             }
