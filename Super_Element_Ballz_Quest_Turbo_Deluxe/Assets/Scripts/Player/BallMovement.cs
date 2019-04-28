@@ -13,10 +13,14 @@ public class BallMovement : MonoBehaviour
     [SerializeField]
     private float airborneForceFactor = 0;
 
+    [SerializeField]
+    private float dashForceFactor = 0;
+
     private float forceFactor = 0;
     private float xSpeed = 0;
     private float zSpeed = 0;
     private int abyssLevel = -30;
+
     private bool isAirborne = true;
 
     //Borde vara ett värde mellan 1.5 och 1.9, högre värde gör det lättare för spelaren att accelerera ytterligare när denne redan är i toppfart.
@@ -24,6 +28,9 @@ public class BallMovement : MonoBehaviour
     
     private Vector3 xMovement = Vector3.zero;
     private Vector3 zMovement = Vector3.zero;
+
+    [SerializeField]
+    private Image dashbar;
 
     private Rigidbody rb;
     public GameObject target; // target is the object you will take the rotations from
@@ -58,8 +65,6 @@ public class BallMovement : MonoBehaviour
     {
         GUI.Label(new Rect(20, 20, 300, 300), "rigidbody velocity: " + rb.velocity);
         GUI.Label(new Rect(20, 40, 300, 300), "xSpeed + zSpeed: " + xSpeed * forceFactor + zSpeed * forceFactor);
-        GUI.Label(new Rect(20, 80, 800, 800), "velocity: " + rb.velocity.magnitude + " more: " 
-            + (rb.velocity.normalized + zMovement + xMovement).magnitude + " more testing: " + ((rb.velocity.normalized + zMovement).magnitude > accelerationTolerance));
     }
     
     //Denna metoden ska skicka tillbaka spelaren till startpunkten för nivån när denne faller av banan.
