@@ -13,12 +13,13 @@ public class PlayerDirectionHelper : MonoBehaviour
     void Start()
     {
         rotation = GetComponent<Transform>();
-        playerCamera = GameObject.FindGameObjectWithTag("MainCamera");
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        playerCamera = GameObject.FindGameObjectWithTag("MainCamera");
         rotation.transform.eulerAngles = new Vector3(0, playerCamera.transform.eulerAngles.y, 0);
     }
 }

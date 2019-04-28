@@ -9,6 +9,8 @@ public class CameraController : MonoBehaviour
     [SerializeField]
     [Header("Camera Settings")]
     private Camera adjustCamera;
+    [SerializeField]
+    private Camera adjustCameraThirdPerson;
 
     [SerializeField]
     [Range(0.01f, 10f)]
@@ -39,12 +41,16 @@ public class CameraController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
+            adjustCamera.enabled = false;
+            adjustCameraThirdPerson.enabled = true;
             currentView = views[0]; //thirdperson
             adjustCamera.orthographic = false;
         }
 
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
+            adjustCamera.enabled = true;
+            adjustCameraThirdPerson.enabled = false;
             currentView = views[1]; //isometric
             adjustCamera.orthographic = true;
             adjustCamera.orthographicSize = 20;
@@ -52,6 +58,8 @@ public class CameraController : MonoBehaviour
 
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
+            adjustCamera.enabled = false;
+            adjustCameraThirdPerson.enabled = true;
             currentView = views[2]; //SpecialView
             adjustCamera.orthographic = false;
         }
