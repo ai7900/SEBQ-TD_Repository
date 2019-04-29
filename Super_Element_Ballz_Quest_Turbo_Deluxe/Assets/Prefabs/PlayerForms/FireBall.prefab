@@ -4809,7 +4809,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3325169681017218265
 Transform:
   m_ObjectHideFlags: 0
@@ -14368,6 +14368,7 @@ MonoBehaviour:
   fireBallPrefab: {fileID: 3325169681584383846}
   iceCubePrefab: {fileID: 6346841100233949423, guid: bf62b88fdd2f639419a9c5b4d976b446,
     type: 3}
+  iceInitialSpeedBoost: 70
 --- !u!135 &312291151534088850
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -28710,7 +28711,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4187026206611216792
 Transform:
   m_ObjectHideFlags: 0
