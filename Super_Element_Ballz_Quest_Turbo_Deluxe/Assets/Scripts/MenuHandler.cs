@@ -34,7 +34,7 @@ public class MenuHandler : MonoBehaviour
                     }
                     break;
 
-                case MenuCamera.MenuState.Level_Select:
+                case MenuCamera.MenuState.LevelSelect:
                     {
 
                     }
