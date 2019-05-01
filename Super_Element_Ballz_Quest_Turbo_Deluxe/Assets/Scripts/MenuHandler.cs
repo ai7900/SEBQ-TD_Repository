@@ -10,8 +10,11 @@ public class MenuHandler : MonoBehaviour
     [SerializeField]
     private SceneFader sceneFader;
 
-    [SerializeField]
-    private string firstLevel;
+    [Header("Levels in levelSelect")]
+    [SerializeField] private string level1;
+    [SerializeField] private string level2;
+    [SerializeField] private string level3;
+    [SerializeField] private string level4;
 
     // Update is called once per frame
     void Update()
@@ -24,7 +27,7 @@ public class MenuHandler : MonoBehaviour
             {
                 case MenuCamera.MenuState.Play:
                     {
-                        sceneFader.FadeTo(firstLevel);
+                        sceneFader.FadeTo(level1);
                     }
                     break;
 
@@ -36,7 +39,29 @@ public class MenuHandler : MonoBehaviour
 
                 case MenuCamera.MenuState.LevelSelect:
                     {
+                        //Only runs is camera is not in main menu select
+                        if (!menuCamera.MainMenu())
+                        {
+                            switch (menuCamera.selectedBranchView + 1)
+                            {
+                                case 1:
+                                    sceneFader.FadeTo(level1);
+                                    break;
 
+                                case 2:
+                                    sceneFader.FadeTo(level2);
+                                    break;
+
+                                case 3:
+                                    sceneFader.FadeTo(level3);
+                                    break;
+
+                                case 4:
+                                    sceneFader.FadeTo(level4);
+                                    break;
+
+                            }
+                        }
                     }
                     break;
 

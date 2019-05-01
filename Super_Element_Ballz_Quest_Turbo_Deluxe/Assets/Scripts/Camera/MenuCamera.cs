@@ -2,13 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This script handles the momvement of the camera
+/// </summary>
 public class MenuCamera : MonoBehaviour
 {
     public enum MenuState {Play = 0, Continue, LevelSelect, Options, Quit};
+    public MenuState CurrentMenuState { get; private set; }
+    public bool MainMenu() { return isMainMenu; }
+
+    public int selectedBranchView;
 
     [SerializeField]
     [Range(0.01f, 10f)]
     private float transitionSpeed;
+    private Transform currentViewTransform;
+    private Vector3 currentAngle;
 
     [Header("Checkpoints for camera")]
     public Transform[] mainViews;
@@ -16,19 +25,14 @@ public class MenuCamera : MonoBehaviour
     public Transform[] optionSelectViews;
     public Transform[] quitGameViews;
 
-    public Transform[] branchMenuViews;
+    private Transform[] branchMenuViews;
 
-    private Transform currentViewTransform;
-    private Vector3 currentAngle;
-
-    public MenuState CurrentMenuState { get; private set; }
-
-    private bool mainMenuSelect;
+    private bool isMainMenu;
 
     // Start is called before the first frame update
     private void Start()
     {
-        mainMenuSelect = true;
+        isMainMenu = true;
         currentViewTransform = mainViews[(int)MenuState.Play];
     }
 
@@ -36,9 +40,10 @@ public class MenuCamera : MonoBehaviour
     {
 
         // Every menu except the play menu has more views for the camera
-        if (Input.GetKeyDown(KeyCode.Return) && CurrentMenuState != (int)MenuState.Play)
+        if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && CurrentMenuState != (int)MenuState.Play)
         {
-            mainMenuSelect = false;
+            isMainMenu = false;
+            selectedBranchView = 0;
 
             switch (CurrentMenuState)
             {
@@ -56,36 +61,69 @@ public class MenuCamera : MonoBehaviour
             }
         }
 
-        if (mainMenuSelect)
+        if (isMainMenu)
         {
             MainMenuControll();
         }
         else
         {
-            BranchMenuSelect();
+            BranchMenuSelect(branchMenuViews);
         }
 
     }
 
-    private void BranchMenuSelect()
+    /// <summary>
+    /// Initiates SmoothRotateToNewPos and SmoothMovementToNewPos every frame
+    /// It knows which views to select
+    /// </summary>
+    private void LateUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (isMainMenu)
         {
-
+            currentViewTransform = mainViews[(int)CurrentMenuState];
         }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow))
+        else
         {
-
+            currentViewTransform = branchMenuViews[selectedBranchView];
         }
-        else if (Input.GetKeyDown(KeyCode.Escape))
+
+        SmoothMovementToNewPos();
+        SmoothRotateToNewPos();
+    }
+
+    /// <summary>
+    /// Controller for branch menu
+    /// </summary>
+    /// <param name="viewSelect">The branchMenuView</param>
+    private void BranchMenuSelect(Transform[] viewSelect)
+    {
+        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
         {
-            mainMenuSelect = true;
+            if(selectedBranchView < viewSelect.Length - 1)
+            {
+                selectedBranchView++;
+            }
+            
+        }
+        else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
+        {
+            if(selectedBranchView > 0)
+            {
+                selectedBranchView--;
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
+        {
+            isMainMenu = true;
         }
     }
 
+    /// <summary>
+    /// Controller for mainMenu
+    /// </summary>
     private void MainMenuControll()
     {
-        if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
         {
             CurrentMenuState--;
             if (CurrentMenuState < 0)
@@ -94,7 +132,7 @@ public class MenuCamera : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
         {
             CurrentMenuState++;
             if ((int)CurrentMenuState == mainViews.Length)
@@ -104,14 +142,9 @@ public class MenuCamera : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    private void LateUpdate()
-    {
-        currentViewTransform = mainViews[(int)CurrentMenuState];
-        SmoothMovementToNewPos();
-        SmoothRotateToNewPos();
-    }
-
+    /// <summary>
+    /// Rotates the camera
+    /// </summary>
     private void SmoothRotateToNewPos()
     {
         currentAngle = new Vector3(
@@ -122,11 +155,17 @@ public class MenuCamera : MonoBehaviour
         transform.eulerAngles = currentAngle;
     }
 
+    /// <summary>
+    /// Uses linjear interpolation to smoothly move the camera for one position to the next
+    /// </summary>
     private void SmoothMovementToNewPos()
     {
         transform.position = Vector3.Lerp(transform.position, currentViewTransform.position, transitionSpeed * Time.deltaTime);
     }
 
+    /// <summary>
+    /// Debugging
+    /// </summary>
     private void OnGUI()
     {
         GUI.Label(new Rect(20, Screen.height - 30, 200, 200), "Current state = " + CurrentMenuState.ToString());
