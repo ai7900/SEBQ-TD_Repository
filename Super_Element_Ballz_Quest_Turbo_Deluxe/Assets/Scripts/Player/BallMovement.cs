@@ -101,15 +101,6 @@ public class BallMovement : MonoBehaviour
         else return true;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.CompareTag("Collectible"))
-        {
-            PlayerStats.collectiblesPickedUp++;
-            Destroy(other.gameObject);
-        }
-    }
-
     private void OnTriggerStay(Collider other)
     {
         if (!other.CompareTag("Trap"))
