@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class BallMovement : MonoBehaviour
 {
     [SerializeField]
-    private float groundForceFactor = 0;
+    public float groundForceFactor = 0;
 
     [SerializeField]
     private float maxSpeed = 20f;
@@ -17,6 +17,7 @@ public class BallMovement : MonoBehaviour
     private float xSpeed = 0;
     private float zSpeed = 0;
     private int abyssLevel = -30;
+
     private bool isAirborne = true;
 
     //Borde vara ett värde mellan 1.5 och 1.9, högre värde gör det lättare för spelaren att accelerera ytterligare när denne redan är i toppfart.
@@ -57,9 +58,7 @@ public class BallMovement : MonoBehaviour
     private void OnGUI()
     {
         GUI.Label(new Rect(20, 20, 300, 300), "rigidbody velocity: " + rb.velocity);
-        GUI.Label(new Rect(20, 40, 300, 300), "xSpeed + zSpeed: " + xSpeed * forceFactor + zSpeed * forceFactor);
-        GUI.Label(new Rect(20, 80, 800, 800), "velocity: " + rb.velocity.magnitude + " more: " 
-            + (rb.velocity.normalized + zMovement + xMovement).magnitude + " more testing: " + ((rb.velocity.normalized + zMovement).magnitude > accelerationTolerance));
+        GUI.Label(new Rect(20, 40, 300, 300), "ground force factor = " + groundForceFactor);
     }
     
     //Denna metoden ska skicka tillbaka spelaren till startpunkten för nivån när denne faller av banan.
