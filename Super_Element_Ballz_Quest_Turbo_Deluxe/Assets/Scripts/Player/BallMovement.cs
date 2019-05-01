@@ -5,16 +5,13 @@ using UnityEngine.UI;
 public class BallMovement : MonoBehaviour
 {
     [SerializeField]
-    private float groundForceFactor = 0;
+    public float groundForceFactor = 0;
 
     [SerializeField]
     private float maxSpeed = 20f;
 
     [SerializeField]
     private float airborneForceFactor = 0;
-
-    [SerializeField]
-    private float dashForceFactor = 0;
 
     private float forceFactor = 0;
     private float xSpeed = 0;
@@ -28,9 +25,6 @@ public class BallMovement : MonoBehaviour
     
     private Vector3 xMovement = Vector3.zero;
     private Vector3 zMovement = Vector3.zero;
-
-    [SerializeField]
-    private Image dashbar;
 
     private Rigidbody rb;
     public GameObject target; // target is the object you will take the rotations from
@@ -64,7 +58,7 @@ public class BallMovement : MonoBehaviour
     private void OnGUI()
     {
         GUI.Label(new Rect(20, 20, 300, 300), "rigidbody velocity: " + rb.velocity);
-        GUI.Label(new Rect(20, 40, 300, 300), "xSpeed + zSpeed: " + xSpeed * forceFactor + zSpeed * forceFactor);
+        GUI.Label(new Rect(20, 40, 300, 300), "ground force factor = " + groundForceFactor);
     }
     
     //Denna metoden ska skicka tillbaka spelaren till startpunkten för nivån när denne faller av banan.

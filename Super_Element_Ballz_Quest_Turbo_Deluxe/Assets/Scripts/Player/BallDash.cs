@@ -8,18 +8,27 @@ public class BallDash : MonoBehaviour
     public bool isDashing;
 
     [HideInInspector]
-    public float dashTime = 5f;
+    public float dashTime = 8f;
     [HideInInspector]
     public float dashCooldown = 30f;
 
+    public BallMovement ballMovement;
+
+    private float baseForceFactor;
+    private float dashForceFactor;
+    [SerializeField]
+    private float dashForceAddition;
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        baseForceFactor = ballMovement.groundForceFactor;
+        dashForceFactor = baseForceFactor + dashForceAddition;
+        ballMovement = gameObject.GetComponent<BallMovement>();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
@@ -31,29 +40,23 @@ public class BallDash : MonoBehaviour
             SetDashing(false);
         }
 
+        if(isDashing)
+        {
+            ballMovement.groundForceFactor = dashForceFactor;
+        }
+        else
+        {
+            ballMovement.groundForceFactor = baseForceFactor;
+        }
     }
 
-    private void SetDashing(bool state)
+    public void SetDashing(bool state)
     {
         isDashing = state;
     }
 
-    //private void Dash()
-    //{
-    //    if (!isDashing && dashbar.fillAmount < 1.0f)
-    //    {
-    //        dashbar.fillAmount += 1.0f / dashCooldown * Time.deltaTime;
-    //    }
-    //    else if (isDashing)
-    //    {
-    //        dashbar.fillAmount -= 1.0f / dashTime * Time.deltaTime;
-
-    //        if (dashbar.fillAmount <= 0)
-    //        {
-    //            isDashing = false;
-    //            groundForceFactor -= dashForceFactor;
-    //            forceFactor = groundForceFactor;
-    //        }
-    //    }
-    //}
+    private void OnGUI()
+    {
+        GUI.Label(new Rect(20, 80, 300, 300), "Dashing = " + isDashing);
+    }
 }

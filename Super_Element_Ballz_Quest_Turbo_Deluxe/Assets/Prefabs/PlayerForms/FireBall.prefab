@@ -14277,6 +14277,7 @@ GameObject:
   - component: {fileID: 2145966266473761675}
   - component: {fileID: 5491053317160130567}
   - component: {fileID: 8150682917835241686}
+  - component: {fileID: 7860184428103495597}
   - component: {fileID: 312291151534088850}
   m_Layer: 0
   m_Name: FireBall
@@ -14343,7 +14344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groundForceFactor: 220
-  maxSpeed: 15
+  maxSpeed: 20
   airborneForceFactor: 20
   target: {fileID: 4790399529980003454}
   spawnPoint: {fileID: 0}
@@ -14369,6 +14370,23 @@ MonoBehaviour:
   iceCubePrefab: {fileID: 6346841100233949423, guid: bf62b88fdd2f639419a9c5b4d976b446,
     type: 3}
   iceInitialSpeedBoost: 70
+--- !u!114 &7860184428103495597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3325169681584383846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c12a0b8abd9eb4642837af69cdce30e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDashing: 0
+  dashTime: 5
+  dashCooldown: 30
+  ballMovement: {fileID: 5491053317160130567}
+  dashForceAddition: 80
 --- !u!135 &312291151534088850
 SphereCollider:
   m_ObjectHideFlags: 0

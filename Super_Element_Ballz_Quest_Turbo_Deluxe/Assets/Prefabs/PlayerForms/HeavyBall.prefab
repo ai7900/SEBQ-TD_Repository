@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 5231837126253139236}
   - component: {fileID: 5231837126253139237}
   - component: {fileID: 1046135444422554209}
+  - component: {fileID: 1042071599508189706}
   - component: {fileID: 4768339096954244879}
   m_Layer: 0
   m_Name: HeavyBall
@@ -195,6 +196,23 @@ MonoBehaviour:
   iceCubePrefab: {fileID: 6346841100233949423, guid: bf62b88fdd2f639419a9c5b4d976b446,
     type: 3}
   iceInitialSpeedBoost: 70
+--- !u!114 &1042071599508189706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5231837126253139230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c12a0b8abd9eb4642837af69cdce30e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDashing: 0
+  dashTime: 5
+  dashCooldown: 30
+  ballMovement: {fileID: 5231837126253139237}
+  dashForceAddition: 100
 --- !u!135 &4768339096954244879
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 5231837126253139236}
   - component: {fileID: 5231837126253139237}
   - component: {fileID: 3257336175173787072}
+  - component: {fileID: 3327168353868174208}
   - component: {fileID: 9012671247297050012}
   m_Layer: 0
   m_Name: NormalBall
@@ -169,8 +170,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groundForceFactor: 80
-  maxSpeed: 10
+  maxSpeed: 15
   airborneForceFactor: 30
+  dashForceFactor: 0
   target: {fileID: 1942412240}
   spawnPoint: {fileID: 0}
 --- !u!114 &3257336175173787072
@@ -195,6 +197,23 @@ MonoBehaviour:
   iceCubePrefab: {fileID: 6346841100233949423, guid: bf62b88fdd2f639419a9c5b4d976b446,
     type: 3}
   iceInitialSpeedBoost: 70
+--- !u!114 &3327168353868174208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5231837126253139230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c12a0b8abd9eb4642837af69cdce30e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDashing: 0
+  dashTime: 5
+  dashCooldown: 30
+  ballMovement: {fileID: 5231837126253139237}
+  dashForceAddition: 40
 --- !u!135 &9012671247297050012
 SphereCollider:
   m_ObjectHideFlags: 0
