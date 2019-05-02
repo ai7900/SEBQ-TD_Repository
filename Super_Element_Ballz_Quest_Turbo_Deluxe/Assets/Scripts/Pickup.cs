@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LightPickup : MonoBehaviour
+public class Pickup : MonoBehaviour
 {
     private Vector3 posOffset = Vector3.zero;
     private Vector3 tempPos = Vector3.zero;
@@ -29,7 +29,15 @@ public class LightPickup : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        PlayerStats.lightFormCount++;
+        if (gameObject.CompareTag("LightPickup"))
+        {
+            PlayerStats.lightFormCount++;
+        }
+        if (gameObject.CompareTag("HeavyPickup"))
+        {
+            PlayerStats.heavyFormCount++;
+        }
+        
         Destroy(gameObject);
     }
 }

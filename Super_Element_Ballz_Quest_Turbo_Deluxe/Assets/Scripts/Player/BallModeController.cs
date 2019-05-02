@@ -20,47 +20,54 @@ public class BallModeController : MonoBehaviour
     [SerializeField]
     private int iceInitialSpeedBoost = 70;
  
-
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.Keypad1))
-        {
-            
+        if (Input.GetKeyDown(KeyCode.Keypad1))//Normal boll
+        {           
             newObject = Instantiate(normalBallPrefab, gameObject.transform.position, gameObject.transform.rotation);
             newObject.GetComponent<Rigidbody>().velocity = gameObject.GetComponent<Rigidbody>().velocity;
+            PlayerStats.currentMode = (int)BallMode.Normal; 
             Destroy(gameObject);
         }
 
-        else if (Input.GetKeyDown(KeyCode.Keypad2))
+        else if (Input.GetKeyDown(KeyCode.Keypad2))//Tung boll
         {
-            newObject = Instantiate(heavyBallPrefab, gameObject.transform.position, gameObject.transform.rotation);
-            newObject.GetComponent<Rigidbody>().velocity = gameObject.GetComponent<Rigidbody>().velocity;
-            Destroy(gameObject);
+            if(PlayerStats.heavyFormCount > 0)
+            {
+                newObject = Instantiate(heavyBallPrefab, gameObject.transform.position, gameObject.transform.rotation);
+                newObject.GetComponent<Rigidbody>().velocity = gameObject.GetComponent<Rigidbody>().velocity;
+                PlayerStats.currentMode = (int)BallMode.Heavy;
+                PlayerStats.heavyFormCount--;
+                Destroy(gameObject);
+            }
         }
 
-        else if (Input.GetKeyDown(KeyCode.Keypad3))
+        else if (Input.GetKeyDown(KeyCode.Keypad3))//Lätt boll
         {
-            newObject = Instantiate(lightBallPrefab, gameObject.transform.position, gameObject.transform.rotation);
-            newObject.GetComponent<Rigidbody>().velocity = gameObject.GetComponent<Rigidbody>().velocity;
-            Destroy(gameObject);
+            if(PlayerStats.lightFormCount > 0)
+            {
+                newObject = Instantiate(lightBallPrefab, gameObject.transform.position, gameObject.transform.rotation);
+                newObject.GetComponent<Rigidbody>().velocity = gameObject.GetComponent<Rigidbody>().velocity;
+                PlayerStats.currentMode = (int)BallMode.Light;
+                PlayerStats.lightFormCount--;
+                Destroy(gameObject);
+            }
         }
 
-        else if (Input.GetKeyDown(KeyCode.Keypad4))
+        else if (Input.GetKeyDown(KeyCode.Keypad4))//Eldboll
         {
             newObject = Instantiate(fireBallPrefab, gameObject.transform.position, gameObject.transform.rotation);
             newObject.GetComponent<Rigidbody>().velocity = gameObject.GetComponent<Rigidbody>().velocity;
+            PlayerStats.currentMode = (int)BallMode.Fire;
             Destroy(gameObject);
         }
 
-        else if (Input.GetKeyDown(KeyCode.Keypad5))
+        else if (Input.GetKeyDown(KeyCode.Keypad5))//Iskub
         {
             newObject = Instantiate(iceCubePrefab, gameObject.transform.position, iceCubeRotation);
             Rigidbody rb = newObject.GetComponent<Rigidbody>();
             rb.velocity = gameObject.GetComponent<Rigidbody>().velocity;
-
-            //Detta kanske borde göras i Start() i BallMovement istället(?)
-            //rb.AddForce(newObject.GetComponent<Rigidbody>().velocity.normalized * iceInitialSpeedBoost, ForceMode.Impulse);
+            PlayerStats.currentMode = (int)BallMode.Ice;
             Destroy(gameObject);
         }
 

@@ -12,6 +12,8 @@ TagManager:
   - PlayerDirection
   - Collectible
   - Spawn
+  - HeavyPickup
+  - LightPickup
   layers:
   - Default
   - TransparentFX

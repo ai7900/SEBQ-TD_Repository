@@ -10,6 +10,8 @@ public class PlayerStats : MonoBehaviour
     public static int lightFormCount;
     public static int heavyFormCount;
 
+    public static int currentMode = (int)BallMode.Normal;
+
     public static int deathCount;
 
     private void OnGUI()
