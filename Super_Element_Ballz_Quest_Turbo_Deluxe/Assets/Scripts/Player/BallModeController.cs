@@ -32,7 +32,7 @@ public class BallModeController : MonoBehaviour
 
         else if (Input.GetKeyDown(KeyCode.Keypad2))//Tung boll
         {
-            if(PlayerStats.heavyFormCount > 0)
+            if(PlayerStats.heavyFormCount > 0 && PlayerStats.currentMode != (int)BallMode.Heavy)
             {
                 newObject = Instantiate(heavyBallPrefab, gameObject.transform.position, gameObject.transform.rotation);
                 newObject.GetComponent<Rigidbody>().velocity = gameObject.GetComponent<Rigidbody>().velocity;
@@ -42,7 +42,7 @@ public class BallModeController : MonoBehaviour
             }
         }
 
-        else if (Input.GetKeyDown(KeyCode.Keypad3))//Lätt boll
+        else if (Input.GetKeyDown(KeyCode.Keypad3) && PlayerStats.currentMode != (int)BallMode.Light)//Lätt boll
         {
             if(PlayerStats.lightFormCount > 0)
             {

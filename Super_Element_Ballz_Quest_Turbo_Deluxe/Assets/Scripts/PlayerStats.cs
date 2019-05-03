@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    [HideInInspector]
-    public static int collectiblesPickedUp;
-
+    [SerializeField]
     public static int lightFormCount;
+    [SerializeField]
     public static int heavyFormCount;
 
     public static int currentMode = (int)BallMode.Normal;
 
     public static int deathCount;
+
+    [HideInInspector]
+    public static int collectiblesPickedUp;
+
+    [SerializeField]
+    private int startingLightCount;
+    [SerializeField]
+    private int startingHeavyCount;
+
+    private void Start()
+    {
+        lightFormCount = startingLightCount;
+        heavyFormCount = startingHeavyCount;
+    }
 
     private void OnGUI()
     {
