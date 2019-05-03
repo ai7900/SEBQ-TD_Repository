@@ -1,0 +1,277 @@
+fileFormatVersion: 2
+guid: 4facfa5cdebcf6e46807ef6fd6eb1b00
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    400000: //RootNode
+    2100000: Synth_Twisters_Color2
+    2100002: Synth_Twisers_Color1
+    2100004: Synth_Scrollers_Color
+    2100006: Synth_WhiteKeys
+    2100008: Synth_BlackKeys
+    2100010: Synth_Color1
+    2100012: Synth_Color2
+    2100014: Gem1
+    2100016: Gem2
+    2100018: Gem5
+    2100020: Gem3
+    2100022: Gem4
+    2100024: Table
+    2100026: Bass_Color
+    2100028: InnerHardPlastic
+    2100030: HardPlastic
+    2100032: Wood
+    2100034: Textile
+    2100036: LightMouse
+    2100038: DarkMouse
+    2100040: Mousepad
+    2100042: Muffler
+    2100044: OuterWood
+    2100046: InnerWood
+    2100048: Vent
+    2100050: Light Plastic
+    2100052: Dark Plastic
+    2100054: Glass
+    2100056: Desktop_material
+    2100058: Material.008
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Synthesizer
+    2186277476908879412: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bass_Color
+    second: {fileID: 2100000, guid: c26322da184d51f4fbd106c0f693241f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dark Plastic
+    second: {fileID: 2100000, guid: 9f792baa728eb5b439358ac4be531d88, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DarkMouse
+    second: {fileID: 2100000, guid: 2a4602c6c1b857a4ea460b5174cae3f9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Desktop_material
+    second: {fileID: 2100000, guid: 934b0cbbf12c92e4fba973899cfd692c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gem1
+    second: {fileID: 2100000, guid: 7e424cecb266bda428d3188faf760cb8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gem2
+    second: {fileID: 2100000, guid: 4fc52b49c603f5a4f976afafd0f14de8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gem3
+    second: {fileID: 2100000, guid: b5b7d08a082190e4b9f6e3b052e481d2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gem4
+    second: {fileID: 2100000, guid: 0026cff58f8e949459f6bcc878eada22, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gem5
+    second: {fileID: 2100000, guid: d2b84c9bb1a5724438d343265de23e1c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass
+    second: {fileID: 2100000, guid: 58e678a78c40e254f83d00eb8bec6e84, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HardPlastic
+    second: {fileID: 2100000, guid: d95a7ecd962fc44459eead4a75f38b5f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: InnerHardPlastic
+    second: {fileID: 2100000, guid: 18bad887bea6a4342b3ac71ba4a924b0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: InnerWood
+    second: {fileID: 2100000, guid: a823196993852c149b605eb769844e47, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Light Plastic
+    second: {fileID: 2100000, guid: 000e3ce5e0d3de6498297e924fb39ec4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LightMouse
+    second: {fileID: 2100000, guid: 267bc2330429b304391a8fef647f1f27, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.008
+    second: {fileID: 2100000, guid: 84b9fc2af02e479438184e1997e19d1e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mousepad
+    second: {fileID: 2100000, guid: 917869359f72e384fa4284de1b3ae88c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Muffler
+    second: {fileID: 2100000, guid: fa7468a80d023574daf582a206a89b82, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OuterWood
+    second: {fileID: 2100000, guid: 6b7eae4f1d660794a8695e6ddc9d84eb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Synth_BlackKeys
+    second: {fileID: 2100000, guid: 074d0f4096db848488fb6dcdcd4c7a8a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Synth_Color1
+    second: {fileID: 2100000, guid: f470569cd7bde6045a0ce1c40eb6276a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Synth_Color2
+    second: {fileID: 2100000, guid: bb883bfcda093564f95444832d914f29, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Synth_Scrollers_Color
+    second: {fileID: 2100000, guid: c7c8d540e249b9c4d9a00f053ed936a1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Synth_Twisers_Color1
+    second: {fileID: 2100000, guid: 02d49695da74f3a46ab5856a46fad857, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Synth_Twisters_Color2
+    second: {fileID: 2100000, guid: ae326afb1e6c81045a46d6ec56dfdd47, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Synth_WhiteKeys
+    second: {fileID: 2100000, guid: 05cf6e83fab4f5c4e88f9a2b0a6f2c60, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Table
+    second: {fileID: 2100000, guid: 7bdd74f3b6e3b8d44abe81304b0cda03, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Textile
+    second: {fileID: 2100000, guid: 55da1f78a61ef1a4b9674da6debc4c36, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Vent
+    second: {fileID: 2100000, guid: bc8b6697daf00dd4e8b0e00ae01bcc4e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood
+    second: {fileID: 2100000, guid: 81521996a73433247b10de473eb8a4dc, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 2
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
