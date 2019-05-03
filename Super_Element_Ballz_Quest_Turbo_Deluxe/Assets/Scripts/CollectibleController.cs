@@ -11,11 +11,12 @@ public class CollectibleController : MonoBehaviour
     private Vector3 posOffset = Vector3.zero;
     private Vector3 tempPos = Vector3.zero;
 
-    private float frequency = 0.25f;
-
     [SerializeField]
     [Range(0.0f, 0.5f)]
     private float amplitude = 0.1f;
+    [SerializeField]
+    [Range(0.0f, 0.5f)]
+    private float frequency = 0.25f;
 
     private void Start()
     {
@@ -23,6 +24,7 @@ public class CollectibleController : MonoBehaviour
         transform.eulerAngles = new Vector3(transform.eulerAngles.x, Random.value * 360, transform.eulerAngles.z);
     }
 
+    //Roterar och flyttar collectiblen upp och ned
     private void Update()
     {
         transform.Rotate(new Vector3(0, rotationY, 0) * Time.deltaTime, Space.World);
@@ -43,7 +45,15 @@ public class CollectibleController : MonoBehaviour
         {
             rotationX *= -1;
         }
+    }
 
-        
+    //Vad som händer om något krockar med collectible.
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Player"))
+        {
+            PlayerStats.collectiblesPickedUp++;
+            Destroy(gameObject);
+        }
     }
 }
