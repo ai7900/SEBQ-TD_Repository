@@ -19127,6 +19127,7 @@ GameObject:
   - component: {fileID: 7546227025618697437}
   - component: {fileID: 1338366357196703702}
   - component: {fileID: 2712737082420341142}
+  - component: {fileID: 187820622706729018}
   m_Layer: 0
   m_Name: IceCube
   m_TagString: Player
@@ -19231,7 +19232,19 @@ MonoBehaviour:
   maxSpeed: 30
   airborneForceFactor: 1
   target: {fileID: 5249444657425004464}
-  spawnPoint: {fileID: 0}
+--- !u!114 &187820622706729018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6346841100233949423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19a40450baa58584d8bcd68889a438e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abyssLevel: -30
 --- !u!1 &7841571226500153585
 GameObject:
   m_ObjectHideFlags: 0

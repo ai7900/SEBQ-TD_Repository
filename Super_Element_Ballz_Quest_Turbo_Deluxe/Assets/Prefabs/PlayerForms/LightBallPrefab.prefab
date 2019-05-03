@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5231837126253139237}
   - component: {fileID: 3257336175173787072}
   - component: {fileID: 9197533863333559766}
+  - component: {fileID: 2315838683359071526}
   - component: {fileID: 8487433477871012772}
   m_Layer: 0
   m_Name: LightBallPrefab
@@ -127,9 +128,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundForceFactor: 24
   maxSpeed: 10
-  airborneForceFactor: 5
+  airborneForceFactor: 8
   target: {fileID: 6686324402544290770}
-  spawnPoint: {fileID: 0}
 --- !u!114 &3257336175173787072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,6 +169,19 @@ MonoBehaviour:
   dashCooldown: 30
   ballMovement: {fileID: 5231837126253139237}
   dashForceAddition: 6
+--- !u!114 &2315838683359071526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5231837126253139230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19a40450baa58584d8bcd68889a438e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abyssLevel: -30
 --- !u!135 &8487433477871012772
 SphereCollider:
   m_ObjectHideFlags: 0

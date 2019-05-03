@@ -60,6 +60,7 @@ GameObject:
   - component: {fileID: 5231837126253139237}
   - component: {fileID: 1046135444422554209}
   - component: {fileID: 1042071599508189706}
+  - component: {fileID: 1004236372814950852}
   - component: {fileID: 4768339096954244879}
   m_Layer: 0
   m_Name: HeavyBall
@@ -173,7 +174,6 @@ MonoBehaviour:
   maxSpeed: 7.5
   airborneForceFactor: 250
   target: {fileID: 2958754340975342473}
-  spawnPoint: {fileID: 0}
 --- !u!114 &1046135444422554209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,6 +213,19 @@ MonoBehaviour:
   dashCooldown: 30
   ballMovement: {fileID: 5231837126253139237}
   dashForceAddition: 100
+--- !u!114 &1004236372814950852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5231837126253139230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19a40450baa58584d8bcd68889a438e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abyssLevel: -30
 --- !u!135 &4768339096954244879
 SphereCollider:
   m_ObjectHideFlags: 0

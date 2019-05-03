@@ -16,7 +16,6 @@ public class BallMovement : MonoBehaviour
     private float forceFactor = 0;
     private float xSpeed = 0;
     private float zSpeed = 0;
-    private int abyssLevel = -30;
 
     private bool isAirborne = true;
 
@@ -28,13 +27,11 @@ public class BallMovement : MonoBehaviour
 
     private Rigidbody rb;
     public GameObject target; // target is the object you will take the rotations from
-    public GameObject spawnPoint;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         target = GameObject.FindWithTag("PlayerDirection");
-        spawnPoint = GameObject.FindWithTag("Spawn");
         forceFactor = airborneForceFactor;
     }
 
@@ -52,7 +49,6 @@ public class BallMovement : MonoBehaviour
             ApplyForce();
         }
 
-        RespawnPlayer();
     }
 
     private void OnGUI()
@@ -64,12 +60,7 @@ public class BallMovement : MonoBehaviour
     //Denna metoden ska skicka tillbaka spelaren till startpunkten för nivån när denne faller av banan.
     private void RespawnPlayer()
     {
-        if(transform.position.y < abyssLevel)
-        {
-            transform.position = spawnPoint.transform.position;
-            rb.velocity = new Vector3(0, -1, 0);
-            PlayerStats.deathCount++;
-        }
+
     }
 
     //Tar hand om krafterna som läggs till på bollen

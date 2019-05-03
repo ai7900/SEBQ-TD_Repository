@@ -60,6 +60,7 @@ GameObject:
   - component: {fileID: 5231837126253139237}
   - component: {fileID: 3257336175173787072}
   - component: {fileID: 3327168353868174208}
+  - component: {fileID: 3700736278960395642}
   - component: {fileID: 9012671247297050012}
   m_Layer: 0
   m_Name: NormalBall
@@ -172,9 +173,7 @@ MonoBehaviour:
   groundForceFactor: 80
   maxSpeed: 15
   airborneForceFactor: 30
-  dashForceFactor: 0
   target: {fileID: 1942412240}
-  spawnPoint: {fileID: 0}
 --- !u!114 &3257336175173787072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,6 +213,19 @@ MonoBehaviour:
   dashCooldown: 30
   ballMovement: {fileID: 5231837126253139237}
   dashForceAddition: 40
+--- !u!114 &3700736278960395642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5231837126253139230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19a40450baa58584d8bcd68889a438e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abyssLevel: -30
 --- !u!135 &9012671247297050012
 SphereCollider:
   m_ObjectHideFlags: 0

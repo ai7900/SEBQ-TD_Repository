@@ -14278,6 +14278,7 @@ GameObject:
   - component: {fileID: 5491053317160130567}
   - component: {fileID: 8150682917835241686}
   - component: {fileID: 7860184428103495597}
+  - component: {fileID: 4477242448832767052}
   - component: {fileID: 312291151534088850}
   m_Layer: 0
   m_Name: FireBall
@@ -14347,7 +14348,6 @@ MonoBehaviour:
   maxSpeed: 20
   airborneForceFactor: 20
   target: {fileID: 4790399529980003454}
-  spawnPoint: {fileID: 0}
 --- !u!114 &8150682917835241686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14387,6 +14387,19 @@ MonoBehaviour:
   dashCooldown: 30
   ballMovement: {fileID: 5491053317160130567}
   dashForceAddition: 80
+--- !u!114 &4477242448832767052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3325169681584383846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19a40450baa58584d8bcd68889a438e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abyssLevel: -30
 --- !u!135 &312291151534088850
 SphereCollider:
   m_ObjectHideFlags: 0
