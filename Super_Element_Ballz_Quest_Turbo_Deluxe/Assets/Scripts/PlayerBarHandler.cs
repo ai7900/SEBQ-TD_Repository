@@ -7,6 +7,8 @@ public class PlayerBarHandler : MonoBehaviour
 {
     [SerializeField]
     private Image dashbar;
+    [SerializeField]
+    private Image firebar;
 
     [SerializeField]
     private GameObject player;
@@ -29,6 +31,11 @@ public class PlayerBarHandler : MonoBehaviour
             playerDash = player.GetComponent<BallDash>();
         }
 
+        HandleDashbar();
+    }
+
+    private void HandleDashbar()
+    {
         if (playerDash.isDashing)
         {
             dashbar.fillAmount -= 1.0f / playerDash.dashTime * Time.deltaTime;
@@ -41,6 +48,11 @@ public class PlayerBarHandler : MonoBehaviour
         {
             dashbar.fillAmount += 1.0f / playerDash.dashCooldown * Time.deltaTime;
         }
+    }
+
+    private void HandleFireBar()
+    {
+
     }
 
     private void OnGUI()
