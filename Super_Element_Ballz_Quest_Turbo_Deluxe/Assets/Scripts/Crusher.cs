@@ -11,7 +11,9 @@ public class Crusher : MonoBehaviour
     private Vector3 speedUp;
     [SerializeField]
     private float ySpeed;
+    [SerializeField]
     private float maxHeight = 7.0f;
+    [SerializeField]
     private float minHeight = 0.4f;
     private bool chargeUp;
     // Start is called before the first frame update
