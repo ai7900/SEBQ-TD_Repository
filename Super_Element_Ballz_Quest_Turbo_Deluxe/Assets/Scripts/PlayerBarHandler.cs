@@ -9,11 +9,13 @@ public class PlayerBarHandler : MonoBehaviour
     private Image dashbar;
     [SerializeField]
     private Image firebar;
+    [SerializeField]
+    private Image icebar;
 
     [SerializeField]
     private GameObject player;
-    [SerializeField]
     private BallDash playerDash;
+    private BallModeController ballMode;
 
     // Start is called before the first frame update
     private void Start()
@@ -29,6 +31,7 @@ public class PlayerBarHandler : MonoBehaviour
         {
             player = GameObject.FindWithTag("Player");
             playerDash = player.GetComponent<BallDash>();
+            ballMode = player.GetComponent<BallModeController>();
         }
 
         HandleDashbar();
@@ -50,7 +53,23 @@ public class PlayerBarHandler : MonoBehaviour
         }
     }
 
-    private void HandleFireBar()
+    private void HandleFirebar()
+    {
+        if (ballMode.FireCharging)
+        {
+            firebar.fillAmount += 1.0f / ballMode.fireChargeTime * Time.deltaTime;   
+        }
+        else if (ballMode.FireCharging == false)
+        {
+            firebar.fillAmount -= 1.0f / ballMode.fireDuration * Time.deltaTime;
+            if (firebar.fillAmount <= 0)
+            {
+                ballMode.TurnIntoNormalBall();
+            }
+        }
+    }
+
+    private void HandleIcebar()
     {
 
     }

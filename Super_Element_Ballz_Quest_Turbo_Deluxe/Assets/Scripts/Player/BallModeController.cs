@@ -15,6 +15,14 @@ public class BallModeController : MonoBehaviour
 
     private GameObject newObject;
 
+    public bool FireCharging { get; set; }
+    public bool IceCharging { get; set; }
+
+    [HideInInspector]
+    public int fireChargeTime = 10; //Preliminärt värde
+    [HideInInspector]
+    public int fireDuration = 15; //Preliminärt värde
+
     private Quaternion iceCubeRotation = Quaternion.Euler(0,0,0);
 
     [SerializeField]
@@ -23,22 +31,15 @@ public class BallModeController : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Keypad1))//Normal boll
-        {           
-            newObject = Instantiate(normalBallPrefab, gameObject.transform.position, gameObject.transform.rotation);
-            newObject.GetComponent<Rigidbody>().velocity = gameObject.GetComponent<Rigidbody>().velocity;
-            PlayerStats.currentMode = (int)BallMode.Normal; 
-            Destroy(gameObject);
+        {
+            TurnIntoNormalBall();
         }
 
         else if (Input.GetKeyDown(KeyCode.Keypad2))//Tung boll
         {
             if(PlayerStats.heavyFormCount > 0 && PlayerStats.currentMode != (int)BallMode.Heavy)
             {
-                newObject = Instantiate(heavyBallPrefab, gameObject.transform.position, gameObject.transform.rotation);
-                newObject.GetComponent<Rigidbody>().velocity = gameObject.GetComponent<Rigidbody>().velocity;
-                PlayerStats.currentMode = (int)BallMode.Heavy;
-                PlayerStats.heavyFormCount--;
-                Destroy(gameObject);
+                TurnIntoHeavyBall();
             }
         }
 
@@ -46,30 +47,61 @@ public class BallModeController : MonoBehaviour
         {
             if(PlayerStats.lightFormCount > 0)
             {
-                newObject = Instantiate(lightBallPrefab, gameObject.transform.position, gameObject.transform.rotation);
-                newObject.GetComponent<Rigidbody>().velocity = gameObject.GetComponent<Rigidbody>().velocity;
-                PlayerStats.currentMode = (int)BallMode.Light;
-                PlayerStats.lightFormCount--;
-                Destroy(gameObject);
+                TurnIntoLightBall();
             }
         }
 
-        else if (Input.GetKeyDown(KeyCode.Keypad4))//Eldboll
+        else if (Input.GetKeyDown(KeyCode.Keypad4))
         {
-            newObject = Instantiate(fireBallPrefab, gameObject.transform.position, gameObject.transform.rotation);
-            newObject.GetComponent<Rigidbody>().velocity = gameObject.GetComponent<Rigidbody>().velocity;
-            PlayerStats.currentMode = (int)BallMode.Fire;
-            Destroy(gameObject);
+            TurnIntoIcecube();
         }
 
-        else if (Input.GetKeyDown(KeyCode.Keypad5))//Iskub
+        else if (Input.GetKeyDown(KeyCode.Keypad5))//DEBUG ONLY
         {
-            newObject = Instantiate(iceCubePrefab, gameObject.transform.position, iceCubeRotation);
-            Rigidbody rb = newObject.GetComponent<Rigidbody>();
-            rb.velocity = gameObject.GetComponent<Rigidbody>().velocity;
-            PlayerStats.currentMode = (int)BallMode.Ice;
-            Destroy(gameObject);
+            TurnIntoFireball();
         }
+    }
 
+    public void TurnIntoNormalBall()
+    {
+        newObject = Instantiate(normalBallPrefab, gameObject.transform.position, gameObject.transform.rotation);
+        newObject.GetComponent<Rigidbody>().velocity = gameObject.GetComponent<Rigidbody>().velocity;
+        PlayerStats.currentMode = (int) BallMode.Normal;
+        Destroy(gameObject);
+    }
+    
+    private void TurnIntoHeavyBall()
+    {
+        newObject = Instantiate(heavyBallPrefab, gameObject.transform.position, gameObject.transform.rotation);
+        newObject.GetComponent<Rigidbody>().velocity = gameObject.GetComponent<Rigidbody>().velocity;
+        PlayerStats.currentMode = (int)BallMode.Heavy;
+        PlayerStats.heavyFormCount--;
+        Destroy(gameObject);
+    }
+
+    private void TurnIntoLightBall()
+    {
+        newObject = Instantiate(lightBallPrefab, gameObject.transform.position, gameObject.transform.rotation);
+        newObject.GetComponent<Rigidbody>().velocity = gameObject.GetComponent<Rigidbody>().velocity;
+        PlayerStats.currentMode = (int)BallMode.Light;
+        PlayerStats.lightFormCount--;
+        Destroy(gameObject);
+    }
+
+    public void TurnIntoFireball()
+    {
+        newObject = Instantiate(fireBallPrefab, gameObject.transform.position, gameObject.transform.rotation);
+        newObject.GetComponent<Rigidbody>().velocity = gameObject.GetComponent<Rigidbody>().velocity;
+        PlayerStats.currentMode = (int)BallMode.Fire;
+        Destroy(gameObject);
+    }
+
+    public void TurnIntoIcecube()
+    {
+        newObject = Instantiate(iceCubePrefab, gameObject.transform.position, iceCubeRotation);
+        Rigidbody rb = newObject.GetComponent<Rigidbody>();
+        rb.velocity = gameObject.GetComponent<Rigidbody>().velocity;
+        PlayerStats.currentMode = (int)BallMode.Ice;
+        Destroy(gameObject);
     }
 }
