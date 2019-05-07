@@ -35,6 +35,7 @@ public class PlayerBarHandler : MonoBehaviour
         }
 
         HandleDashbar();
+        HandleFirebar();
     }
 
     private void HandleDashbar()
@@ -55,11 +56,11 @@ public class PlayerBarHandler : MonoBehaviour
 
     private void HandleFirebar()
     {
-        if (ballMode.FireCharging)
+        if (ballMode.ChargingFire)
         {
             firebar.fillAmount += 1.0f / ballMode.fireChargeTime * Time.deltaTime;   
         }
-        else if (ballMode.FireCharging == false)
+        else if (ballMode.ChargingFire == false)
         {
             firebar.fillAmount -= 1.0f / ballMode.fireDuration * Time.deltaTime;
             if (firebar.fillAmount <= 0)

@@ -8,10 +8,16 @@ public class FireBallSparks : MonoBehaviour
     public ParticleSystem chargeSpark;
     public Transform chargeSparkPos;
 
-    private bool isCharging;
+    private BallModeController ballMode;
+
+    private void Start()
+    {
+        ballMode = gameObject.GetComponent<BallModeController>();
+        chargeSpark.Stop();
+    }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (Charging() || Input.GetKey(KeyCode.Keypad7))
         {
@@ -35,7 +41,7 @@ public class FireBallSparks : MonoBehaviour
 
     private bool Charging()
     {
-        if(isCharging)
+        if(ballMode.ChargingFire)
         {
             chargeSpark.Play();
             idleSpark.Stop();
@@ -47,10 +53,5 @@ public class FireBallSparks : MonoBehaviour
             chargeSpark.Stop();
             return false;
         }
-    }
-
-    private void SetIsCharging(bool state)
-    {
-        isCharging = state;
     }
 }

@@ -15,8 +15,8 @@ public class BallModeController : MonoBehaviour
 
     private GameObject newObject;
 
-    public bool FireCharging { get; set; }
-    public bool IceCharging { get; set; }
+    public bool ChargingFire { get; set; }
+    public bool ChargingIce { get; set; }
 
     [HideInInspector]
     public int fireChargeTime = 10; //Preliminärt värde
@@ -27,8 +27,14 @@ public class BallModeController : MonoBehaviour
 
     [SerializeField]
     private int iceInitialSpeedBoost = 70;
- 
-    void Update()
+
+    private void Start()
+    {
+        ChargingFire = false;
+        ChargingIce = false;
+    }
+
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Keypad1))//Normal boll
         {
@@ -90,10 +96,14 @@ public class BallModeController : MonoBehaviour
 
     public void TurnIntoFireball()
     {
-        newObject = Instantiate(fireBallPrefab, gameObject.transform.position, gameObject.transform.rotation);
-        newObject.GetComponent<Rigidbody>().velocity = gameObject.GetComponent<Rigidbody>().velocity;
-        PlayerStats.currentMode = (int)BallMode.Fire;
-        Destroy(gameObject);
+        if(PlayerStats.currentMode != (int)BallMode.Fire)
+        {
+            newObject = Instantiate(fireBallPrefab, gameObject.transform.position, gameObject.transform.rotation);
+            newObject.GetComponent<Rigidbody>().velocity = gameObject.GetComponent<Rigidbody>().velocity;
+            newObject.GetComponent<BallModeController>().ChargingFire = ChargingFire;
+            PlayerStats.currentMode = (int)BallMode.Fire;
+            Destroy(gameObject);
+        }
     }
 
     public void TurnIntoIcecube()

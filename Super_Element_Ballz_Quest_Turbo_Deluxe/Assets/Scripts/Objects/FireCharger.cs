@@ -12,6 +12,7 @@ public class FireCharger : MonoBehaviour
         {
             playerMode = other.GetComponent<BallModeController>();
             playerMode.TurnIntoFireball();
+            playerMode.ChargingFire = true;
         }
     }
 
@@ -19,7 +20,7 @@ public class FireCharger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-
+            playerMode.ChargingFire = false;
         }
     }
 }
