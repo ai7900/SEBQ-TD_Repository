@@ -1,0 +1,401 @@
+fileFormatVersion: 2
+guid: 745e0b16e967cdb4f97575872733a626
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Cube.002
+    100002: Empty.001
+    100004: Group001
+    100006: Group002
+    100008: Group003
+    100010: Group004
+    100012: Group005
+    100014: Group006
+    100016: //RootNode
+    400000: Cube.002
+    400002: Empty.001
+    400004: Group001
+    400006: Group002
+    400008: Group003
+    400010: Group004
+    400012: Group005
+    400014: Group006
+    400016: //RootNode
+    2100000: FirstTowerColor1
+    2100002: FirstTowerColor3
+    2100004: FirstTowerColor2
+    2100006: FirstTowerSpikeColor
+    2100008: StarColor
+    2100010: ChestColor2
+    2100012: ChestColor3
+    2100014: ChestColor1
+    2100016: WholePillarColor
+    2100018: FinalTowerColor1
+    2100020: FinalTowerColor2
+    2100022: GrassColor
+    2100024: Material.040
+    2100026: StairsColor2
+    2100028: FountainColor1
+    2100030: SemiFinalTowerColor1
+    2100032: SemiFinalTowerColor2
+    2100034: FountainColor2
+    2100036: FountainColor5
+    2100038: FountainColor3
+    2100040: FountainGlassColor1
+    2100042: FountainGemColor1
+    2100044: FountainColor4
+    2100046: FountainGemColor2
+    2100048: FirstTowerLeavsColor
+    2100050: BottomGemColor
+    2100052: BottomPlatformColor2
+    2100054: SandColor
+    2100056: StaffColor2
+    2100058: StaffColor1
+    2100060: HatColor1
+    2100062: HatColor3
+    2100064: HatColor2
+    2100066: EyeColor2
+    2100068: EyeColor3
+    2100070: EyeColor1
+    2100072: PyramidColor
+    2100074: CloudColor
+    2100076: SecondTowerColor1
+    2100078: Material.019
+    2100080: SecondTowerColor2
+    2100082: SecondTowerPillarColor2
+    2100084: SecondTowerPillarColor1
+    2100086: FirstTowerRoofColor
+    2100088: FirstTowerGlassColor
+    2100090: StairsColor1
+    2100092: BottomPlatformColor1
+    2100094: FirstTowerGemColor
+    2300000: Cube.002
+    3300000: Cube.002
+    4300000: Cube.002
+    2186277476908879412: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BottomGemColor
+    second: {fileID: 2100000, guid: ca077c3c1d488f7488530803d685e557, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BottomPlatformColor1
+    second: {fileID: 2100000, guid: fdc5a93d5d98b50468ea33677213ffe0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BottomPlatformColor2
+    second: {fileID: 2100000, guid: f8162f4d9902dc448a083a6751fdf478, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ChestColor1
+    second: {fileID: 2100000, guid: 12f259238f568dd4cb0d852a2fe15d91, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ChestColor2
+    second: {fileID: 2100000, guid: 95dec720e81c84342b87d14f96bd9567, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ChestColor3
+    second: {fileID: 2100000, guid: 3ef6b189e306e3641927832e6680738a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CloudColor
+    second: {fileID: 2100000, guid: d36d9c5d308bf9b428907d59cf6b55df, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EyeColor1
+    second: {fileID: 2100000, guid: 01cd479dfa9700b46a29e2553b9873b6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EyeColor2
+    second: {fileID: 2100000, guid: 4409e4111ede9dd41913a6c2f273316e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EyeColor3
+    second: {fileID: 2100000, guid: bcf1b5be673dd4f4ca01751794cbba47, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FinalTowerColor1
+    second: {fileID: 2100000, guid: 99f97b61b65cafb4ea173d2dc1c7c3be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FinalTowerColor2
+    second: {fileID: 2100000, guid: 972c3e856e6d93c4a9a3e7689180f856, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FirstTowerColor1
+    second: {fileID: 2100000, guid: fba61490a8b9e1542a1ce1da5708d038, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FirstTowerColor2
+    second: {fileID: 2100000, guid: 8bb0cc609d728984a83f148de663fff5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FirstTowerColor3
+    second: {fileID: 2100000, guid: 4ca9fdc042516414e9e327024f979e91, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FirstTowerGemColor
+    second: {fileID: 2100000, guid: d87f5f75018391546ac5bc5c6eb4ca91, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FirstTowerGlassColor
+    second: {fileID: 2100000, guid: c66466ad0e4a46a4f8ff93794be045ad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FirstTowerLeavsColor
+    second: {fileID: 2100000, guid: a2e9138297e21b242b35c3a43eed6622, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FirstTowerRoofColor
+    second: {fileID: 2100000, guid: 223c859e9f6bf0441baa92874b5e4ff8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FirstTowerSpikeColor
+    second: {fileID: 2100000, guid: 35fceb3fd2185984b98fcab9122e8aaa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FountainColor1
+    second: {fileID: 2100000, guid: 804095cb22f1ede49945c2748a9cfca1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FountainColor2
+    second: {fileID: 2100000, guid: 21ce2c79d33e3264ca5323d4265f24ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FountainColor3
+    second: {fileID: 2100000, guid: 13dab8eb41f61ce47a351f2576ef1ad6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FountainColor4
+    second: {fileID: 2100000, guid: 836c40fe7c2c3f54e8392eadb8aa06da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FountainColor5
+    second: {fileID: 2100000, guid: 77243538ff6a45440a81fe9367326bad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FountainGemColor1
+    second: {fileID: 2100000, guid: e6cc4ded1b9f1af4b851b08ae84d7c5b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FountainGemColor2
+    second: {fileID: 2100000, guid: 3d324ffb5a5ca884d842409db6479abd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FountainGlassColor1
+    second: {fileID: 2100000, guid: bad5f941c4c556b4e808329d4450149a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GrassColor
+    second: {fileID: 2100000, guid: 539839308e623b14fb6cd2660b0b1672, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HatColor1
+    second: {fileID: 2100000, guid: 4659fcd13ff4a3f479dfa0387e451723, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HatColor2
+    second: {fileID: 2100000, guid: 5e3cbf62d5e8b4840a80bf3376883780, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HatColor3
+    second: {fileID: 2100000, guid: 868856a433395c4429348ea61b220807, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.019
+    second: {fileID: 2100000, guid: f575d7a4185743749a2dd5708aadf36a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.040
+    second: {fileID: 2100000, guid: 234ae0d99f42b1c4499ce87a0835eec5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PyramidColor
+    second: {fileID: 2100000, guid: f11905700f4173146b1dd719881f9af3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SandColor
+    second: {fileID: 2100000, guid: bba6cd211a995844f9d84bd9403b60cf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SecondTowerColor1
+    second: {fileID: 2100000, guid: 96c253220d9092c458882f8793ff04ac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SecondTowerColor2
+    second: {fileID: 2100000, guid: 844bcf52d17b2474f86a3146be00a1d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SecondTowerPillarColor1
+    second: {fileID: 2100000, guid: 5be5290f1b078654e8b98bb41725783e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SecondTowerPillarColor2
+    second: {fileID: 2100000, guid: 69525aa5002969f48a40c71ef030ba78, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SemiFinalTowerColor1
+    second: {fileID: 2100000, guid: ffd720adcc7ed4349a565afc207fad16, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SemiFinalTowerColor2
+    second: {fileID: 2100000, guid: dac1aa9fd81a20041b2ec9ef987b2254, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: StaffColor1
+    second: {fileID: 2100000, guid: 668744fc6b5d5d94ba04f27f3b98a47f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: StaffColor2
+    second: {fileID: 2100000, guid: 608bb7b7c1470544ebb2e44af663910c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: StairsColor1
+    second: {fileID: 2100000, guid: 5b6c9d43fa831ef49b2d15e0a091cb5f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: StairsColor2
+    second: {fileID: 2100000, guid: dcfcfcf27dee88741964d9cf960df6bb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: StarColor
+    second: {fileID: 2100000, guid: 066ddb300dfec814f82e37167d23921c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WholePillarColor
+    second: {fileID: 2100000, guid: da868643149bf504482a63b4df157b26, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 10
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
