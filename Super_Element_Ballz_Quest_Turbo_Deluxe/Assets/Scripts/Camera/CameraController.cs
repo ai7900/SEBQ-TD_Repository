@@ -8,7 +8,7 @@ public class CameraController : MonoBehaviour
 
     [SerializeField]
     [Header("Camera Settings")]
-    private Camera adjustCamera;
+    public Camera adjustCamera;
 
     [SerializeField]
     [Range(0.01f, 10f)]
@@ -21,84 +21,37 @@ public class CameraController : MonoBehaviour
     [SerializeField]
     private float rotationSpeed = 1f;
 
-    [Header("Checkpoints for camera")]
-    public Transform[] views;
-
-    private Transform currentView;
+    [SerializeField]
+    private Transform isoView;
     private Vector3 currentAngle;
     private Vector3 viewOffset = new Vector3(10f, 10f, 3f);
 
 
     private void Start()
     {
-        currentView = views[0];
     }
 
     private void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            currentView = views[0]; //thirdperson
-            adjustCamera.orthographic = false;
-        }
-
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            currentView = views[1]; //isometric
-            adjustCamera.orthographic = true;
-            adjustCamera.orthographicSize = 20;
-        }
-
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            currentView = views[2]; //SpecialView
-            adjustCamera.orthographic = false;
-        }
+        
     }
 
     private void LateUpdate()
     {
-
-        //Lerp position
-        if(currentView == views[0])
-        {
-            transform.position = Vector3.Lerp(transform.position, currentView.position + viewOffset, transitionSpeedThirdPerson * Time.deltaTime);
-        }
-
-        else if(currentView == views[1] || currentView == views[2])
-        {
-            transform.position = Vector3.Lerp(transform.position, currentView.position, transitionSpeedIsometric * Time.deltaTime);
-        }
+        transform.position = Vector3.Lerp(transform.position, isoView.position, transitionSpeedIsometric * Time.deltaTime);
 
         CameraRotation();
     }
 
     private void CameraRotation()
     {
-        if (currentView == views[0])
-        {
-            Quaternion XcamTurnAngle = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * rotationSpeed, Vector3.up);
-            Quaternion YcamTurnAngle = Quaternion.AngleAxis(Input.GetAxis("Mouse Y") * rotationSpeed, Vector3.left);
 
-            viewOffset = XcamTurnAngle * viewOffset;
-            viewOffset = YcamTurnAngle * viewOffset;
-
-        }
-
-        else if (currentView == views[1] || currentView == views[2])
-        {
             currentAngle = new Vector3(
-                    Mathf.LerpAngle(transform.rotation.eulerAngles.x, currentView.transform.eulerAngles.x, Time.deltaTime * transitionSpeedIsometric),
-                    Mathf.LerpAngle(transform.rotation.eulerAngles.y, currentView.transform.eulerAngles.y, Time.deltaTime * transitionSpeedIsometric),
-                    Mathf.LerpAngle(transform.rotation.eulerAngles.z, currentView.transform.eulerAngles.z, Time.deltaTime * transitionSpeedIsometric));
-        }
+                    Mathf.LerpAngle(transform.rotation.eulerAngles.x, transform.eulerAngles.x, Time.deltaTime * transitionSpeedIsometric),
+                    Mathf.LerpAngle(transform.rotation.eulerAngles.y, transform.eulerAngles.y, Time.deltaTime * transitionSpeedIsometric),
+                    Mathf.LerpAngle(transform.rotation.eulerAngles.z, transform.eulerAngles.z, Time.deltaTime * transitionSpeedIsometric));
+     
 
         transform.eulerAngles = currentAngle;
-        
-        if (currentView == views[0])
-        {
-            transform.LookAt(currentView);
-        }
     }
 }
