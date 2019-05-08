@@ -11,8 +11,8 @@ public class FireCharger : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             playerMode = other.GetComponent<BallModeController>();
-            playerMode.TurnIntoFireball();
             playerMode.ChargingFire = true;
+            playerMode.TurnIntoFireball();
         }
     }
 

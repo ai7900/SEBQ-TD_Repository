@@ -61,12 +61,16 @@ public class PlayerBarHandler : MonoBehaviour
         {
             firebar.fillAmount += 1.0f / ballMode.fireChargeTime * Time.deltaTime;   
         }
-        else if (ballMode.ChargingFire == false)
+        else
         {
             firebar.fillAmount -= 1.0f / ballMode.fireDuration * Time.deltaTime;
-            if (firebar.fillAmount <= 0 && PlayerStats.currentMode == (int)BallMode.Fire)
+            if (firebar.fillAmount <= 0)
             {
-                ballMode.TurnIntoNormalBall();
+                if(PlayerStats.currentMode == (int)BallMode.Fire && ballMode.ChargingFire == false)
+                {
+                    ballMode.TurnIntoNormalBall();
+                }
+                
             }
         }
     }
