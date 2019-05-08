@@ -15,6 +15,7 @@ public class BallModeController : MonoBehaviour
 
     private GameObject newObject;
 
+    public bool IceReady { get; set; } = false;
     public bool ChargingFire { get; set; } = false;
     public bool ChargingIce { get; set; } = false;
 
@@ -22,6 +23,10 @@ public class BallModeController : MonoBehaviour
     public int fireChargeTime = 5; //Preliminärt värde
     [HideInInspector]
     public int fireDuration = 10; //Preliminärt värde
+    [HideInInspector]
+    public int iceChargeTime = 5; //Preliminärt värde
+    [HideInInspector]
+    public int iceDuration = 15; //Preliminärt värde
 
     private Quaternion iceCubeRotation = Quaternion.Euler(0,0,0);
 
@@ -56,7 +61,7 @@ public class BallModeController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Keypad4))
         {
-            if(PlayerStats.currentMode != (int)BallMode.Ice)
+            if(PlayerStats.currentMode != (int)BallMode.Ice && IceReady)
             {
                 TurnIntoIcecube();
             }

@@ -17,6 +17,8 @@ public class PlayerBarHandler : MonoBehaviour
     private BallDash playerDash;
     private BallModeController ballMode;
 
+    private int depletionRate = 3;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -37,29 +39,35 @@ public class PlayerBarHandler : MonoBehaviour
 
         HandleDashbar();
         HandleFirebar();
+        HandleIcebar();
     }
 
     private void HandleDashbar()
     {
-        if (playerDash.isDashing)
+        if(PlayerStats.currentMode != (int)BallMode.Ice)
         {
-            dashbar.fillAmount -= 1.0f / playerDash.dashTime * Time.deltaTime;
-            if (dashbar.fillAmount <= 0)
+            if (playerDash.isDashing)
             {
-                playerDash.SetDashing(false);
+                dashbar.fillAmount -= 1.0f / playerDash.dashTime * Time.deltaTime;
+                if (dashbar.fillAmount <= 0)
+                {
+                    playerDash.SetDashing(false);
+                }
+            }
+            else if (playerDash.isDashing == false)
+            {
+                dashbar.fillAmount += 1.0f / playerDash.dashCooldown * Time.deltaTime;
             }
         }
-        else if (playerDash.isDashing == false)
-        {
-            dashbar.fillAmount += 1.0f / playerDash.dashCooldown * Time.deltaTime;
-        }
+
     }
 
     private void HandleFirebar()
     {
         if (ballMode.ChargingFire)
         {
-            firebar.fillAmount += 1.0f / ballMode.fireChargeTime * Time.deltaTime;   
+            firebar.fillAmount += 1.0f / ballMode.fireChargeTime * Time.deltaTime;
+            icebar.fillAmount -= 1.0f / depletionRate * Time.deltaTime;
         }
         else
         {
@@ -77,7 +85,28 @@ public class PlayerBarHandler : MonoBehaviour
 
     private void HandleIcebar()
     {
+        if (ballMode.ChargingIce)
+        {
+            icebar.fillAmount += 1.0f / ballMode.iceChargeTime * Time.deltaTime;
+            firebar.fillAmount -= 1.0f / depletionRate * Time.deltaTime;
+            if (icebar.fillAmount > 0)
+            {
+                ballMode.IceReady = true;
+            }
+        }
+        else
+        {
+            icebar.fillAmount -= 1.0f / ballMode.iceDuration * Time.deltaTime;
+            if (icebar.fillAmount <= 0)
+            {
+                ballMode.IceReady = false;
+                if (PlayerStats.currentMode == (int)BallMode.Ice && ballMode.ChargingIce == false)
+                {
+                    ballMode.TurnIntoNormalBall();
+                }
 
+            }
+        }
     }
 
     private void OnGUI()
