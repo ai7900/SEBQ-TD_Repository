@@ -9,14 +9,9 @@ public class CameraChanger : MonoBehaviour
     public Camera adjustCamera;
     [SerializeField]
     public Camera adjustCameraThirdPerson;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {

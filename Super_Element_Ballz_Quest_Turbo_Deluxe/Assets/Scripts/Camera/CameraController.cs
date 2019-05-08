@@ -26,16 +26,6 @@ public class CameraController : MonoBehaviour
     private Vector3 currentAngle;
     private Vector3 viewOffset = new Vector3(10f, 10f, 3f);
 
-
-    private void Start()
-    {
-    }
-
-    private void Update()
-    {
-        
-    }
-
     private void LateUpdate()
     {
         transform.position = Vector3.Lerp(transform.position, isoView.position, transitionSpeedIsometric * Time.deltaTime);
