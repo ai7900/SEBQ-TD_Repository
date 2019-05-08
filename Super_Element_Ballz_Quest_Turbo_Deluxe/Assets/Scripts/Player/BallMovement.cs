@@ -51,18 +51,6 @@ public class BallMovement : MonoBehaviour
 
     }
 
-    private void OnGUI()
-    {
-        GUI.Label(new Rect(20, 20, 300, 300), "rigidbody velocity: " + rb.velocity);
-        GUI.Label(new Rect(20, 40, 300, 300), "ground force factor = " + groundForceFactor);
-    }
-    
-    //Denna metoden ska skicka tillbaka spelaren till startpunkten för nivån när denne faller av banan.
-    private void RespawnPlayer()
-    {
-
-    }
-
     //Tar hand om krafterna som läggs till på bollen
     private void ApplyForce()
     {

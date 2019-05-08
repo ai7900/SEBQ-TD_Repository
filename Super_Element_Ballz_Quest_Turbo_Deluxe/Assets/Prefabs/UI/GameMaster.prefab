@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2513387224008082148}
   - component: {fileID: 2513387224008082147}
-  - component: {fileID: 2513387224008082149}
+  - component: {fileID: 2157237858070106416}
   m_Layer: 0
   m_Name: GameMaster
   m_TagString: Untagged
@@ -44,10 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 394781450ec4d584bad1d67086491987, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showMouseCursor: 1
-  levelWonUI: {fileID: 0}
+  showMouseCursor: 0
   lockMouseCursor: 1
---- !u!114 &2513387224008082149
+  nextLevel: NAME OF NEXT SCENE
+--- !u!114 &2157237858070106416
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -56,6 +56,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 2513387224008082146}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 474e5763c6c26ff4087724d5a58f59ab, type: 3}
+  m_Script: {fileID: 11500000, guid: 95195c7501bad8d468373575c85627d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingLightCount: 0
+  startingHeavyCount: 0

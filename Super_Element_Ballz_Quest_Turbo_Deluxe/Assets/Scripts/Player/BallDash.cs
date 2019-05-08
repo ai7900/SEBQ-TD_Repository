@@ -54,9 +54,4 @@ public class BallDash : MonoBehaviour
     {
         isDashing = state;
     }
-
-    private void OnGUI()
-    {
-        GUI.Label(new Rect(20, 80, 300, 300), "Dashing = " + isDashing);
-    }
 }
