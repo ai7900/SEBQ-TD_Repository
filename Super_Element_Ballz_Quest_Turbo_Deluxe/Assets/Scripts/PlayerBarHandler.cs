@@ -30,9 +30,10 @@ public class PlayerBarHandler : MonoBehaviour
         if (!player)
         {
             player = GameObject.FindWithTag("Player");
-            playerDash = player.GetComponent<BallDash>();
-            ballMode = player.GetComponent<BallModeController>();
         }
+
+        playerDash = player.GetComponent<BallDash>();
+        ballMode = player.GetComponent<BallModeController>();
 
         HandleDashbar();
         HandleFirebar();
@@ -63,7 +64,7 @@ public class PlayerBarHandler : MonoBehaviour
         else if (ballMode.ChargingFire == false)
         {
             firebar.fillAmount -= 1.0f / ballMode.fireDuration * Time.deltaTime;
-            if (firebar.fillAmount <= 0)
+            if (firebar.fillAmount <= 0 && PlayerStats.currentMode == (int)BallMode.Fire)
             {
                 ballMode.TurnIntoNormalBall();
             }
@@ -77,6 +78,6 @@ public class PlayerBarHandler : MonoBehaviour
 
     private void OnGUI()
     {
-        GUI.Label(new Rect(20, 60, 300, 300), "Fill amount = " + dashbar.fillAmount);
+        GUI.Label(new Rect(20, 60, 300, 300), "Fill amount = " + firebar.fillAmount);
     }
 }

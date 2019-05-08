@@ -14369,6 +14369,8 @@ MonoBehaviour:
   fireBallPrefab: {fileID: 3325169681584383846}
   iceCubePrefab: {fileID: 6346841100233949423, guid: bf62b88fdd2f639419a9c5b4d976b446,
     type: 3}
+  fireChargeTime: 10
+  fireDuration: 15
   iceInitialSpeedBoost: 70
 --- !u!114 &7860184428103495597
 MonoBehaviour:
@@ -33471,3 +33473,4 @@ MonoBehaviour:
   idleSpark: {fileID: 4370036353897733462}
   chargeSpark: {fileID: 3325169681017218267}
   chargeSparkPos: {fileID: 3325169681017218265}
+  ballMode: {fileID: 8150682917835241686}

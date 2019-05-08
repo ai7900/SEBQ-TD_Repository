@@ -38,10 +38,13 @@ public class BallModeController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Keypad1))//Normal boll
         {
-            TurnIntoNormalBall();
+            if(PlayerStats.currentMode != (int)BallMode.Normal)
+            {
+                TurnIntoNormalBall();
+            }
         }
 
-        else if (Input.GetKeyDown(KeyCode.Keypad2))//Tung boll
+        if (Input.GetKeyDown(KeyCode.Keypad2))//Tung boll
         {
             if(PlayerStats.heavyFormCount > 0 && PlayerStats.currentMode != (int)BallMode.Heavy)
             {
@@ -49,7 +52,7 @@ public class BallModeController : MonoBehaviour
             }
         }
 
-        else if (Input.GetKeyDown(KeyCode.Keypad3) && PlayerStats.currentMode != (int)BallMode.Light)//Lätt boll
+        if (Input.GetKeyDown(KeyCode.Keypad3) && PlayerStats.currentMode != (int)BallMode.Light)//Lätt boll
         {
             if(PlayerStats.lightFormCount > 0)
             {
@@ -57,12 +60,16 @@ public class BallModeController : MonoBehaviour
             }
         }
 
-        else if (Input.GetKeyDown(KeyCode.Keypad4))
+        if (Input.GetKeyDown(KeyCode.Keypad4))
         {
-            TurnIntoIcecube();
+            if(PlayerStats.currentMode != (int)BallMode.Ice)
+            {
+                TurnIntoIcecube();
+            }
+            
         }
 
-        else if (Input.GetKeyDown(KeyCode.Keypad5))//DEBUG ONLY
+        if (Input.GetKeyDown(KeyCode.Keypad5))//DEBUG ONLY
         {
             TurnIntoFireball();
         }

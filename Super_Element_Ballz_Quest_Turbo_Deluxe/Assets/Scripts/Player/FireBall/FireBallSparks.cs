@@ -8,11 +8,11 @@ public class FireBallSparks : MonoBehaviour
     public ParticleSystem chargeSpark;
     public Transform chargeSparkPos;
 
+    [SerializeField]
     private BallModeController ballMode;
 
     private void Start()
     {
-        ballMode = gameObject.GetComponent<BallModeController>();
         chargeSpark.Stop();
     }
 
