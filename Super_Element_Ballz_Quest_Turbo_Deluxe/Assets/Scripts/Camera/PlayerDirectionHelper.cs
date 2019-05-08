@@ -6,7 +6,10 @@ public class PlayerDirectionHelper : MonoBehaviour
 {
     [SerializeField]
     private GameObject playerCamera;
-
+    [SerializeField]
+    private Camera isoCamera;
+    [SerializeField]
+    private Camera thirdCamera;
     private Transform rotation;
 
     // Start is called before the first frame update
@@ -19,7 +22,15 @@ public class PlayerDirectionHelper : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerCamera = GameObject.FindGameObjectWithTag("MainCamera");
+        if(isoCamera.enabled == true)
+        {
+            playerCamera = GameObject.FindGameObjectWithTag("MainCamera");
+        }
+        else if (thirdCamera.enabled)
+        {
+            playerCamera = GameObject.FindGameObjectWithTag("ThirdPersonCamera");
+        }
+
         rotation.transform.eulerAngles = new Vector3(0, playerCamera.transform.eulerAngles.y, 0);
     }
 }

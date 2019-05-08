@@ -12,6 +12,7 @@ TagManager:
   - PlayerDirection
   - Collectible
   - Spawn
+  - ThirdPersonCamera
   layers:
   - Default
   - TransparentFX

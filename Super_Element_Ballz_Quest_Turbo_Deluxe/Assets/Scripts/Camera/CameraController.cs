@@ -8,9 +8,9 @@ public class CameraController : MonoBehaviour
 
     [SerializeField]
     [Header("Camera Settings")]
-    private Camera adjustCamera;
+    public Camera adjustCamera;
     [SerializeField]
-    private Camera adjustCameraThirdPerson;
+    public Camera adjustCameraThirdPerson;
 
     [SerializeField]
     [Range(0.01f, 10f)]
@@ -69,12 +69,12 @@ public class CameraController : MonoBehaviour
     {
 
         //Lerp position
-        if(currentView == views[0])
-        {
-            transform.position = Vector3.Lerp(transform.position, currentView.position + viewOffset, transitionSpeedThirdPerson * Time.deltaTime);
-        }
+        //if(currentView == views[0])
+        //{
+        //    transform.position = Vector3.Lerp(transform.position, currentView.position + viewOffset, transitionSpeedThirdPerson * Time.deltaTime);
+        //}
 
-        else if(currentView == views[1] || currentView == views[2])
+        if(currentView == views[1] || currentView == views[2])
         {
             transform.position = Vector3.Lerp(transform.position, currentView.position, transitionSpeedIsometric * Time.deltaTime);
         }
@@ -84,17 +84,17 @@ public class CameraController : MonoBehaviour
 
     private void CameraRotation()
     {
-        if (currentView == views[0])
-        {
-            Quaternion XcamTurnAngle = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * rotationSpeed, Vector3.up);
-            Quaternion YcamTurnAngle = Quaternion.AngleAxis(Input.GetAxis("Mouse Y") * rotationSpeed, Vector3.left);
+        //if (currentView == views[0])
+        //{
+        //    Quaternion XcamTurnAngle = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * rotationSpeed, Vector3.up);
+        //    Quaternion YcamTurnAngle = Quaternion.AngleAxis(Input.GetAxis("Mouse Y") * rotationSpeed, Vector3.left);
 
-            viewOffset = XcamTurnAngle * viewOffset;
-            viewOffset = YcamTurnAngle * viewOffset;
+        //    viewOffset = XcamTurnAngle * viewOffset;
+        //    viewOffset = YcamTurnAngle * viewOffset;
 
-        }
+        //}
 
-        else if (currentView == views[1] || currentView == views[2])
+       if (currentView == views[1] || currentView == views[2])
         {
             currentAngle = new Vector3(
                     Mathf.LerpAngle(transform.rotation.eulerAngles.x, currentView.transform.eulerAngles.x, Time.deltaTime * transitionSpeedIsometric),
@@ -104,9 +104,9 @@ public class CameraController : MonoBehaviour
 
         transform.eulerAngles = currentAngle;
         
-        if (currentView == views[0])
-        {
-            transform.LookAt(currentView);
-        }
+        //if (currentView == views[0])
+        //{
+        //    transform.LookAt(currentView);
+        //}
     }
 }
