@@ -11,10 +11,7 @@ public class MenuHandler : MonoBehaviour
     private SceneFader sceneFader;
 
     [Header("Levels in levelSelect")]
-    [SerializeField] private string level1;
-    [SerializeField] private string level2;
-    [SerializeField] private string level3;
-    [SerializeField] private string level4;
+    [SerializeField] private string[] levelName;
 
     // Update is called once per frame
     void Update()
@@ -27,7 +24,7 @@ public class MenuHandler : MonoBehaviour
             {
                 case MenuCamera.MenuState.Play:
                     {
-                        sceneFader.FadeTo(level1);
+                        sceneFader.FadeTo(levelName[0]);
                     }
                     break;
 
@@ -40,34 +37,32 @@ public class MenuHandler : MonoBehaviour
                 case MenuCamera.MenuState.LevelSelect:
                     {
                         //Only runs is camera is not in main menu select
-                        if (!menuCamera.MainMenu())
+                        if (menuCamera.IsBranchView && menuCamera.branchInceptionLevel == 2)
                         {
-                            switch (menuCamera.selectedBranchView + 1)
+                            
+                            for(int i = 0; i < menuCamera.selectedBranchView + 1; i++)
                             {
-                                case 1:
-                                    sceneFader.FadeTo(level1);
-                                    break;
-
-                                case 2:
-                                    sceneFader.FadeTo(level2);
-                                    break;
-
-                                case 3:
-                                    sceneFader.FadeTo(level3);
-                                    break;
-
-                                case 4:
-                                    sceneFader.FadeTo(level4);
-                                    break;
-
+                                try
+                                {
+                                    if (i == menuCamera.selectedBranchView)
+                                    {
+                                    
+                                        sceneFader.FadeTo(levelName[i]);
+                                    }
+                                }
+                                catch(System.Exception failedToLoadScene)
+                                {
+                                    Debug.Log("Couldn't load scene");
+                                }
                             }
+
                         }
                     }
                     break;
 
                 case MenuCamera.MenuState.Options:
                     {
-
+                        Screen.SetResolution(640, 480, false);
                     }
                     break;
 
