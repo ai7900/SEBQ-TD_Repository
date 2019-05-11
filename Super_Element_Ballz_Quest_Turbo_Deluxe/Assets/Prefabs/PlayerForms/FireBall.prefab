@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &330020760465537009
 Transform:
   m_ObjectHideFlags: 0
@@ -14371,6 +14371,8 @@ MonoBehaviour:
     type: 3}
   fireChargeTime: 10
   fireDuration: 15
+  iceChargeTime: 5
+  iceDuration: 15
   iceInitialSpeedBoost: 70
 --- !u!114 &7860184428103495597
 MonoBehaviour:

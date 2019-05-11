@@ -28,7 +28,7 @@ public class CollectibleController : MonoBehaviour
     private void Update()
     {
         transform.Rotate(new Vector3(0, rotationY, 0) * Time.deltaTime, Space.World);
-        transform.Rotate(new Vector3(rotationX, 0, rotationZ) * Time.deltaTime, Space.Self);
+        transform.Rotate(new Vector3(rotationX, 0, rotationZ) * Time.deltaTime, Space.World);
 
         tempPos = posOffset;
         tempPos.y += Mathf.Sin(Time.fixedTime * Mathf.PI * frequency) * amplitude;
