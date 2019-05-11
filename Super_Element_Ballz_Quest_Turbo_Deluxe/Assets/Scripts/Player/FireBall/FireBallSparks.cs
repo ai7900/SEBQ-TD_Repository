@@ -4,30 +4,54 @@ using UnityEngine;
 
 public class FireBallSparks : MonoBehaviour
 {
-    public GameObject idleSpark;
-    public GameObject ChargeSpark;
-    public Transform ChargeSparkPos;
+    public ParticleSystem idleSpark;
+    public ParticleSystem chargeSpark;
+    public Transform chargeSparkPos;
+
+    [SerializeField]
+    private BallModeController ballMode;
+
+    private void Start()
+    {
+        chargeSpark.Stop();
+    }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (Input.GetKey(KeyCode.Keypad7))
+        if (Charging() || Input.GetKey(KeyCode.Keypad7))
         {
-            ChargeSpark.SetActive(true);
-            idleSpark.SetActive(false);
+            chargeSpark.Play();
+            idleSpark.Stop();
 
             ChargeSparkTransform();
         }
         else
         {
-            ChargeSpark.SetActive(false);
-            idleSpark.SetActive(true);
+            chargeSpark.Stop();
+            idleSpark.Play();
         }
     }
 
     private void ChargeSparkTransform()
     {
-        ChargeSpark.transform.eulerAngles = new Vector3(-90, 0, 0);
-        ChargeSpark.transform.position = ChargeSparkPos.position;
+        chargeSpark.transform.eulerAngles = new Vector3(-90, 0, 0);
+        chargeSpark.transform.position = chargeSparkPos.position;
+    }
+
+    private bool Charging()
+    {
+        if(ballMode.ChargingFire)
+        {
+            chargeSpark.Play();
+            idleSpark.Stop();
+            return true;
+        }
+        else
+        {
+            idleSpark.Play();
+            chargeSpark.Stop();
+            return false;
+        }
     }
 }

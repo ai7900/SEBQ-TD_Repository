@@ -7,11 +7,17 @@ public class PlayerBarHandler : MonoBehaviour
 {
     [SerializeField]
     private Image dashbar;
+    [SerializeField]
+    private Image firebar;
+    [SerializeField]
+    private Image icebar;
 
     [SerializeField]
     private GameObject player;
-    [SerializeField]
     private BallDash playerDash;
+    private BallModeController ballMode;
+
+    private int depletionRate = 3;
 
     // Start is called before the first frame update
     private void Start()
@@ -26,20 +32,85 @@ public class PlayerBarHandler : MonoBehaviour
         if (!player)
         {
             player = GameObject.FindWithTag("Player");
-            playerDash = player.GetComponent<BallDash>();
         }
 
-        if (playerDash.isDashing)
+        playerDash = player.GetComponent<BallDash>();
+        ballMode = player.GetComponent<BallModeController>();
+
+        HandleDashbar();
+        HandleFirebar();
+        HandleIcebar();
+    }
+
+    private void HandleDashbar()
+    {
+        if(PlayerStats.currentMode != (int)BallMode.Ice)
         {
-            dashbar.fillAmount -= 1.0f / playerDash.dashTime * Time.deltaTime;
-            if (dashbar.fillAmount <= 0)
+            if (playerDash.isDashing)
             {
-                playerDash.SetDashing(false);
+                dashbar.fillAmount -= 1.0f / playerDash.dashTime * Time.deltaTime;
+                if (dashbar.fillAmount <= 0)
+                {
+                    playerDash.SetDashing(false);
+                }
+            }
+            else if (playerDash.isDashing == false)
+            {
+                dashbar.fillAmount += 1.0f / playerDash.dashCooldown * Time.deltaTime;
             }
         }
-        else if (playerDash.isDashing == false)
+
+    }
+
+    private void HandleFirebar()
+    {
+        if (ballMode.ChargingFire)
         {
-            dashbar.fillAmount += 1.0f / playerDash.dashCooldown * Time.deltaTime;
+            firebar.fillAmount += 1.0f / ballMode.fireChargeTime * Time.deltaTime;
+            icebar.fillAmount -= 1.0f / depletionRate * Time.deltaTime;
         }
+        else
+        {
+            firebar.fillAmount -= 1.0f / ballMode.fireDuration * Time.deltaTime;
+            if (firebar.fillAmount <= 0)
+            {
+                if(PlayerStats.currentMode == (int)BallMode.Fire && ballMode.ChargingFire == false)
+                {
+                    ballMode.TurnIntoNormalBall();
+                }
+
+            }
+        }
+    }
+
+    private void HandleIcebar()
+    {
+        if (ballMode.ChargingIce)
+        {
+            icebar.fillAmount += 1.0f / ballMode.iceChargeTime * Time.deltaTime;
+            firebar.fillAmount -= 1.0f / depletionRate * Time.deltaTime;
+            if (icebar.fillAmount > 0)
+            {
+                ballMode.IceReady = true;
+            }
+        }
+        else
+        {
+            icebar.fillAmount -= 1.0f / ballMode.iceDuration * Time.deltaTime;
+            if (icebar.fillAmount <= 0)
+            {
+                ballMode.IceReady = false;
+                if (PlayerStats.currentMode == (int)BallMode.Ice && ballMode.ChargingIce == false)
+                {
+                    ballMode.TurnIntoNormalBall();
+                }
+
+            }
+        }
+    }
+
+    private void OnGUI()
+    {
+        GUI.Label(new Rect(20, 60, 300, 300), "Fill amount = " + firebar.fillAmount);
     }
 }

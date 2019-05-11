@@ -40,13 +40,13 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 306905209468189519}
   serializedVersion: 6
-  lengthInSec: 5
+  lengthInSec: 1
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -105,7 +105,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 8370998475067786373}
   scalingMode: 1
   randomSeed: 0
@@ -4809,7 +4809,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3325169681017218265
 Transform:
   m_ObjectHideFlags: 0
@@ -14369,6 +14369,8 @@ MonoBehaviour:
   fireBallPrefab: {fileID: 3325169681584383846}
   iceCubePrefab: {fileID: 6346841100233949423, guid: bf62b88fdd2f639419a9c5b4d976b446,
     type: 3}
+  fireChargeTime: 10
+  fireDuration: 15
   iceInitialSpeedBoost: 70
 --- !u!114 &7860184428103495597
 MonoBehaviour:
@@ -33468,6 +33470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea1519f603d2bc941909a719bfeb0a0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idleSpark: {fileID: 7304547414668523723}
-  ChargeSpark: {fileID: 3325169681017218262}
-  ChargeSparkPos: {fileID: 3325169681584383849}
+  idleSpark: {fileID: 4370036353897733462}
+  chargeSpark: {fileID: 3325169681017218267}
+  chargeSparkPos: {fileID: 3325169681017218265}
+  ballMode: {fileID: 8150682917835241686}
