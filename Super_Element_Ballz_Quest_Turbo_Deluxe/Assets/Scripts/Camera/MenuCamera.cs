@@ -55,6 +55,7 @@ public class MenuCamera : MonoBehaviour
             {
                 case MenuState.Options:
                     branchMenuViews = optionSelectViews;
+                    branchInceptionLevel = InceptionLevelCap(branchInceptionLevel, 2);
                     break;
 
                 case MenuState.LevelSelect:
