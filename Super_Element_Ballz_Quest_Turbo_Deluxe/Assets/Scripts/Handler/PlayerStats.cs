@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -8,6 +9,11 @@ public class PlayerStats : MonoBehaviour
     public static int lightFormCount;
     [SerializeField]
     public static int heavyFormCount;
+
+    private static float timeSpent;
+
+    private string minutes;
+    private string seconds;
 
     public static int currentMode = (int)BallMode.Normal;
 
@@ -17,6 +23,12 @@ public class PlayerStats : MonoBehaviour
     public static int collectiblesPickedUp;
 
     [SerializeField]
+    private Text deathCounterText;
+    [SerializeField]
+    private Text timerText;
+    [SerializeField]
+    private Text collectibleText;
+    [SerializeField]
     private int startingLightCount;
     [SerializeField]
     private int startingHeavyCount;
@@ -25,6 +37,17 @@ public class PlayerStats : MonoBehaviour
     {
         lightFormCount = startingLightCount;
         heavyFormCount = startingHeavyCount;
+    }
+
+    private void Update()
+    {
+        collectibleText.text = "x" + collectiblesPickedUp;
+        deathCounterText.text = "x" + deathCount;
+        timeSpent = Time.time;
+        minutes = ((int)timeSpent / 60).ToString();
+        seconds = (timeSpent % 60).ToString("f0");
+
+        timerText.text = minutes+ ":" + seconds;
     }
 
     private void OnGUI()

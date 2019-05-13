@@ -11,6 +11,10 @@ public class BallMovement : MonoBehaviour
     private float maxSpeed = 20f;
 
     [SerializeField]
+    private AudioClip movementSoundEffect;
+
+    private AudioSource audioSrc;
+    [SerializeField]
     private float airborneForceFactor = 0;
 
     private float forceFactor = 0;
@@ -33,6 +37,7 @@ public class BallMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         target = GameObject.FindWithTag("PlayerDirection");
         forceFactor = airborneForceFactor;
+        audioSrc = GetComponent<AudioSource>();
     }
 
     private void FixedUpdate()
@@ -43,6 +48,12 @@ public class BallMovement : MonoBehaviour
         zSpeed = Input.GetAxis("Vertical");
         xMovement = target.transform.right * xSpeed;
         zMovement = target.transform.forward * zSpeed;
+
+        if(rb.velocity.magnitude > 0.3 && !audioSrc.isPlaying && !isAirborne)
+        {
+            audioSrc.PlayOneShot(movementSoundEffect);
+        }
+        audioSrc.volume = rb.velocity.magnitude/50;
 
         if(CanAccelerate())
         {
