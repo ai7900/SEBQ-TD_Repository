@@ -103,8 +103,8 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _Emission: 0.347
-    - _EnvironmentLight: 0.834
+    - _Emission: 0.586
+    - _EnvironmentLight: 1.351
     - _Freezeeffectnormal: 4.77537
     - _Gloss: 0.3252537
     - _GlossMapScale: 1
