@@ -18,6 +18,9 @@ public class MenuHandler : MonoBehaviour
     private int maxScreenSizeSelect;        // The max amount of options for ScreenSelect
     private int maxSoundVolumeSelect;       // The max amount of options for SoundSelect
 
+    private int initResolutionWidth;
+    private int initResolutionHeight;
+
     [SerializeField] private SceneFader sceneFader;          // A black screne-fader
 
     [SerializeField] private GameObject levelSelectCardsUI;
@@ -39,7 +42,9 @@ public class MenuHandler : MonoBehaviour
         screenOptionText.text = screenText + "100%";
         soundOptionText.text = soundText + "100%";
 
-        Screen.SetResolution(1920, 1080, true);
+        initResolutionWidth = Screen.currentResolution.width;
+        initResolutionHeight = Screen.currentResolution.height;
+
     }
 
     // Update is called once per frame
@@ -135,7 +140,15 @@ public class MenuHandler : MonoBehaviour
                                 {
                                     if (screenSizeSelect == i)
                                     {
-                                        Screen.SetResolution(1920 / i, 1080 / i, true);
+                                        if (Screen.fullScreen)
+                                        {
+                                            Screen.SetResolution(initResolutionWidth / i, initResolutionHeight / i, true);
+                                        }
+                                        else
+                                        {
+                                            Screen.SetResolution(1920 / i, 1080 / i, false);
+                                        }
+                                        
                                         screenOptionText.text = screenText + (100 / i).ToString() + "%";
                                     }
 
