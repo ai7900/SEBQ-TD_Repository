@@ -14,6 +14,8 @@ public class CollectibleController : MonoBehaviour
     private Vector3 posOffset = Vector3.zero;
     private Vector3 tempPos = Vector3.zero;
 
+    private int value = 1;
+
     [SerializeField]
     [Range(0.0f, 0.5f)]
     private float amplitude = 0.1f;
@@ -57,9 +59,11 @@ public class CollectibleController : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            Destroy(gameObject);
             audioSrc.PlayOneShot(pickupSoundEffect);
-            PlayerStats.collectiblesPickedUp++;
+            PlayerStats.collectiblesPickedUp += value;
+            value = 0;
+            Destroy(gameObject);
+            
         }
     }
 }
