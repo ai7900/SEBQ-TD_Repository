@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -10666,31 +10666,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5031228843072304913, guid: 258f1001fcadf68439e23532b0ef6d11,
-        type: 3}
-      propertyPath: curve.m_Curve.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5031228843072304913, guid: 258f1001fcadf68439e23532b0ef6d11,
-        type: 3}
-      propertyPath: curve.m_Curve.Array.data[1].time
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5031228843072304913, guid: 258f1001fcadf68439e23532b0ef6d11,
-        type: 3}
-      propertyPath: curve.m_Curve.Array.data[1].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5031228843072304913, guid: 258f1001fcadf68439e23532b0ef6d11,
-        type: 3}
-      propertyPath: curve.m_Curve.Array.data[1].inSlope
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5031228843072304913, guid: 258f1001fcadf68439e23532b0ef6d11,
-        type: 3}
-      propertyPath: curve.m_Curve.Array.data[1].outSlope
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 8978604829543582789, guid: 258f1001fcadf68439e23532b0ef6d11,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10745,6 +10720,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5031228843072304913, guid: 258f1001fcadf68439e23532b0ef6d11,
+        type: 3}
+      propertyPath: curve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5031228843072304913, guid: 258f1001fcadf68439e23532b0ef6d11,
+        type: 3}
+      propertyPath: curve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5031228843072304913, guid: 258f1001fcadf68439e23532b0ef6d11,
+        type: 3}
+      propertyPath: curve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5031228843072304913, guid: 258f1001fcadf68439e23532b0ef6d11,
+        type: 3}
+      propertyPath: curve.m_Curve.Array.data[1].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5031228843072304913, guid: 258f1001fcadf68439e23532b0ef6d11,
+        type: 3}
+      propertyPath: curve.m_Curve.Array.data[1].outSlope
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8978604829225854018, guid: 258f1001fcadf68439e23532b0ef6d11,
         type: 3}
@@ -55143,16 +55143,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
-    - target: {fileID: 3964186290721014139, guid: 94353d1cf46b8454991fadc5ff254bad,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: e3717a9b0e828dd4da2523bdcdc52c0d, type: 2}
-    - target: {fileID: 3964186290721014139, guid: 94353d1cf46b8454991fadc5ff254bad,
-        type: 3}
-      propertyPath: m_SelectedEditorRenderState
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3964186290721014138, guid: 94353d1cf46b8454991fadc5ff254bad,
         type: 3}
       propertyPath: m_Mesh
@@ -55183,6 +55173,16 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1038623493}
+    - target: {fileID: 3964186290721014139, guid: 94353d1cf46b8454991fadc5ff254bad,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e3717a9b0e828dd4da2523bdcdc52c0d, type: 2}
+    - target: {fileID: 3964186290721014139, guid: 94353d1cf46b8454991fadc5ff254bad,
+        type: 3}
+      propertyPath: m_SelectedEditorRenderState
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94353d1cf46b8454991fadc5ff254bad, type: 3}
 --- !u!1001 &1280132405
@@ -65889,6 +65889,7 @@ MonoBehaviour:
   - LevelTutorial
   - IceLevel
   - IceLevel2
+  - IceLevel3
 --- !u!4 &1556782157
 Transform:
   m_ObjectHideFlags: 0
@@ -67617,8 +67618,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   idleSpark: {fileID: 1890339208}
-  ChargeSpark: {fileID: 1002715065}
-  ChargeSparkPos: {fileID: 2048688518}
+  chargeSpark: {fileID: 0}
+  chargeSparkPos: {fileID: 0}
+  ballMode: {fileID: 0}
 --- !u!4 &1888784983 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7036238257541006979, guid: fc1eaddc9b37e8640a243951b9a3b36f,
@@ -83772,8 +83774,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   idleSpark: {fileID: 4082881957200420361}
-  ChargeSpark: {fileID: 8345971220515570196}
-  ChargeSparkPos: {fileID: 8345971220208189867}
+  chargeSpark: {fileID: 0}
+  chargeSparkPos: {fileID: 0}
+  ballMode: {fileID: 0}
 --- !u!198 &972385522749836625
 ParticleSystem:
   m_ObjectHideFlags: 0
