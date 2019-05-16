@@ -42,7 +42,7 @@ public class CameraFollow2 : MonoBehaviour
         mouseX = Input.GetAxis("Mouse X");
         mouseY = Input.GetAxis("Mouse Y");
         finalInputX = (inputX + mouseX) * inputSensitivity;
-        finalInputZ = (inputZ + mouseY) * inputSensitivity;
+        finalInputZ = -(inputZ + mouseY) * inputSensitivity;
         rotY += finalInputX * Time.deltaTime;
         rotX += finalInputZ * Time.deltaTime;
         rotX = Mathf.Clamp(rotX, -clampAngle, clampAngle);

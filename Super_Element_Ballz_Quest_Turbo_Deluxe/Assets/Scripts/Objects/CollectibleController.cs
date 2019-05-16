@@ -7,9 +7,14 @@ public class CollectibleController : MonoBehaviour
     private float rotationX = 5;
     private float rotationY = 50;
     private float rotationZ = 2.5f;
+    [SerializeField]
+    private AudioClip pickupSoundEffect;
+    private static AudioSource audioSrc;
 
     private Vector3 posOffset = Vector3.zero;
     private Vector3 tempPos = Vector3.zero;
+
+    private int value = 1;
 
     [SerializeField]
     [Range(0.0f, 0.5f)]
@@ -20,6 +25,7 @@ public class CollectibleController : MonoBehaviour
 
     private void Start()
     {
+        audioSrc = GetComponent<AudioSource>();
         posOffset = transform.position;
         transform.eulerAngles = new Vector3(transform.eulerAngles.x, Random.value * 360, transform.eulerAngles.z);
     }
@@ -27,6 +33,7 @@ public class CollectibleController : MonoBehaviour
     //Roterar och flyttar collectiblen upp och ned
     private void Update()
     {
+        audioSrc = GetComponent<AudioSource>();
         transform.Rotate(new Vector3(0, rotationY, 0) * Time.deltaTime, Space.World);
         transform.Rotate(new Vector3(rotationX, 0, rotationZ) * Time.deltaTime, Space.Self);
 
@@ -52,8 +59,11 @@ public class CollectibleController : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            PlayerStats.collectiblesPickedUp++;
+            audioSrc.PlayOneShot(pickupSoundEffect);
+            PlayerStats.collectiblesPickedUp += value;
+            value = 0;
             Destroy(gameObject);
+            
         }
     }
 }
