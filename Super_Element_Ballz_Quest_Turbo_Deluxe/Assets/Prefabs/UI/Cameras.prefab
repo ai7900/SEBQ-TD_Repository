@@ -242,7 +242,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8731996061782756105}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!114 &8731996061782756214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,22 +285,22 @@ PrefabInstance:
     - target: {fileID: 2364976634715827805, guid: 109188d8ac43e4e4e93e52011ce0f325,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: -0.08715578
       objectReference: {fileID: 0}
     - target: {fileID: 2364976634715827805, guid: 109188d8ac43e4e4e93e52011ce0f325,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2364976634715827805, guid: 109188d8ac43e4e4e93e52011ce0f325,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2364976634715827805, guid: 109188d8ac43e4e4e93e52011ce0f325,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9961947
       objectReference: {fileID: 0}
     - target: {fileID: 2364976634715827805, guid: 109188d8ac43e4e4e93e52011ce0f325,
         type: 3}
@@ -310,7 +310,7 @@ PrefabInstance:
     - target: {fileID: 2364976634715827805, guid: 109188d8ac43e4e4e93e52011ce0f325,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 2364976634715827805, guid: 109188d8ac43e4e4e93e52011ce0f325,
         type: 3}
