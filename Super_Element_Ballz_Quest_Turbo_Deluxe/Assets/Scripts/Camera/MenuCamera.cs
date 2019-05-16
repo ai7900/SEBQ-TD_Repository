@@ -8,31 +8,33 @@ using UnityEngine;
 public class MenuCamera : MonoBehaviour
 {
     public enum MenuState {Play = 0, Continue, LevelSelect, Options, Quit};
-    public MenuState CurrentMenuState { get; private set; }
-    public bool MainMenu() { return isMainMenu; }
+    public MenuState CurrentMenuState { get; private set; } 
+    public bool IsBranchView { get { return branchView; } }                         // Is used in MenuHandler
+    public int branchInceptionLevel;                                                // The level of depth the user is in menus
 
-    public int selectedBranchView;
+    public int selectedBranchView;                                                  // Similar to an Enum when selection options from branchViews
 
     [SerializeField]
     [Range(0.01f, 10f)]
-    private float transitionSpeed;
-    private Transform currentViewTransform;
-    private Vector3 currentAngle;
+    private float transitionSpeed;                                                  // The lerp-speed of the camera
+    private Transform currentViewTransform;                                         // The cameras current transform
+    private Vector3 currentAngle;                                                   // The cameras current angle
 
     [Header("Checkpoints for camera")]
-    public Transform[] mainViews;
-    public Transform[] levelSelectViews;
-    public Transform[] optionSelectViews;
-    public Transform[] quitGameViews;
+    public Transform[] mainViews;                                                   // The main menu's views
+    public Transform[] levelSelectViews;                                            // The level-select's views
+    public Transform[] optionSelectViews;                                           // The options-menu's views
+    public Transform[] quitGameViews;                                               // The quitGame's views
 
-    private Transform[] branchMenuViews;
+    private Transform[] branchMenuViews;                                            // A placeholder for branchMenu views used to copy the branch views
 
-    private bool isMainMenu;
+    private bool branchView;
 
-    // Start is called before the first frame update
     private void Start()
     {
-        isMainMenu = true;
+        branchView = false;
+        branchInceptionLevel = 0;
+
         currentViewTransform = mainViews[(int)MenuState.Play];
     }
 
@@ -40,28 +42,31 @@ public class MenuCamera : MonoBehaviour
     {
 
         // Every menu except the play menu has more views for the camera
-        if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && CurrentMenuState != (int)MenuState.Play)
+        if (Input.GetKeyDown(KeyCode.Return) && CurrentMenuState != MenuState.Play && CurrentMenuState != MenuState.Quit)
         {
-            isMainMenu = false;
-            selectedBranchView = 0;
+            branchView = true;
+            if(branchInceptionLevel == 0)
+            {
+                selectedBranchView = 0;
+            }
+            branchInceptionLevel++;
 
             switch (CurrentMenuState)
             {
                 case MenuState.Options:
                     branchMenuViews = optionSelectViews;
+                    branchInceptionLevel = InceptionLevelCap(branchInceptionLevel, 2);
                     break;
 
                 case MenuState.LevelSelect:
                     branchMenuViews = levelSelectViews;
-                    break;
+                    branchInceptionLevel = InceptionLevelCap(branchInceptionLevel, 2);
 
-                case MenuState.Quit:
-                    branchMenuViews = quitGameViews;
                     break;
             }
         }
 
-        if (isMainMenu)
+        if (!branchView)
         {
             MainMenuControll();
         }
@@ -78,7 +83,7 @@ public class MenuCamera : MonoBehaviour
     /// </summary>
     private void LateUpdate()
     {
-        if (isMainMenu)
+        if (!branchView)
         {
             currentViewTransform = mainViews[(int)CurrentMenuState];
         }
@@ -112,9 +117,10 @@ public class MenuCamera : MonoBehaviour
                 selectedBranchView--;
             }
         }
-        else if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
+        else if (Input.GetKeyDown(KeyCode.Backspace))
         {
-            isMainMenu = true;
+            branchView = false;
+            branchInceptionLevel = 0;
         }
     }
 
@@ -169,5 +175,21 @@ public class MenuCamera : MonoBehaviour
     private void OnGUI()
     {
         GUI.Label(new Rect(20, Screen.height - 30, 200, 200), "Current state = " + CurrentMenuState.ToString());
+    }
+
+    /// <summary>
+    /// Caps the inceptionLevel
+    /// </summary>
+    /// <param name="currentInceptionLevel">The current inceptionLevel</param>
+    /// <param name="cap">The cap of inceptionLevel</param>
+    /// <returns></returns>
+    private int InceptionLevelCap(int currentInceptionLevel, int cap)
+    {
+        if(currentInceptionLevel >= cap)
+        {
+            currentInceptionLevel = cap;
+        }
+
+        return currentInceptionLevel;
     }
 }
