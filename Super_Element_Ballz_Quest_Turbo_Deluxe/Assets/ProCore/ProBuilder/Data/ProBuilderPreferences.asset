@@ -17,6 +17,8 @@ MonoBehaviour:
   - pb_SmoothingGroupEditor::m_DrawNormals
   - pb_SmoothingGroupEditor::m_ShowPreview
   - pbIconGUI
+  - pbGenerateUV2PerObject
+  - pbUVMaterialPreview
   m_Int_keys:
   - pbDefaultEditLevel
   - pbDefaultSelectionMode
@@ -27,17 +29,19 @@ MonoBehaviour:
   - pbEditorScroll.x
   - pbEditorScroll.y
   - pb_SmoothingGroupEditor::m_NormalsSize
+  - pbUVWeldDistance
   m_String_keys:
   - pbCurrentMaterialPalette
   m_Color_keys: []
   m_Material_keys: []
-  m_Bool_values: 00010100
-  m_Int_values: 00000000000000000000000000000000
+  m_Bool_values: 000101000001
+  m_Int_values: 01000000020000000000000000000000
   m_Float_values:
   - 0.522
   - 0
   - 0
-  - 0.07828261
+  - 0.0891413
+  - 0.001
   m_String_values:
   - Assets/ProCore/ProBuilder/Data/Default Material Palette.asset
   m_Color_values: []
