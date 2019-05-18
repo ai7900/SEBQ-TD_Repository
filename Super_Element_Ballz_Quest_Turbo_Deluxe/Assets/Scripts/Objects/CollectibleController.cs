@@ -54,11 +54,11 @@ public class CollectibleController : MonoBehaviour
     {
         if(other.tag == "Player")
         {
+            FindObjectOfType<PlayerStats>().ShowCollectibles();
             FindObjectOfType<AudioManager>().Play("CoinCollect");
             PlayerStats.collectiblesPickedUp += value;
             value = 0;
             Destroy(gameObject);
-            
         }
     }
 }

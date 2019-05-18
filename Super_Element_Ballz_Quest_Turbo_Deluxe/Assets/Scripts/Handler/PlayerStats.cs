@@ -26,17 +26,29 @@ public class PlayerStats : MonoBehaviour
     private Text deathCounterText;
     [SerializeField]
     private Text timerText;
+
     [SerializeField]
     private Text collectibleText;
     [SerializeField]
     private int startingLightCount;
     [SerializeField]
     private int startingHeavyCount;
+    [SerializeField]
+    public GameObject moveCollectibles;
+    [SerializeField]
+    private Transform showCollectiblePos;
+    private Vector3 originalCollectionPos;
+    private float collectibleTimer;
+    private float collectibleStartTimer;
+    private bool showCollectibles;
 
     private void Start()
     {
         lightFormCount = startingLightCount;
         heavyFormCount = startingHeavyCount;
+        collectibleStartTimer = 4.0f;
+        showCollectibles = false;
+        originalCollectionPos = moveCollectibles.transform.position;
     }
 
     private void Update()
@@ -46,14 +58,33 @@ public class PlayerStats : MonoBehaviour
         timeSpent = Time.time;
         minutes = ((int)timeSpent / 60).ToString();
         seconds = (timeSpent % 60).ToString("f0");
-
         timerText.text = minutes+ ":" + seconds;
-    }
 
+        if(timeSpent < collectibleTimer)
+        {
+            showCollectibles = true;
+        }
+        else
+        {
+            showCollectibles = false;
+        }
+
+        if(showCollectibles)
+        {
+            moveCollectibles.transform.position = Vector3.MoveTowards(showCollectiblePos.position, originalCollectionPos,0.1f * Time.deltaTime);
+        }
+        else if(!showCollectibles)
+        {
+            moveCollectibles.transform.position = Vector3.MoveTowards(originalCollectionPos, showCollectiblePos.position, 0.1f * Time.deltaTime);
+        }
+        
+    }
+    public void ShowCollectibles()
+    {
+        collectibleTimer = Time.time + collectibleStartTimer;
+    }
     private void OnGUI()
     {
-        GUI.Label(new Rect(20, 20, 400, 400), "Collectibles picked up " + collectiblesPickedUp);
-        GUI.Label(new Rect(20, 40, 100, 100), "Death count: " + deathCount);
         GUI.Label(new Rect(20, 60, 500, 500), "Light: " + lightFormCount + " Heavy: " + heavyFormCount);
     }
 }
