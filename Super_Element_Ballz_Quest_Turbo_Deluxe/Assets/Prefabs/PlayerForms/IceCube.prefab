@@ -19193,7 +19193,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &1338366357196703702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19217,6 +19217,8 @@ MonoBehaviour:
   iceCubePrefab: {fileID: 6346841100233949423}
   fireChargeTime: 5
   fireDuration: 10
+  iceChargeTime: 5
+  iceDuration: 15
   iceInitialSpeedBoost: 70
 --- !u!114 &2712737082420341142
 MonoBehaviour:
