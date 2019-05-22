@@ -22,6 +22,7 @@ public class GameMaster : MonoBehaviour
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        FindObjectOfType<AudioManager>().Play("WinterTheme");
     }
 
     // Update is called once per frame

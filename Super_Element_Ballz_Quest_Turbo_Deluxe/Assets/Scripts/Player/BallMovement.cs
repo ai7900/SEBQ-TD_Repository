@@ -53,7 +53,7 @@ public class BallMovement : MonoBehaviour
         {
             audioSrc.PlayOneShot(movementSoundEffect);
         }
-        audioSrc.volume = rb.velocity.magnitude/50;
+        audioSrc.volume = rb.velocity.magnitude/20;
 
         if(CanAccelerate())
         {

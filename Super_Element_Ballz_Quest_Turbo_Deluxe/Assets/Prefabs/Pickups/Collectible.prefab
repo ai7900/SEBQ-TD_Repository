@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 785236197151866316}
   - component: {fileID: 785236197151866304}
   - component: {fileID: 296386661}
+  - component: {fileID: 1647576270}
   m_Layer: 0
   m_Name: Collectible
   m_TagString: Collectible
@@ -105,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86ca88a9652583b4282e843ea3d7d06e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupSoundEffect: {fileID: 8300000, guid: dbf802552e17ac84ba7b57c0514282b2, type: 3}
+  pickupSoundEffect: {fileID: 8300000, guid: 6e6752e700f456942a6f2cc04aad2ab0, type: 3}
   amplitude: 0.25
   frequency: 0.25
 --- !u!82 &296386661
@@ -119,7 +120,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -204,3 +205,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!54 &1647576270
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785236197233531642}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
