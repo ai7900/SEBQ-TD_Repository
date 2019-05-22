@@ -13,7 +13,13 @@ public class BallModeController : MonoBehaviour
     public GameObject fireBallPrefab;
     public GameObject iceCubePrefab;
 
+    public ParticleSystem heavyBallEffect;
+    public ParticleSystem lightBallEffect;
+    public ParticleSystem fireballEffect;
+    public ParticleSystem normalBallEffect;
+
     private GameObject newObject;
+    private ParticleSystem newParticle;
 
     public bool IceReady { get; set; } = false;
     public bool ChargingFire { get; set; } = false;
@@ -29,6 +35,7 @@ public class BallModeController : MonoBehaviour
     public int iceDuration = 15; //Preliminärt värde
 
     private Quaternion iceCubeRotation = Quaternion.Euler(0,0,0);
+    private Quaternion particleRotation = Quaternion.Euler(0, 0, 0);
 
     [SerializeField]
     private int iceInitialSpeedBoost = 70;
@@ -39,6 +46,7 @@ public class BallModeController : MonoBehaviour
         {
             if(PlayerStats.currentMode != (int)BallMode.Normal)
             {
+                newParticle = Instantiate(normalBallEffect, gameObject.transform.position, particleRotation);
                 TurnIntoNormalBall();
             }
         }
@@ -47,6 +55,7 @@ public class BallModeController : MonoBehaviour
         {
             if(PlayerStats.heavyFormCount > 0 && PlayerStats.currentMode != (int)BallMode.Heavy)
             {
+                newParticle = Instantiate(heavyBallEffect, gameObject.transform.position, particleRotation);
                 TurnIntoHeavyBall();
             }
         }
@@ -55,11 +64,12 @@ public class BallModeController : MonoBehaviour
         {
             if(PlayerStats.lightFormCount > 0)
             {
+                newParticle = Instantiate(lightBallEffect, gameObject.transform.position, particleRotation);
                 TurnIntoLightBall();
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Keypad4))
+        if (Input.GetKeyDown(KeyCode.Keypad4))  //Kall boll
         {
             if(PlayerStats.currentMode != (int)BallMode.Ice && IceReady)
             {
@@ -70,7 +80,18 @@ public class BallModeController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Keypad5))//DEBUG ONLY
         {
+            newParticle = Instantiate(fireballEffect, gameObject.transform.position, particleRotation);
             TurnIntoFireball();
+        }
+
+    }
+
+    private void LateUpdate()
+    {
+        if (newParticle != null)
+        {
+            newParticle.transform.position = gameObject.transform.position;
+            DestroyParticle(newParticle);
         }
     }
 
@@ -78,6 +99,7 @@ public class BallModeController : MonoBehaviour
     {
         newObject = Instantiate(normalBallPrefab, gameObject.transform.position, gameObject.transform.rotation);
         newObject.GetComponent<Rigidbody>().velocity = gameObject.GetComponent<Rigidbody>().velocity;
+
         PlayerStats.currentMode = (int) BallMode.Normal;
         Destroy(gameObject);
     }
@@ -86,6 +108,7 @@ public class BallModeController : MonoBehaviour
     {
         newObject = Instantiate(heavyBallPrefab, gameObject.transform.position, gameObject.transform.rotation);
         newObject.GetComponent<Rigidbody>().velocity = gameObject.GetComponent<Rigidbody>().velocity;
+
         PlayerStats.currentMode = (int)BallMode.Heavy;
         PlayerStats.heavyFormCount--;
         Destroy(gameObject);
@@ -95,6 +118,7 @@ public class BallModeController : MonoBehaviour
     {
         newObject = Instantiate(lightBallPrefab, gameObject.transform.position, gameObject.transform.rotation);
         newObject.GetComponent<Rigidbody>().velocity = gameObject.GetComponent<Rigidbody>().velocity;
+
         PlayerStats.currentMode = (int)BallMode.Light;
         PlayerStats.lightFormCount--;
         Destroy(gameObject);
@@ -106,6 +130,7 @@ public class BallModeController : MonoBehaviour
         {
             newObject = Instantiate(fireBallPrefab, gameObject.transform.position, gameObject.transform.rotation);
             newObject.GetComponent<Rigidbody>().velocity = gameObject.GetComponent<Rigidbody>().velocity;
+
             newObject.GetComponent<BallModeController>().ChargingFire = ChargingFire;
             PlayerStats.currentMode = (int)BallMode.Fire;
             Destroy(gameObject);
@@ -117,7 +142,19 @@ public class BallModeController : MonoBehaviour
         newObject = Instantiate(iceCubePrefab, gameObject.transform.position, iceCubeRotation);
         Rigidbody rb = newObject.GetComponent<Rigidbody>();
         rb.velocity = gameObject.GetComponent<Rigidbody>().velocity;
+
         PlayerStats.currentMode = (int)BallMode.Ice;
         Destroy(gameObject);
     }
+
+    private void DestroyParticle(ParticleSystem particle)
+    {
+
+        if (!particle.IsAlive())
+        {
+            Destroy(gameObject);
+        }
+
+    }
+
 }

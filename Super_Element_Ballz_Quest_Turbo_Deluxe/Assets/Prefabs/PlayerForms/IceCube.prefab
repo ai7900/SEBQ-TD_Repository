@@ -19218,6 +19218,14 @@ MonoBehaviour:
   fireBallPrefab: {fileID: 3325169681584383846, guid: c9342562e09f403438bde28b8d5b80ad,
     type: 3}
   iceCubePrefab: {fileID: 6346841100233949423}
+  heavyBallEffect: {fileID: 2949778795375628706, guid: f893e1b3381d2074d8b2ee36d876390f,
+    type: 3}
+  lightBallEffect: {fileID: 4257332793967691812, guid: 6612903766f28e547aea06c8b7d6875d,
+    type: 3}
+  fireballEffect: {fileID: 2814638356128585910, guid: 33f4571b3fd31d340b0783e47c16b1bd,
+    type: 3}
+  normalBallEffect: {fileID: 2949778795375628706, guid: f893e1b3381d2074d8b2ee36d876390f,
+    type: 3}
   fireChargeTime: 5
   fireDuration: 10
   iceChargeTime: 5

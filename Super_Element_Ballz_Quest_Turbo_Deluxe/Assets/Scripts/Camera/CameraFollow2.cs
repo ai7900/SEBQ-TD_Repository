@@ -35,7 +35,15 @@ public class CameraFollow2 : MonoBehaviour
 
     void Update()
     {
-        cameraFollowObject = GameObject.FindGameObjectWithTag("Player");
+        //Added a try and catch
+        try
+        {
+            cameraFollowObject = GameObject.FindGameObjectWithTag("Player");
+        }
+        catch (MissingReferenceException e)
+        {
+
+        }
 
         float inputX = Input.GetAxis("RightStickHorizontal");
         float inputZ = Input.GetAxis("RightStickVertical");
@@ -56,8 +64,17 @@ public class CameraFollow2 : MonoBehaviour
     }
     void CameraUpdater()
     {
-        Transform target = cameraFollowObject.transform;
-        float step = cameraMoveSpeed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+        //Added try catch
+        try
+        {
+            Transform target = cameraFollowObject.transform;
+            float step = cameraMoveSpeed * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+        }
+        catch (MissingReferenceException e)
+        {
+
+        }
+
     }
 }

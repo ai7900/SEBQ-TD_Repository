@@ -67581,7 +67581,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1881619362}
-  - component: {fileID: 1881619363}
   m_Layer: 0
   m_Name: Sparks
   m_TagString: Untagged
@@ -67605,22 +67604,6 @@ Transform:
   m_Father: {fileID: 2082556034}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1881619363
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1881619361}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea1519f603d2bc941909a719bfeb0a0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  idleSpark: {fileID: 1890339208}
-  chargeSpark: {fileID: 0}
-  chargeSparkPos: {fileID: 0}
-  ballMode: {fileID: 0}
 --- !u!4 &1888784983 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7036238257541006979, guid: fc1eaddc9b37e8640a243951b9a3b36f,
@@ -83761,22 +83744,6 @@ Transform:
   m_Father: {fileID: 3679717063359755206}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!114 &965714603114920600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3297388309877916438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea1519f603d2bc941909a719bfeb0a0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  idleSpark: {fileID: 4082881957200420361}
-  chargeSpark: {fileID: 0}
-  chargeSparkPos: {fileID: 0}
-  ballMode: {fileID: 0}
 --- !u!198 &972385522749836625
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -93323,7 +93290,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 405022709798707329}
-  - component: {fileID: 965714603114920600}
   m_Layer: 0
   m_Name: Sparks
   m_TagString: Untagged
