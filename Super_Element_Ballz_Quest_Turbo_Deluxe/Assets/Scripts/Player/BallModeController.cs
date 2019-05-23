@@ -28,19 +28,27 @@ public class BallModeController : MonoBehaviour
     public bool ChargingIce { get; set; } = false;
 
     [HideInInspector]
-    public int fireChargeTime = 5; //Preliminärt värde
+    public int fireChargeTime;
     [HideInInspector]
-    public int fireDuration = 10; //Preliminärt värde
+    public int fireDuration;
     [HideInInspector]
-    public int iceChargeTime = 5; //Preliminärt värde
+    public int iceChargeTime;
     [HideInInspector]
-    public int iceDuration = 15; //Preliminärt värde
+    public int iceDuration;
 
     private Quaternion iceCubeRotation = Quaternion.Euler(0,0,0);
     private Quaternion particleRotation = Quaternion.Euler(0, 0, 0);
 
     [SerializeField]
     private int iceInitialSpeedBoost = 70;
+
+    private void Start()
+    {
+        fireChargeTime = 5; //Preliminärt värde
+        fireDuration = 10; //Preliminärt värde
+        iceChargeTime = 5; //Preliminärt värde
+        iceDuration = 15; //Preliminärt värde
+}
 
     private void Update()
     {

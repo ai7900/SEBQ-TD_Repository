@@ -36,7 +36,6 @@ public class CameraFollow2 : MonoBehaviour
 
     void Update()
     {
-        //Added a try and catch
         try
         {
             cameraFollowObject = GameObject.FindGameObjectWithTag("Player");
@@ -53,7 +52,7 @@ public class CameraFollow2 : MonoBehaviour
         finalInputX = (inputX + mouseX) * inputSensitivity;
         finalInputZ = -(inputZ + mouseY) * inputSensitivity;
         rotY += finalInputX * Time.deltaTime;
-        rotX += finalInputZ * Time.deltaTime;
+        rotX -= finalInputZ * Time.deltaTime;
         rotX = Mathf.Clamp(rotX, -clampAngle, clampAngle);
         Quaternion localRotation = Quaternion.Euler(rotX, rotY, 0.0f);
         transform.rotation = localRotation;

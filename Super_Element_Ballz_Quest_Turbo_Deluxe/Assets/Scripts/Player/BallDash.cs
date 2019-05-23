@@ -10,7 +10,7 @@ public class BallDash : MonoBehaviour
     [HideInInspector]
     public float dashTime = 8f;
     [HideInInspector]
-    public float dashCooldown = 30f;
+    public float dashCooldown = 10f;
 
     public BallMovement ballMovement;
 
