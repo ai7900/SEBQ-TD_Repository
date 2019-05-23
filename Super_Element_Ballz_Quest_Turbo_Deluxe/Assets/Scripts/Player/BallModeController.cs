@@ -21,6 +21,8 @@ public class BallModeController : MonoBehaviour
     private GameObject newObject;
     private ParticleSystem newParticle;
 
+    private int secondsParticleDestory = 3;
+
     public bool IceReady { get; set; } = false;
     public bool ChargingFire { get; set; } = false;
     public bool ChargingIce { get; set; } = false;
@@ -47,6 +49,7 @@ public class BallModeController : MonoBehaviour
             if(PlayerStats.currentMode != (int)BallMode.Normal)
             {
                 newParticle = Instantiate(normalBallEffect, gameObject.transform.position, particleRotation);
+                Destroy(newParticle, 5);
                 TurnIntoNormalBall();
             }
         }
@@ -56,6 +59,7 @@ public class BallModeController : MonoBehaviour
             if(PlayerStats.heavyFormCount > 0 && PlayerStats.currentMode != (int)BallMode.Heavy)
             {
                 newParticle = Instantiate(heavyBallEffect, gameObject.transform.position, particleRotation);
+                Destroy(newParticle, 5);
                 TurnIntoHeavyBall();
             }
         }
@@ -65,6 +69,7 @@ public class BallModeController : MonoBehaviour
             if(PlayerStats.lightFormCount > 0)
             {
                 newParticle = Instantiate(lightBallEffect, gameObject.transform.position, particleRotation);
+                Destroy(newParticle, 5);
                 TurnIntoLightBall();
             }
         }
@@ -81,18 +86,15 @@ public class BallModeController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Keypad5))//DEBUG ONLY
         {
             newParticle = Instantiate(fireballEffect, gameObject.transform.position, particleRotation);
+            Destroy(newParticle, 5);
             TurnIntoFireball();
         }
 
-    }
-
-    private void LateUpdate()
-    {
         if (newParticle != null)
         {
-            newParticle.transform.position = gameObject.transform.position;
-            DestroyParticle(newParticle);
+            newParticle.transform.SetParent(newObject.transform);
         }
+
     }
 
     public void TurnIntoNormalBall()
@@ -145,16 +147,6 @@ public class BallModeController : MonoBehaviour
 
         PlayerStats.currentMode = (int)BallMode.Ice;
         Destroy(gameObject);
-    }
-
-    private void DestroyParticle(ParticleSystem particle)
-    {
-
-        if (!particle.IsAlive())
-        {
-            Destroy(gameObject);
-        }
-
     }
 
 }
