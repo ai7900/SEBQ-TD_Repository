@@ -8,9 +8,9 @@ public class BallDash : MonoBehaviour
     public bool isDashing;
 
     [HideInInspector]
-    public float dashTime = 8f;
+    public float dashTime;
     [HideInInspector]
-    public float dashCooldown = 10f;
+    public float dashCooldown;
 
     public BallMovement ballMovement;
 
@@ -25,6 +25,8 @@ public class BallDash : MonoBehaviour
         baseForceFactor = ballMovement.groundForceFactor;
         dashForceFactor = baseForceFactor + dashForceAddition;
         ballMovement = gameObject.GetComponent<BallMovement>();
+        dashTime = 8f;
+        dashCooldown = 10f;
     }
 
     // Update is called once per frame
