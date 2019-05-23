@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,7 +12,14 @@ public class Goal : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            gameMaster.LevelCompleted();
+            try
+            {
+                gameMaster.LevelCompleted();
+            }
+            catch(Exception e)
+            {
+                Debug.Log(e.Message);
+            }
         }
     }
 }
