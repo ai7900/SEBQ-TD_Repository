@@ -13335,6 +13335,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2085738841, guid: 9e34cd2c5ee43644695bccf7c57c81d4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 86037116}
+    - target: {fileID: 2085738841, guid: 9e34cd2c5ee43644695bccf7c57c81d4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitToMain
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e34cd2c5ee43644695bccf7c57c81d4, type: 3}
 --- !u!1 &278433645 stripped
@@ -38441,16 +38449,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8146714888473191887, guid: c310563b5d55f104aafa10fcfeb91d6b,
-        type: 3}
-      propertyPath: m_IsKinematic
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7432553298903495980, guid: c310563b5d55f104aafa10fcfeb91d6b,
-        type: 3}
-      propertyPath: objectStrength
-      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c310563b5d55f104aafa10fcfeb91d6b, type: 3}
