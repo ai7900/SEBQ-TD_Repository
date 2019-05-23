@@ -108,9 +108,4 @@ public class PlayerBarHandler : MonoBehaviour
             }
         }
     }
-
-    private void OnGUI()
-    {
-        GUI.Label(new Rect(20, 60, 300, 300), "Fill amount = " + firebar.fillAmount);
-    }
 }

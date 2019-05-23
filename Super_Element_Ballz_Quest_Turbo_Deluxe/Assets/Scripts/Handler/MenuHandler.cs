@@ -45,6 +45,8 @@ public class MenuHandler : MonoBehaviour
         initResolutionWidth = Screen.currentResolution.width;
         initResolutionHeight = Screen.currentResolution.height;
 
+        FindObjectOfType<AudioManager>().Play("WinterTheme");
+
     }
 
     // Update is called once per frame
