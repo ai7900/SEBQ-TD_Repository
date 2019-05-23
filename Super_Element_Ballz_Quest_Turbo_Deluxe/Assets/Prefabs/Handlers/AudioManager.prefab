@@ -47,5 +47,10 @@ MonoBehaviour:
   - name: CoinCollect
     clip: {fileID: 8300000, guid: 6e6752e700f456942a6f2cc04aad2ab0, type: 3}
     volume: 1
-    pitch: 1.03
+    pitch: 1
+    source: {fileID: 0}
+  - name: WinterTheme
+    clip: {fileID: 8300000, guid: fe066c8fe7a1d6c4cb0c92d6e81d03b5, type: 3}
+    volume: 0.3
+    pitch: 1
     source: {fileID: 0}

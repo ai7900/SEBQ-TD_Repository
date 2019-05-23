@@ -97,8 +97,4 @@ public class PlayerStats : MonoBehaviour
     {
         collectibleTimer = Time.time + collectibleStartTimer;
     }
-    private void OnGUI()
-    {
-        GUI.Label(new Rect(20, 60, 500, 500), "Light: " + lightFormCount + " Heavy: " + heavyFormCount);
-    }
 }

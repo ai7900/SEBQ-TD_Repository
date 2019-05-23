@@ -5,16 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class GameMaster : MonoBehaviour
 {
-    [Header("Mouse settings")]
-    public bool showMouseCursor = false;
-
-    public bool lockMouseCursor = false;
-
     [SerializeField]
     private SceneFader sceneFader;
 
     [SerializeField]
     private string nextLevel;
+
+    private string menuScene = "MainMenu_2.0";
 
     private GameObject player;
 
@@ -24,19 +21,7 @@ public class GameMaster : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         FindObjectOfType<AudioManager>().Play("WinterTheme");
     }
-    //public void ShowCursor()
-    //{
-    //    if(!showMouseCursor)
-    //    {
-    //        lockMouseCursor = false;
-    //        showMouseCursor = true;
-    //    }
-    //    if (showMouseCursor)
-    //    {
-    //        lockMouseCursor = true;
-    //        showMouseCursor = false;
-    //    }
-    //}
+
     // Update is called once per frame
     private void Update()
     {
@@ -46,10 +31,9 @@ public class GameMaster : MonoBehaviour
         }
         //MouseSettings();
 
-        if(Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R))
         {
-            PlayerStats.deathCount++;
-            sceneFader.FadeTo(SceneManager.GetActiveScene().name);
+            RestartLevel();
         }
     }
 
@@ -57,21 +41,18 @@ public class GameMaster : MonoBehaviour
     public void LevelCompleted()
     {
         player.SetActive(false);
-        SceneManager.LoadScene(nextLevel);
-        //sceneFader.FadeTo(nextLevel);
+        sceneFader.FadeTo(nextLevel);
     }
 
-    //private void MouseSettings()
-    //{
-    //    Cursor.visible = showMouseCursor;
+    //Metod som startar om den nuvarande nivån och lägger till ett dödsfall för spelaren
+    public void RestartLevel()
+    {
+        PlayerStats.deathCount++;
+        sceneFader.FadeTo(SceneManager.GetActiveScene().name);
+    }
 
-    //    if (lockMouseCursor == true)
-    //    {
-    //        Cursor.lockState = CursorLockMode.Locked;
-    //    }
-    //    else
-    //    {
-    //        Cursor.lockState = CursorLockMode.None;
-    //    }
-    //}
+    public void QuitToMain()
+    {
+        sceneFader.FadeTo(menuScene);
+    }
 }
