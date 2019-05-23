@@ -36,7 +36,15 @@ public class CameraFollow2 : MonoBehaviour
 
     void Update()
     {
-        cameraFollowObject = GameObject.FindGameObjectWithTag("Player");
+        //Added a try and catch
+        try
+        {
+            cameraFollowObject = GameObject.FindGameObjectWithTag("Player");
+        }
+        catch (MissingReferenceException e)
+        {
+
+        }
 
         float inputX = Input.GetAxis("RightStickHorizontal");
         float inputZ = Input.GetAxis("RightStickVertical");
