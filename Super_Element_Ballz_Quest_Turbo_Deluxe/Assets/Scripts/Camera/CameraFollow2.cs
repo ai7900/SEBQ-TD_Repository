@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -56,8 +57,15 @@ public class CameraFollow2 : MonoBehaviour
     }
     void CameraUpdater()
     {
-        Transform target = cameraFollowObject.transform;
-        float step = cameraMoveSpeed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+        try
+        {
+            Transform target = cameraFollowObject.transform;
+            float step = cameraMoveSpeed * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+        }
+        catch(Exception e)
+        {
+            Debug.Log(e.Message);
+        }
     }
 }

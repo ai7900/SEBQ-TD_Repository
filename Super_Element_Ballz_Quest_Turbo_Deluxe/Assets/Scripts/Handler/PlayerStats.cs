@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -69,14 +70,22 @@ public class PlayerStats : MonoBehaviour
             showCollectibles = false;
         }
 
-        if(showCollectibles)
+        try
         {
-            moveCollectibles.transform.position = Vector3.MoveTowards(showCollectiblePos.position, originalCollectionPos,0.1f * Time.deltaTime);
+            if (showCollectibles)
+            {
+                moveCollectibles.transform.position = Vector3.MoveTowards(showCollectiblePos.position, originalCollectionPos, 0.1f * Time.deltaTime);
+            }
+            else if (!showCollectibles)
+            {
+                moveCollectibles.transform.position = Vector3.MoveTowards(originalCollectionPos, showCollectiblePos.position, 0.1f * Time.deltaTime);
+            }
         }
-        else if(!showCollectibles)
+        catch (Exception e)
         {
-            moveCollectibles.transform.position = Vector3.MoveTowards(originalCollectionPos, showCollectiblePos.position, 0.1f * Time.deltaTime);
+            Debug.Log(e.Message);
         }
+        
         
     }
     public void ShowCollectibles()
