@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3035721408753434076}
   m_Layer: 0
   m_Name: Hexagon (14)
-  m_TagString: Untagged
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 3035721409992606658}
   m_Layer: 0
   m_Name: Hexagon (15)
-  m_TagString: Untagged
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
