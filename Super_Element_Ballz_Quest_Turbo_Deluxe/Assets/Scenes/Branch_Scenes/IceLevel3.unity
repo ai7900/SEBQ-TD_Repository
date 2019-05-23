@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -20093,6 +20093,11 @@ PrefabInstance:
         type: 3}
       propertyPath: nextLevel
       value: IceLevel3GUISOUND
+      objectReference: {fileID: 0}
+    - target: {fileID: 3698809779900484765, guid: e71a4f158bd607c4ba9cdec5e93383d5,
+        type: 3}
+      propertyPath: showMouseCursor
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3698809779900484762, guid: e71a4f158bd607c4ba9cdec5e93383d5,
         type: 3}
@@ -41643,16 +41648,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 506803070}
-    - target: {fileID: 1151663433475875560, guid: 94353d1cf46b8454991fadc5ff254bad,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1151663433475875560, guid: 94353d1cf46b8454991fadc5ff254bad,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.097586
-      objectReference: {fileID: 0}
     - target: {fileID: 3964186291256736015, guid: 94353d1cf46b8454991fadc5ff254bad,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -41687,6 +41682,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_selectedTriangles.Array.size
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151663433475875560, guid: 94353d1cf46b8454991fadc5ff254bad,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151663433475875560, guid: 94353d1cf46b8454991fadc5ff254bad,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.097586
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94353d1cf46b8454991fadc5ff254bad, type: 3}

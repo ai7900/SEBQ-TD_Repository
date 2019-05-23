@@ -24,7 +24,19 @@ public class GameMaster : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         FindObjectOfType<AudioManager>().Play("WinterTheme");
     }
-
+    //public void ShowCursor()
+    //{
+    //    if(!showMouseCursor)
+    //    {
+    //        lockMouseCursor = false;
+    //        showMouseCursor = true;
+    //    }
+    //    if (showMouseCursor)
+    //    {
+    //        lockMouseCursor = true;
+    //        showMouseCursor = false;
+    //    }
+    //}
     // Update is called once per frame
     private void Update()
     {
@@ -32,7 +44,7 @@ public class GameMaster : MonoBehaviour
         {
             player = GameObject.FindWithTag("Player");
         }
-        MouseSettings();
+        //MouseSettings();
 
         if(Input.GetKeyDown(KeyCode.R))
         {
@@ -45,20 +57,21 @@ public class GameMaster : MonoBehaviour
     public void LevelCompleted()
     {
         player.SetActive(false);
-        sceneFader.FadeTo(nextLevel);
+        SceneManager.LoadScene(nextLevel);
+        //sceneFader.FadeTo(nextLevel);
     }
 
-    private void MouseSettings()
-    {
-        Cursor.visible = showMouseCursor;
+    //private void MouseSettings()
+    //{
+    //    Cursor.visible = showMouseCursor;
 
-        if (lockMouseCursor == true)
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-        }
-        else
-        {
-            Cursor.lockState = CursorLockMode.None;
-        }
-    }
+    //    if (lockMouseCursor == true)
+    //    {
+    //        Cursor.lockState = CursorLockMode.Locked;
+    //    }
+    //    else
+    //    {
+    //        Cursor.lockState = CursorLockMode.None;
+    //    }
+    //}
 }

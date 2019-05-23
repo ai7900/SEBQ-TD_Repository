@@ -27,7 +27,10 @@ public class PlayerStats : MonoBehaviour
     private Text deathCounterText;
     [SerializeField]
     private Text timerText;
-
+    [SerializeField]
+    private Text airChargeText;
+    [SerializeField]
+    private Text stoneChargeText;
     [SerializeField]
     private Text collectibleText;
     [SerializeField]
@@ -60,8 +63,10 @@ public class PlayerStats : MonoBehaviour
         minutes = ((int)timeSpent / 60).ToString();
         seconds = (timeSpent % 60).ToString("f0");
         timerText.text = minutes+ ":" + seconds;
+        airChargeText.text = "x" + lightFormCount;
+        stoneChargeText.text = "x" + heavyFormCount;
 
-        if(timeSpent < collectibleTimer)
+        if (timeSpent < collectibleTimer)
         {
             showCollectibles = true;
         }

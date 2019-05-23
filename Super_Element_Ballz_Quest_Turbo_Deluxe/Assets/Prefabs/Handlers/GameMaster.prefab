@@ -45,8 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showMouseCursor: 1
-  levelWonUI: {fileID: 0}
   lockMouseCursor: 1
+  sceneFader: {fileID: 0}
+  nextLevel: MainMenu
 --- !u!114 &3819170361137014722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,3 +60,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95195c7501bad8d468373575c85627d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathCounterText: {fileID: 0}
+  timerText: {fileID: 0}
+  airChargeText: {fileID: 0}
+  stoneChargeText: {fileID: 0}
+  collectibleText: {fileID: 0}
+  startingLightCount: 0
+  startingHeavyCount: 0
+  moveCollectibles: {fileID: 0}
+  showCollectiblePos: {fileID: 0}
