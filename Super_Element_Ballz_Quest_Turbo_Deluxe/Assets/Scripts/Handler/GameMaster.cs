@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -19,7 +20,14 @@ public class GameMaster : MonoBehaviour
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        FindObjectOfType<AudioManager>().Play("WinterTheme");
+        try
+        {
+            FindObjectOfType<AudioManager>().Play("WinterTheme");
+        }
+        catch(Exception e)
+        {
+            Debug.Log(e.Message);
+        }
     }
 
     // Update is called once per frame
