@@ -30,6 +30,11 @@ public class AudioManager : MonoBehaviour
         {
             return;
         }
-        s.source.Play();
+        else if(s.name == "WinterTheme")
+        {
+            s.source.loop = true;
+        }
+            s.source.Play();
+
     }
 }
