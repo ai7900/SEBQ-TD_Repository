@@ -9,6 +9,7 @@ public class Destruction : MonoBehaviour
     private float objectStrength;
     private Rigidbody playerRb;
 
+
     void OnTriggerEnter(Collider collider)
     {
         if (collider.gameObject.CompareTag("Player"))

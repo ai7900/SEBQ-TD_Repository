@@ -413,11 +413,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 759938088, guid: c310563b5d55f104aafa10fcfeb91d6b, type: 3}
-      propertyPath: m_Volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 759938088, guid: c310563b5d55f104aafa10fcfeb91d6b, type: 3}
-      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      propertyPath: Loop
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -862,7 +858,7 @@ PrefabInstance:
     - target: {fileID: 3659524592241645466, guid: 8ce213c17f725c34fa531f80316e7709,
         type: 3}
       propertyPath: soundList.Array.data[1].volume
-      value: 0.35
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3659524592241645466, guid: 8ce213c17f725c34fa531f80316e7709,
         type: 3}
@@ -1377,7 +1373,8 @@ PrefabInstance:
       propertyPath: objectStrength
       value: 200
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 759938088, guid: c310563b5d55f104aafa10fcfeb91d6b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c310563b5d55f104aafa10fcfeb91d6b, type: 3}
 --- !u!1 &573940062
 GameObject:

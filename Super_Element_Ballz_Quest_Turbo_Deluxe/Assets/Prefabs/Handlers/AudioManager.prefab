@@ -46,11 +46,31 @@ MonoBehaviour:
   soundList:
   - name: CoinCollect
     clip: {fileID: 8300000, guid: 6e6752e700f456942a6f2cc04aad2ab0, type: 3}
-    volume: 1
+    volume: 0.525
     pitch: 1
     source: {fileID: 0}
-  - name: WinterTheme
+  - name: LevelTheme
     clip: {fileID: 8300000, guid: fe066c8fe7a1d6c4cb0c92d6e81d03b5, type: 3}
-    volume: 0.3
+    volume: 0.1
+    pitch: 1
+    source: {fileID: 0}
+  - name: TransformAirSFX
+    clip: {fileID: 8300000, guid: 7a620af3f4a19f74c9370b6b6db7f61c, type: 3}
+    volume: 0.551
+    pitch: 1
+    source: {fileID: 0}
+  - name: Ambience
+    clip: {fileID: 8300000, guid: 8185e16e6d8341f4f80744a5ae5bbe3a, type: 3}
+    volume: 0.03
+    pitch: 1
+    source: {fileID: 0}
+  - name: TransformStoneSFX
+    clip: {fileID: 8300000, guid: 391c1058949814847b8f72c36d277a93, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+  - name: AbilityPickup
+    clip: {fileID: 8300000, guid: 55300a1e33968db499f4b9babd43adc2, type: 3}
+    volume: 0.5
     pitch: 1
     source: {fileID: 0}

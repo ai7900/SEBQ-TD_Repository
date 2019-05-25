@@ -66,6 +66,7 @@ public class BallModeController : MonoBehaviour
         {
             if(PlayerStats.heavyFormCount > 0 && PlayerStats.currentMode != (int)BallMode.Heavy)
             {
+                FindObjectOfType<AudioManager>().Play("TransformStoneSFX");
                 newParticle = Instantiate(heavyBallEffect, gameObject.transform.position, particleRotation);
                 Destroy(newParticle, 5);
                 TurnIntoHeavyBall();
@@ -76,6 +77,7 @@ public class BallModeController : MonoBehaviour
         {
             if(PlayerStats.lightFormCount > 0)
             {
+                FindObjectOfType<AudioManager>().Play("TransformAirSFX");
                 newParticle = Instantiate(lightBallEffect, gameObject.transform.position, particleRotation);
                 Destroy(newParticle, 5);
                 TurnIntoLightBall();

@@ -30,11 +30,11 @@ public class AudioManager : MonoBehaviour
         {
             return;
         }
-        else if(s.name == "WinterTheme")
+        else if(s.name == "LevelTheme")
         {
             s.source.loop = true;
         }
-            s.source.Play();
+            s.source.PlayOneShot(s.clip);
 
     }
 }
