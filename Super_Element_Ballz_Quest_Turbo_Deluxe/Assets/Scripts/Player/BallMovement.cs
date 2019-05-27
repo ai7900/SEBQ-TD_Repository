@@ -53,6 +53,10 @@ public class BallMovement : MonoBehaviour
         {
             audioSrc.PlayOneShot(movementSoundEffect);
         }
+        else if(isAirborne)
+        {
+            audioSrc.Stop();
+        }
         audioSrc.volume = rb.velocity.magnitude/20;
 
         if(CanAccelerate())
@@ -102,7 +106,7 @@ public class BallMovement : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Trap"))
+        if (!other.CompareTag("Trap"))
         {
             isAirborne = true;
             forceFactor = airborneForceFactor;
