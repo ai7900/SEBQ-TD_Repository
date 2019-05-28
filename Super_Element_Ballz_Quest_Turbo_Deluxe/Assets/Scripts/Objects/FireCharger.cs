@@ -17,6 +17,7 @@ public class FireCharger : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
+            FindObjectOfType<AudioManager>().Play("FireLoop");
             chargeParticles.Play();
             playerMode = other.GetComponent<BallModeController>();
             playerMode.ChargingFire = true;
@@ -28,6 +29,7 @@ public class FireCharger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            FindObjectOfType<AudioManager>().Stop("FireLoop");
             playerMode.ChargingFire = false;
             chargeParticles.Stop();
         }

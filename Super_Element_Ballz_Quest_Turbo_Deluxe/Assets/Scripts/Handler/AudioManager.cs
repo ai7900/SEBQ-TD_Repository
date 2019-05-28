@@ -30,11 +30,22 @@ public class AudioManager : MonoBehaviour
         {
             return;
         }
-        else if(s.name == "LevelTheme")
+        else if(s.name == "LevelTheme" || s.name == "FireLoop" || s.name == "FireBall")
         {
             s.source.loop = true;
         }
-            s.source.PlayOneShot(s.clip);
+            s.source.Play(0);
+
+    }
+
+    public void Stop(string name)
+    {
+        Sound s = Array.Find(soundList, sound => sound.name == name);
+        if (s == null)
+        {
+            return;
+        }
+        s.source.Stop();
 
     }
 }

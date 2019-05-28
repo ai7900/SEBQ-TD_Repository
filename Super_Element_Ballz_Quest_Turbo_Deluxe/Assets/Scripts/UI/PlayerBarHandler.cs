@@ -76,6 +76,8 @@ public class PlayerBarHandler : MonoBehaviour
             {
                 if(PlayerStats.currentMode == (int)BallMode.Fire && ballMode.ChargingFire == false)
                 {
+                    FindObjectOfType<AudioManager>().Stop("FireBall");
+                    FindObjectOfType<AudioManager>().Play("FireExtinguish");
                     ballMode.TurnIntoNormalBall();
                 }
 

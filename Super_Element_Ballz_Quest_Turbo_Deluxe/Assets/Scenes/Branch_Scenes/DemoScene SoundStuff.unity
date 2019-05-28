@@ -845,41 +845,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3659524592241645466, guid: 8ce213c17f725c34fa531f80316e7709,
-        type: 3}
-      propertyPath: soundList.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3659524592241645466, guid: 8ce213c17f725c34fa531f80316e7709,
-        type: 3}
-      propertyPath: soundList.Array.data[1].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 64b4a469315aaf947ace62f22bd4f0e5, type: 3}
-    - target: {fileID: 3659524592241645466, guid: 8ce213c17f725c34fa531f80316e7709,
-        type: 3}
-      propertyPath: soundList.Array.data[1].volume
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3659524592241645466, guid: 8ce213c17f725c34fa531f80316e7709,
-        type: 3}
-      propertyPath: soundList.Array.data[6].name
-      value: SmashPlankSFX
-      objectReference: {fileID: 0}
-    - target: {fileID: 3659524592241645466, guid: 8ce213c17f725c34fa531f80316e7709,
-        type: 3}
-      propertyPath: soundList.Array.data[6].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 4e82f45c3cee57a478e6d42231718b5c, type: 3}
-    - target: {fileID: 3659524592241645466, guid: 8ce213c17f725c34fa531f80316e7709,
-        type: 3}
-      propertyPath: soundList.Array.data[6].volume
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3659524592241645466, guid: 8ce213c17f725c34fa531f80316e7709,
-        type: 3}
-      propertyPath: soundList.Array.data[6].pitch
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ce213c17f725c34fa531f80316e7709, type: 3}
 --- !u!1 &306676302

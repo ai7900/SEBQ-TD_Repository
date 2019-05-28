@@ -50,8 +50,8 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
   - name: LevelTheme
-    clip: {fileID: 8300000, guid: fe066c8fe7a1d6c4cb0c92d6e81d03b5, type: 3}
-    volume: 0.1
+    clip: {fileID: 8300000, guid: 64b4a469315aaf947ace62f22bd4f0e5, type: 3}
+    volume: 0
     pitch: 1
     source: {fileID: 0}
   - name: TransformAirSFX
@@ -72,5 +72,25 @@ MonoBehaviour:
   - name: AbilityPickup
     clip: {fileID: 8300000, guid: 55300a1e33968db499f4b9babd43adc2, type: 3}
     volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+  - name: FireLoop
+    clip: {fileID: 8300000, guid: 4aae12e0ec6b5454aa1f87a7ff35f1b4, type: 3}
+    volume: 0.5
+    pitch: 0.9
+    source: {fileID: 0}
+  - name: FireIgnite
+    clip: {fileID: 8300000, guid: 229ca11349efd5d4a8ed15fa6314c3b5, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+  - name: FireExtinguish
+    clip: {fileID: 8300000, guid: bef889adb74a296429829261c92a3aca, type: 3}
+    volume: 0.35
+    pitch: 1
+    source: {fileID: 0}
+  - name: FireBall
+    clip: {fileID: 8300000, guid: 4aae12e0ec6b5454aa1f87a7ff35f1b4, type: 3}
+    volume: 0.35
     pitch: 1
     source: {fileID: 0}

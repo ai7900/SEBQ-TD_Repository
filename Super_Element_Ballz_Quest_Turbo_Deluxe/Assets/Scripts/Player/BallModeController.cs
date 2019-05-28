@@ -142,7 +142,8 @@ public class BallModeController : MonoBehaviour
         {
             newObject = Instantiate(fireBallPrefab, gameObject.transform.position, gameObject.transform.rotation);
             newObject.GetComponent<Rigidbody>().velocity = gameObject.GetComponent<Rigidbody>().velocity;
-
+            FindObjectOfType<AudioManager>().Play("FireIgnite");
+            FindObjectOfType<AudioManager>().Play("FireBall");
             newObject.GetComponent<BallModeController>().ChargingFire = ChargingFire;
             PlayerStats.currentMode = (int)BallMode.Fire;
             Destroy(gameObject);

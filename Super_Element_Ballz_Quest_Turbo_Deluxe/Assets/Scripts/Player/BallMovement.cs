@@ -51,7 +51,7 @@ public class BallMovement : MonoBehaviour
 
         if(rb.velocity.magnitude > 0.3 && !audioSrc.isPlaying && !isAirborne)
         {
-            audioSrc.PlayOneShot(movementSoundEffect);
+                audioSrc.PlayOneShot(movementSoundEffect);
         }
         audioSrc.volume = rb.velocity.magnitude/20;
 
