@@ -62,6 +62,12 @@ public class BallMovement : MonoBehaviour
 
     }
 
+    public float GetVolume()
+    {
+        float volume = 0f;
+        volume = rb.velocity.magnitude / 20;
+        return volume;
+    }
     //Tar hand om krafterna som läggs till på bollen
     private void ApplyForce()
     {

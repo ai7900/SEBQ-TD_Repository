@@ -94,3 +94,8 @@ MonoBehaviour:
     volume: 0.35
     pitch: 1
     source: {fileID: 0}
+  - name: ImpactSFX
+    clip: {fileID: 8300000, guid: 9ceb0395213f9544683868d1086222bc, type: 3}
+    volume: 0.25
+    pitch: 0.75
+    source: {fileID: 0}
