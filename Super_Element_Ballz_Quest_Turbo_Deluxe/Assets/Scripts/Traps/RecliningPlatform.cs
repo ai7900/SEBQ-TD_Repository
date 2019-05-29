@@ -23,7 +23,7 @@ public class RecliningPlatform : MonoBehaviour
 
     private IEnumerator StartWait()
     {
-        yield return new WaitForSecondsRealtime(secondsToWait);
+        yield return new WaitForSeconds(secondsToWait);
     }
 
     private IEnumerator PlatformMovement()
