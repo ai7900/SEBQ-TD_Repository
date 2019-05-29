@@ -177,6 +177,7 @@ MonoBehaviour:
   maxSpeed: 7.5
   movementSoundEffect: {fileID: 8300000, guid: 40fa0b5a789c17c46aa14e2b00e9d5cf, type: 3}
   airborneForceFactor: 250
+  submergedForceFactor: 65
   target: {fileID: 2958754340975342473}
 --- !u!114 &1046135444422554209
 MonoBehaviour:
