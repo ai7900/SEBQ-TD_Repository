@@ -28,6 +28,15 @@ public class GameMaster : MonoBehaviour
         {
             Debug.Log(e.Message);
         }
+
+        try
+        {
+            FindObjectOfType<AudioManager>().Play("AwesomeTheme");
+        }
+        catch (Exception e)
+        {
+            Debug.Log(e.Message);
+        }
     }
 
     // Update is called once per frame
