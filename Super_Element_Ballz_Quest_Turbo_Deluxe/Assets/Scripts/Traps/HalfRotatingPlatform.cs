@@ -10,14 +10,14 @@ public class HalfRotatingPlatform : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        rotationSpeed = 0.4f;
+        rotationSpeed = 14f;
         transform.eulerAngles = new Vector3(transform.eulerAngles.x, 0, 0);
     }
 
     private IEnumerator PlatformMovement()
     {
 
-        transform.Rotate(0, rotationSpeed, 0, Space.World);
+        transform.Rotate(0, rotationSpeed * Time.deltaTime, 0, Space.World);
 
         if (transform.rotation.eulerAngles.y > 180)
         {
