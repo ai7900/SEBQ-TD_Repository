@@ -1,0 +1,349 @@
+fileFormatVersion: 2
+guid: e92f1cb744535054eb111aaf6d3c299f
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Circle
+    100002: Circle.001
+    100004: Circle.002
+    100006: Circle.003
+    100008: Cube
+    100010: Cube.001
+    100012: Cylinder
+    100014: Fence
+    100016: Fence.001
+    100018: Fence.002
+    100020: Fence.003
+    100022: Fence.004
+    100024: Fence.005
+    100026: Fence.006
+    100028: Fence.007
+    100030: Fence.008
+    100032: Fence.009
+    100034: Fence.010
+    100036: Fence.011
+    100038: Fence.012
+    100040: Fence.013
+    100042: Fence.014
+    100044: Fence.015
+    100046: Fence.016
+    100048: Fence.017
+    100050: Fence.018
+    100052: Fence.019
+    100054: GrassLevel
+    100056: Retreaving_platform1
+    100058: Retreaving_platform2
+    100060: Retreaving_platform3
+    100062: Spinning_platform
+    100064: //RootNode
+    400000: Circle
+    400002: Circle.001
+    400004: Circle.002
+    400006: Circle.003
+    400008: Cube
+    400010: Cube.001
+    400012: Cylinder
+    400014: Fence
+    400016: Fence.001
+    400018: Fence.002
+    400020: Fence.003
+    400022: Fence.004
+    400024: Fence.005
+    400026: Fence.006
+    400028: Fence.007
+    400030: Fence.008
+    400032: Fence.009
+    400034: Fence.010
+    400036: Fence.011
+    400038: Fence.012
+    400040: Fence.013
+    400042: Fence.014
+    400044: Fence.015
+    400046: Fence.016
+    400048: Fence.017
+    400050: Fence.018
+    400052: Fence.019
+    400054: GrassLevel
+    400056: Retreaving_platform1
+    400058: Retreaving_platform2
+    400060: Retreaving_platform3
+    400062: Spinning_platform
+    400064: //RootNode
+    2100000: Fence_mat
+    2100002: FlowerTop
+    2100004: FlowerBottom
+    2100006: UnderGrass_mat
+    2100008: Grass_mat
+    2100010: Dirt_mat
+    2100012: Brown_brick_mat
+    2100014: Checkerboard_mat
+    2100016: BrickFloor_mat
+    2100018: SuperRoughStone_mat
+    2100020: RoughStone_mat
+    2100022: Tower_mat
+    2100024: WhiteBrickFloor
+    2100026: Wood_mat
+    2100028: RedBrick_mat
+    2100030: TowerWindow
+    2300000: Circle
+    2300002: Circle.001
+    2300004: Circle.002
+    2300006: Circle.003
+    2300008: Cube
+    2300010: Cube.001
+    2300012: Cylinder
+    2300014: Fence
+    2300016: Fence.001
+    2300018: Fence.002
+    2300020: Fence.003
+    2300022: Fence.004
+    2300024: Fence.005
+    2300026: Fence.006
+    2300028: Fence.007
+    2300030: Fence.008
+    2300032: Fence.009
+    2300034: Fence.010
+    2300036: Fence.011
+    2300038: Fence.012
+    2300040: Fence.013
+    2300042: Fence.014
+    2300044: Fence.015
+    2300046: Fence.016
+    2300048: Fence.017
+    2300050: Fence.018
+    2300052: Fence.019
+    2300054: GrassLevel
+    2300056: Retreaving_platform1
+    2300058: Retreaving_platform2
+    2300060: Retreaving_platform3
+    2300062: Spinning_platform
+    3300000: Circle
+    3300002: Circle.001
+    3300004: Circle.002
+    3300006: Circle.003
+    3300008: Cube
+    3300010: Cube.001
+    3300012: Cylinder
+    3300014: Fence
+    3300016: Fence.001
+    3300018: Fence.002
+    3300020: Fence.003
+    3300022: Fence.004
+    3300024: Fence.005
+    3300026: Fence.006
+    3300028: Fence.007
+    3300030: Fence.008
+    3300032: Fence.009
+    3300034: Fence.010
+    3300036: Fence.011
+    3300038: Fence.012
+    3300040: Fence.013
+    3300042: Fence.014
+    3300044: Fence.015
+    3300046: Fence.016
+    3300048: Fence.017
+    3300050: Fence.018
+    3300052: Fence.019
+    3300054: GrassLevel
+    3300056: Retreaving_platform1
+    3300058: Retreaving_platform2
+    3300060: Retreaving_platform3
+    3300062: Spinning_platform
+    4300000: Fence
+    4300002: Fence.001
+    4300004: Fence.002
+    4300006: Fence.003
+    4300008: Fence.004
+    4300010: Fence.005
+    4300012: Fence.006
+    4300014: Fence.007
+    4300016: Fence.008
+    4300018: Fence.009
+    4300020: Fence.010
+    4300022: Fence.011
+    4300024: Fence.012
+    4300026: Fence.013
+    4300028: Fence.014
+    4300030: Fence.015
+    4300032: Fence.016
+    4300034: Fence.017
+    4300036: Fence.018
+    4300038: Fence.019
+    4300040: Circle
+    4300042: Circle.001
+    4300044: Circle.002
+    4300046: Circle.003
+    4300048: Cube
+    4300050: GrassLevel
+    4300052: Cube.001
+    4300054: Cylinder
+    4300056: Retreaving_platform1
+    4300058: Retreaving_platform2
+    4300060: Retreaving_platform3
+    4300062: Spinning_platform
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BrickFloor_mat
+    second: {fileID: 2100000, guid: e66a491ac16fad84c95164921fff5b33, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Brown_brick_mat
+    second: {fileID: 2100000, guid: 93e48da1672ae7b488ab5330e4b35171, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Checkerboard_mat
+    second: {fileID: 2100000, guid: a74cef39fbdbd074ca44b68979efd0f9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dirt_mat
+    second: {fileID: 2100000, guid: 5cdd5fc18c217a04b9598464d4afc2ac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fence_mat
+    second: {fileID: 2100000, guid: 826e7cb15dd2b4f439b0e90980b304c9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FlowerBottom
+    second: {fileID: 2100000, guid: 91d2a164d4ba46148a30cf35d3ed320a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FlowerTop
+    second: {fileID: 2100000, guid: 032d317982f939f48b9917ab0bfbfc56, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grass_mat
+    second: {fileID: 2100000, guid: b9ff8b96726d7a84bb3a75d1435b8c99, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RedBrick_mat
+    second: {fileID: 2100000, guid: 7a3901edc7ccefe498973512b66fd536, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RoughStone_mat
+    second: {fileID: 2100000, guid: 127b81e2ff5879f44aaed1ffb28720b5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SuperRoughStone_mat
+    second: {fileID: 2100000, guid: ebd4aa71154f08e43b202dd173feb2e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TowerWindow
+    second: {fileID: 2100000, guid: 703fdc103470a284e855e623714721e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tower_mat
+    second: {fileID: 2100000, guid: 827386a5091507f498f93c6c55552f7b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: UnderGrass_mat
+    second: {fileID: 2100000, guid: 019a36a9cdd917249858ff5cf1f8a305, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WhiteBrickFloor
+    second: {fileID: 2100000, guid: d3758a2458f468143922c5a2e108cf98, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood_mat
+    second: {fileID: 2100000, guid: f899feb7aeb722149af6d2518706ce8b, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
