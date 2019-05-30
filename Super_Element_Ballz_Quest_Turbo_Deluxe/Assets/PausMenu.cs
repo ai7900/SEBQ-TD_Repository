@@ -32,6 +32,7 @@ public class PausMenu : MonoBehaviour
     public void Resume()
     {
         pauseMenuUi.SetActive(false);
+        FindObjectOfType<AudioManager>().Play("UnPauseSFX");
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         Time.timeScale = 1f;
@@ -41,6 +42,7 @@ public class PausMenu : MonoBehaviour
     private void Pause()
     {
         pauseMenuUi.SetActive(true);
+        FindObjectOfType<AudioManager>().Play("PauseSFX");
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         Time.timeScale = 0f;

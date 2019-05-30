@@ -66,6 +66,7 @@ public class BallModeController : MonoBehaviour
         {
             if(PlayerStats.heavyFormCount > 0 && PlayerStats.currentMode != (int)BallMode.Heavy)
             {
+                FindObjectOfType<AudioManager>().Play("TransformStoneSFX");
                 newParticle = Instantiate(heavyBallEffect, gameObject.transform.position, particleRotation);
                 Destroy(newParticle, 5);
                 TurnIntoHeavyBall();
@@ -76,6 +77,7 @@ public class BallModeController : MonoBehaviour
         {
             if(PlayerStats.lightFormCount > 0)
             {
+                FindObjectOfType<AudioManager>().Play("TransformAirSFX");
                 newParticle = Instantiate(lightBallEffect, gameObject.transform.position, particleRotation);
                 Destroy(newParticle, 5);
                 TurnIntoLightBall();
@@ -140,7 +142,8 @@ public class BallModeController : MonoBehaviour
         {
             newObject = Instantiate(fireBallPrefab, gameObject.transform.position, gameObject.transform.rotation);
             newObject.GetComponent<Rigidbody>().velocity = gameObject.GetComponent<Rigidbody>().velocity;
-
+            FindObjectOfType<AudioManager>().Play("FireIgnite");
+            FindObjectOfType<AudioManager>().Play("FireBall");
             newObject.GetComponent<BallModeController>().ChargingFire = ChargingFire;
             PlayerStats.currentMode = (int)BallMode.Fire;
             Destroy(gameObject);

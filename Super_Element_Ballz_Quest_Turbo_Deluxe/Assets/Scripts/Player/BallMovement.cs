@@ -51,7 +51,11 @@ public class BallMovement : MonoBehaviour
 
         if(rb.velocity.magnitude > 0.3 && !audioSrc.isPlaying && !isAirborne)
         {
-            audioSrc.PlayOneShot(movementSoundEffect);
+                audioSrc.PlayOneShot(movementSoundEffect);
+        }
+        else if(isAirborne)
+        {
+            audioSrc.Stop();
         }
         else if(isAirborne)
         {
@@ -66,6 +70,12 @@ public class BallMovement : MonoBehaviour
 
     }
 
+    public float GetVolume()
+    {
+        float volume = 0f;
+        volume = rb.velocity.magnitude / 20;
+        return volume;
+    }
     //Tar hand om krafterna som läggs till på bollen
     private void ApplyForce()
     {

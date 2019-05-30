@@ -22,7 +22,8 @@ public class GameMaster : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         try
         {
-            FindObjectOfType<AudioManager>().Play("WinterTheme");
+            FindObjectOfType<AudioManager>().Play("LevelTheme");
+            FindObjectOfType<AudioManager>().Play("Ambience");
         }
         catch(Exception e)
         {
