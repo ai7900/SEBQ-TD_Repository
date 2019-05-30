@@ -47,7 +47,7 @@ public class BallModeController : MonoBehaviour
         fireChargeTime = 5; //Preliminärt värde
         fireDuration = 10; //Preliminärt värde
         iceChargeTime = 5; //Preliminärt värde
-        iceDuration = 15; //Preliminärt värde
+        iceDuration = 25; //Preliminärt värde
 }
 
     private void Update()

@@ -5,39 +5,86 @@ using UnityEngine;
 public class Water : MonoBehaviour
 {
     [SerializeField]
-    Rigidbody rb;
+    private Rigidbody rb;
     [SerializeField]
     private float waterLevel;
     public float floatHeight = 1.5f;
-    public float bounceDamp = 0.05f;
-    Vector3 bouyancyCenterOffset;
+    private float dampFactor = 0.05f;
+    private float impactDamp = 0.8f;
+    private Vector3 bouyancyCenterOffset = Vector3.zero;
 
     private float forceFactor;
     private Vector3 actionPoint;
     private Vector3 upLift;
 
-    RectTransform rt;
+    private float weakForceFactor;
 
-    void Start()
+    private float magicNumber = .5f;
+    private float magicDivisor = 4;
+
+    private RectTransform rt;
+    //private BallModeController ballModeController;
+    private Transform waterHeight;
+
+
+    private void Start()
     {
-        waterLevel =  transform.localScale.y;
+        waterLevel = transform.position.y * 2;
+        floatHeight = -.5f;
+        forceFactor = 5f;
+        weakForceFactor = 3f;
     }
 
-    void OnTriggerStay(Collider collision)
+    private void OnTriggerStay(Collider other)
     {
-        if (collision.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
-            rb = collision.gameObject.GetComponent<Rigidbody>();
-            actionPoint = collision.transform.position + collision.transform.TransformDirection(bouyancyCenterOffset);
-            forceFactor = 1f - ((actionPoint.y - waterLevel) / (floatHeight*transform.position.y));
-            if (forceFactor > 0f)
+            if(PlayerStats.currentMode == (int)BallMode.Light || PlayerStats.currentMode == (int)BallMode.Ice)
             {
-                upLift = -Physics.gravity * (forceFactor - rb.velocity.y * bounceDamp)*5;
-                rb.AddForceAtPosition(upLift, actionPoint);
+                rb = other.gameObject.GetComponent<Rigidbody>();
+                actionPoint = other.transform.position + other.transform.TransformDirection(bouyancyCenterOffset);
+                if (forceFactor > 0f)
+                {
+                    if (rb.velocity.y >= 0)
+                    {
+                        upLift = -Physics.gravity * (forceFactor + rb.velocity.y * dampFactor);
+                    }
+                    if (rb.velocity.y < 0)
+                    {
+                        upLift = -Physics.gravity * (forceFactor - rb.velocity.y * impactDamp);
+                    }
+                    rb.AddForceAtPosition(upLift, actionPoint);
+                }
             }
+
+            else if(PlayerStats.currentMode == (int)BallMode.Heavy || PlayerStats.currentMode == (int)BallMode.Normal)
+            {
+                rb = other.gameObject.GetComponent<Rigidbody>();
+                BallMovement ballMove = other.gameObject.GetComponent<BallMovement>();
+                
+                actionPoint = other.transform.position + other.transform.TransformDirection(bouyancyCenterOffset);
+                if (weakForceFactor > 0f)
+                {
+                    if(rb.velocity.y >= 0)
+                    {
+                        upLift = -Physics.gravity * (weakForceFactor + rb.velocity.y * dampFactor);
+                    }
+                    if(rb.velocity.y < 0)
+                    {
+                        upLift = -Physics.gravity * (weakForceFactor - rb.velocity.y * impactDamp);
+                    }
+
+                    rb.AddForceAtPosition(upLift, actionPoint);
+                }
+            }
+            else if (PlayerStats.currentMode == (int)BallMode.Fire)
+            {
+                Player playerScript = other.gameObject.GetComponent<Player>();
+                playerScript.Die();
+            }
+
         }
 
     }
-
 
 }

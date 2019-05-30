@@ -174,10 +174,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9807edff7f0a1ac42a447cb3e6686e58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundForceFactor: 80
+  groundForceFactor: 90
   maxSpeed: 15
   movementSoundEffect: {fileID: 8300000, guid: 40fa0b5a789c17c46aa14e2b00e9d5cf, type: 3}
   airborneForceFactor: 30
+  submergedForceFactor: 40
   target: {fileID: 1942412240}
 --- !u!114 &3257336175173787072
 MonoBehaviour:

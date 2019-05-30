@@ -16,6 +16,8 @@ TagManager:
   - LightPickup
   - ThirdPersonCamera
   - HeadCamera
+  - Water
+  - Ice
   layers:
   - Default
   - TransparentFX

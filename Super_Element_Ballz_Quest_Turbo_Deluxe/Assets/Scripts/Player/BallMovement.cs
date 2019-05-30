@@ -17,11 +17,15 @@ public class BallMovement : MonoBehaviour
     [SerializeField]
     private float airborneForceFactor = 0;
 
+    [SerializeField]
+    private float submergedForceFactor = 0;
+
     private float forceFactor = 0;
     private float xSpeed = 0;
     private float zSpeed = 0;
 
     private bool isAirborne = true;
+    private bool isSubmerged = false;
 
     //Borde vara ett värde mellan 1.5 och 1.9, högre värde gör det lättare för spelaren att accelerera ytterligare när denne redan är i toppfart.
     private double accelerationTolerance = 1.8; 
@@ -112,6 +116,12 @@ public class BallMovement : MonoBehaviour
             isAirborne = false;
             forceFactor = groundForceFactor;
         }
+
+        if(other.CompareTag("Water"))
+        {
+            isSubmerged = true;
+            forceFactor = submergedForceFactor;
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -120,6 +130,12 @@ public class BallMovement : MonoBehaviour
         {
             isAirborne = true;
             forceFactor = airborneForceFactor;
+        }
+
+        if (other.CompareTag("Water"))
+        {
+            isSubmerged = false;
+            forceFactor = groundForceFactor;
         }
     }
 }
