@@ -2024,34 +2024,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3659524592241645466, guid: 8ce213c17f725c34fa531f80316e7709,
         type: 3}
-      propertyPath: soundList.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3659524592241645466, guid: 8ce213c17f725c34fa531f80316e7709,
-        type: 3}
-      propertyPath: soundList.Array.data[1].name
-      value: WinterTheme
-      objectReference: {fileID: 0}
-    - target: {fileID: 3659524592241645466, guid: 8ce213c17f725c34fa531f80316e7709,
-        type: 3}
       propertyPath: soundList.Array.data[1].clip
       value: 
       objectReference: {fileID: 8300000, guid: 0bcd94637c4af5e46b17b15447592b7a, type: 3}
-    - target: {fileID: 3659524592241645466, guid: 8ce213c17f725c34fa531f80316e7709,
-        type: 3}
-      propertyPath: soundList.Array.data[1].volume
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3659524592241645466, guid: 8ce213c17f725c34fa531f80316e7709,
-        type: 3}
-      propertyPath: soundList.Array.data[1].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3659524592241645466, guid: 8ce213c17f725c34fa531f80316e7709,
-        type: 3}
-      propertyPath: soundList.Array.data[0].volume
-      value: 0.4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ce213c17f725c34fa531f80316e7709, type: 3}
 --- !u!4 &722363260 stripped
