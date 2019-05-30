@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class HalfRotatingPlatform : MonoBehaviour
 {
-
-    private float rotationSpeed;
+    [SerializeField]
+    private float rotationSpeed = 15.0f;
 
     // Start is called before the first frame update
     private void Start()
     {
-        rotationSpeed = 14f;
         transform.eulerAngles = new Vector3(transform.eulerAngles.x, 0, 0);
     }
 
