@@ -1918,17 +1918,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: ShowCursor
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1112413209
@@ -2789,6 +2778,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6163552688866203433}
   - component: {fileID: 6163552688866203432}
+  - component: {fileID: 832693988}
   m_Layer: 0
   m_Name: UIElements
   m_TagString: Untagged
@@ -2828,6 +2818,25 @@ MonoBehaviour:
   firebar: {fileID: 2076879106024862110}
   icebar: {fileID: 962911110594521295}
   player: {fileID: 0}
+--- !u!114 &832693988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6163552688866203438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c070e7a0a184f0e4d88f41e52c1251be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveCollectibles: {fileID: 1477082500}
+  showCollectiblePos: {fileID: 1076505573}
+  deathCounterText: {fileID: 1147459773}
+  timerText: {fileID: 836715211}
+  airChargeText: {fileID: 1092327663}
+  stoneChargeText: {fileID: 838406523}
+  collectibleText: {fileID: 1242861786}
 --- !u!1 &6612177536570338927
 GameObject:
   m_ObjectHideFlags: 0

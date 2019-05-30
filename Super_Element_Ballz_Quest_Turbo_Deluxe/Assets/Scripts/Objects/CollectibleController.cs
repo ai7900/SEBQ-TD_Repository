@@ -54,7 +54,7 @@ public class CollectibleController : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            FindObjectOfType<PlayerStats>().ShowCollectibles();
+            FindObjectOfType<UiHandler>().ShowCollectibles();
             FindObjectOfType<AudioManager>().Play("CoinCollect");
             PlayerStats.collectiblesPickedUp += value;
             value = 0;
