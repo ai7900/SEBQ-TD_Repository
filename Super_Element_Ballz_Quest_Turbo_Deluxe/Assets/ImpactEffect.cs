@@ -11,7 +11,7 @@ public class ImpactEffect : MonoBehaviour
     }
     private void Update()
     {
-        float volume = ballMovement.GetVolume()/5;
+        float volume = ballMovement.GetVolume()/20;
         FindObjectOfType<AudioManager>().ChangeVolume(volume, "ImpactSFX");
     }
 

@@ -50,8 +50,8 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
   - name: LevelTheme
-    clip: {fileID: 8300000, guid: 64b4a469315aaf947ace62f22bd4f0e5, type: 3}
-    volume: 0
+    clip: {fileID: 8300000, guid: 0bcd94637c4af5e46b17b15447592b7a, type: 3}
+    volume: 0.3
     pitch: 1
     source: {fileID: 0}
   - name: TransformAirSFX
@@ -97,5 +97,15 @@ MonoBehaviour:
   - name: ImpactSFX
     clip: {fileID: 8300000, guid: 9ceb0395213f9544683868d1086222bc, type: 3}
     volume: 0.25
-    pitch: 0.75
+    pitch: 0.4
+    source: {fileID: 0}
+  - name: PauseSFX
+    clip: {fileID: 8300000, guid: 717e2a21c6d0a234bb09c5e7f1c84303, type: 3}
+    volume: 0.25
+    pitch: 1
+    source: {fileID: 0}
+  - name: UnPauseSFX
+    clip: {fileID: 8300000, guid: d82e42fdb73923841b66efc7c1c1e77e, type: 3}
+    volume: 0.25
+    pitch: 1
     source: {fileID: 0}
