@@ -16,6 +16,11 @@ public class GameMaster : MonoBehaviour
 
     private GameObject player;
 
+    [SerializeField]
+    private float parTime;
+
+    private PlayerStats playerStats;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -29,6 +34,8 @@ public class GameMaster : MonoBehaviour
         {
             Debug.Log(e.Message);
         }
+
+        playerStats = GetComponent<PlayerStats>();
     }
 
     // Update is called once per frame
@@ -47,9 +54,19 @@ public class GameMaster : MonoBehaviour
     }
 
     //Denna metoden ska hantera vad som händer när nivån klaras av
-    public void LevelCompleted()
+    public void LevelCompleted(float timeSpent)
     {
+        if (timeSpent < parTime)
+        {
+            playerStats.TimeBonus = parTime - timeSpent * 1.85f;
+        }
+        else
+        {
+            playerStats.TimeBonus = 0;
+        }
+        playerStats.CalculateTotalScore();
         player.SetActive(false);
+        playerStats.TimeBonus = 0;
         sceneFader.FadeTo(nextLevel);
     }
 

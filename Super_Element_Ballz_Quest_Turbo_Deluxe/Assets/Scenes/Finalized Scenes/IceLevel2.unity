@@ -35533,6 +35533,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameMaster
       objectReference: {fileID: 0}
+    - target: {fileID: 3698809779900484764, guid: e71a4f158bd607c4ba9cdec5e93383d5,
+        type: 3}
+      propertyPath: m_TagString
+      value: GameController
+      objectReference: {fileID: 0}
     - target: {fileID: 3698809779900484765, guid: e71a4f158bd607c4ba9cdec5e93383d5,
         type: 3}
       propertyPath: levelWonUI
@@ -35547,6 +35552,11 @@ PrefabInstance:
         type: 3}
       propertyPath: nextLevel
       value: IceLevel3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3698809779900484765, guid: e71a4f158bd607c4ba9cdec5e93383d5,
+        type: 3}
+      propertyPath: parTime
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 3698809779900484762, guid: e71a4f158bd607c4ba9cdec5e93383d5,
         type: 3}
