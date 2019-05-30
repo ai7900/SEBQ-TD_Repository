@@ -9396,6 +9396,36 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!1 &839242821591706287
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1019421446466982050}
+  m_Layer: 0
+  m_Name: IceSpawnPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1019421446466982050
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839242821591706287}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.129, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6346841100234054863}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2175730018508182327
 GameObject:
   m_ObjectHideFlags: 0
@@ -19130,6 +19160,7 @@ GameObject:
   - component: {fileID: 1338366357196703702}
   - component: {fileID: 2712737082420341142}
   - component: {fileID: 187820622706729018}
+  - component: {fileID: 8436866962838835536}
   - component: {fileID: 8850681630568018062}
   m_Layer: 0
   m_Name: IceCube
@@ -19152,6 +19183,7 @@ Transform:
   - {fileID: 5772632581084648327}
   - {fileID: 5272170872916827871}
   - {fileID: 6948820134750966682}
+  - {fileID: 1019421446466982050}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19166,7 +19198,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.4, y: 1.4, z: 1.4}
+  m_Size: {x: 1.2, y: 1.35, z: 1.35}
   m_Center: {x: 0, y: 0.64, z: 0}
 --- !u!65 &4441525141235695890
 BoxCollider:
@@ -19179,7 +19211,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 2}
+  m_Size: {x: 1.25, y: 2.1, z: 1.25}
   m_Center: {x: 0, y: 0.64, z: 0}
 --- !u!54 &7546227025618697437
 Rigidbody:
@@ -19190,13 +19222,13 @@ Rigidbody:
   m_GameObject: {fileID: 6346841100233949423}
   serializedVersion: 2
   m_Mass: 6
-  m_Drag: 0.1
+  m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 1
+  m_Interpolate: 1
+  m_Constraints: 80
+  m_CollisionDetection: 3
 --- !u!114 &1338366357196703702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19247,7 +19279,7 @@ MonoBehaviour:
   maxSpeed: 30
   movementSoundEffect: {fileID: 8300000, guid: 40fa0b5a789c17c46aa14e2b00e9d5cf, type: 3}
   airborneForceFactor: 1
-  submergedForceFactor: 1
+  submergedForceFactor: 8
   target: {fileID: 5249444657425004464}
 --- !u!114 &187820622706729018
 MonoBehaviour:
@@ -19262,6 +19294,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abyssLevel: -30
+--- !u!114 &8436866962838835536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6346841100233949423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13eac76063b31a34d83714cef264e1e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icePrefab: {fileID: 3143572082425042942, guid: 79dc4f6fbc6050e44a9d6c6a95df87cf,
+    type: 3}
+  iceTarget: {fileID: 1019421446466982050}
 --- !u!82 &8850681630568018062
 AudioSource:
   m_ObjectHideFlags: 0

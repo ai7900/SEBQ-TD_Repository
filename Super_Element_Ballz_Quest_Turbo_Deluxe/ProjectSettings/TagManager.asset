@@ -17,6 +17,7 @@ TagManager:
   - ThirdPersonCamera
   - HeadCamera
   - Water
+  - Ice
   layers:
   - Default
   - TransparentFX
