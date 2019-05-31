@@ -19,6 +19,7 @@ TagManager:
   - Water
   - Ice
   - LevelCompleteUI
+  - OverlayCanvas
   layers:
   - Default
   - TransparentFX

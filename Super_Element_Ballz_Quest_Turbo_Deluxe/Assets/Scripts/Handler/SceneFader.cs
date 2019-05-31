@@ -12,11 +12,10 @@ public class SceneFader : MonoBehaviour
     private GameObject levelCompleteGO;
 
     [SerializeField]
-    private UiHandler hud;
+    private GameObject hud;
 
     private void Start()
     {
-        //hud = GetComponent<UiHandler>();
         StartCoroutine(FadeIn());
     }
 
@@ -71,7 +70,10 @@ public class SceneFader : MonoBehaviour
             yield return 0;
         }
 
-        hud.gameObject.SetActive(false);
         levelCompleteGO.SetActive(true);
+
+        yield return new WaitForSeconds(3);
+
+        hud.gameObject.SetActive(false);
     }
 }

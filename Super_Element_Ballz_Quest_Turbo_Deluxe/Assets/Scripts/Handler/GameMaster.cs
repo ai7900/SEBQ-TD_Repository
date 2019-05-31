@@ -58,7 +58,7 @@ public class GameMaster : MonoBehaviour
     {
         if (timeSpent < parTime)
         {
-            playerStats.TimeBonus = (int)(parTime - (timeSpent * 1.85f));
+            playerStats.TimeBonus = (int)((parTime - timeSpent) * 3.85f);
         }
         else
         {

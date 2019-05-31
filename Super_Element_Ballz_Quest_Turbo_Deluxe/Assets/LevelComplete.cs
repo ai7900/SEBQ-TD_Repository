@@ -30,6 +30,7 @@ public class LevelComplete : MonoBehaviour
         timeBonusAmount.text = "0";
         totalScoreAmount.text = "0";
         totalScoreTarget = PlayerStats.TotalScore;
+        scoreAmount.alignment = TextAnchor.UpperLeft;
     }
 
     // Update is called once per frame
@@ -45,9 +46,9 @@ public class LevelComplete : MonoBehaviour
 
     private IEnumerator AnimateTotalScore()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(.5f);
 
-        if (totalScoreAmount.text != totalScoreTarget.ToString())
+        while (totalScoreAmount.text != totalScoreTarget.ToString())
         {
             if(timeBonusAdded > 0)
             {
@@ -58,31 +59,42 @@ public class LevelComplete : MonoBehaviour
             
             if(ingameScoreValue > 0)
             {
-                ingameScoreValue--;
-                scoreAmount.text = ingameScoreValue.ToString();
-                totalScoreValue++;
-            }
+                if(ingameScoreValue > 500)
+                {
+                    ingameScoreValue -= 5;
+                    totalScoreValue += 5;
+                }
+                else
+                {
+                    ingameScoreValue--;
+                    totalScoreValue++;
+                }
 
+                scoreAmount.text = ingameScoreValue.ToString();
+
+            }
+            yield return new WaitForSeconds(.005f);
             totalScoreAmount.text = totalScoreValue.ToString();
 
         }
-
-        yield return 0;
     }
 
     private IEnumerator AnimateIncreaseTimeBonus()
     {
-        if (timeBonusAmount.text != playerStats.TimeBonus.ToString())
+        while (timeBonusAmount.text != playerStats.TimeBonus.ToString())
         {
             timeBonusAdded++;
             timeBonusAmount.text = timeBonusAdded.ToString();
+            yield return new WaitForSeconds(.005f);
         }
-        else
-        {
-            StartCoroutine(AnimateTotalScore());
-        }
+
+        StartCoroutine(AnimateTotalScore());
 
         yield return 0;
     }
 
+    private void OnGUI()
+    {
+        GUI.Label(new Rect(20, Screen.height - 30, 500, 200), "timebonus? = " + playerStats.TimeBonus.ToString() + " timebonusamount.text = " + timeBonusAmount.text);
+    }
 }
