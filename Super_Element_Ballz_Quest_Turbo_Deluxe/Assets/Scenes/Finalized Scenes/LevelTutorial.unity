@@ -292,7 +292,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-85480
+  m_Name: pb_Mesh-3740
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -2135,7 +2135,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-85478
+  m_Name: pb_Mesh-3738
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -2720,12 +2720,6 @@ Transform:
   m_Father: {fileID: 1193387062}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &973748995 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1477082500, guid: 9e34cd2c5ee43644695bccf7c57c81d4,
-    type: 3}
-  m_PrefabInstance: {fileID: 1161887364}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &981229073
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3534,18 +3528,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value:
       objectReference: {fileID: 2513387224008082147}
-    - target: {fileID: 932288802, guid: 9e34cd2c5ee43644695bccf7c57c81d4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RestartLevel
-      objectReference: {fileID: 0}
     - target: {fileID: 2085738841, guid: 9e34cd2c5ee43644695bccf7c57c81d4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value:
       objectReference: {fileID: 2513387224008082147}
-    - target: {fileID: 2085738841, guid: 9e34cd2c5ee43644695bccf7c57c81d4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: QuitToMain
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e34cd2c5ee43644695bccf7c57c81d4, type: 3}
 --- !u!114 &1161887365 stripped
@@ -5396,12 +5382,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4940536244194110480, guid: c6accba66fc680448972d0fafb0f63c9,
     type: 3}
   m_PrefabInstance: {fileID: 1843429748}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &1854801133 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1076505573, guid: 9e34cd2c5ee43644695bccf7c57c81d4,
-    type: 3}
-  m_PrefabInstance: {fileID: 1161887364}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1862078717 stripped
 Transform:

@@ -14,7 +14,7 @@ public class Goal : MonoBehaviour
         {
             try
             {
-                gameMaster.LevelCompleted();
+                gameMaster.LevelCompleted(UiHandler.timeSpent);
             }
             catch(Exception e)
             {

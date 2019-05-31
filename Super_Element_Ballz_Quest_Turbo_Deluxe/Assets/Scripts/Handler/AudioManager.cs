@@ -51,7 +51,14 @@ public class AudioManager : MonoBehaviour
 
     public void ChangeVolume(float volume, string name)
     {
-        Sound s = Array.Find(soundList, sound => sound.name == name);
-        s.volume = volume;
+        try
+        {
+            Sound s = Array.Find(soundList, sound => sound.name == name);
+            s.volume = volume;
+        }
+        catch(Exception e)
+        {
+            Debug.Log(e.Message);
+        }
     }
 }

@@ -24,16 +24,24 @@ public class UiHandler : MonoBehaviour
     private Text stoneChargeText;
     [SerializeField]
     private Text collectibleText;
+    [SerializeField]
+    private Text scoreText;
 
-    private static float timeSpent;
+    private PlayerStats playerStats;
+
+    [HideInInspector]
+    public static float timeSpent;
 
     private string minutes;
     private string seconds;
     void Start()
     {
+        timeSpent = 0;
         collectibleStartTimer = 4.0f;
         showCollectibles = false;
         originalCollectionPos = moveCollectibles.transform.position;
+
+        playerStats = GameObject.FindGameObjectWithTag("GameController").GetComponent<PlayerStats>();
     }
 
     void Update()
@@ -46,7 +54,7 @@ public class UiHandler : MonoBehaviour
         timeSpent = Time.time;
         minutes = ((int)timeSpent / 60).ToString();
         seconds = (timeSpent % 60).ToString("f0");
-
+        scoreText.text = playerStats.LevelScore.ToString();
 
         if (timeSpent < collectibleTimer)
         {
