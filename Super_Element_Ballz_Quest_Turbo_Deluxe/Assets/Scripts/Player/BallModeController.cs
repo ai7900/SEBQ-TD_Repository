@@ -52,7 +52,7 @@ public class BallModeController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Keypad1))//Normal boll
+        if (Input.GetKeyDown(KeyCode.Q))//Normal boll
         {
             if(PlayerStats.currentMode != (int)BallMode.Normal)
             {
@@ -62,7 +62,7 @@ public class BallModeController : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Keypad2))//Tung boll
+        if (Input.GetKeyDown(KeyCode.E))//Tung boll
         {
             if(PlayerStats.heavyFormCount > 0 && PlayerStats.currentMode != (int)BallMode.Heavy)
             {
@@ -73,7 +73,7 @@ public class BallModeController : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Keypad3) && PlayerStats.currentMode != (int)BallMode.Light)//Lätt boll
+        if (Input.GetKeyDown(KeyCode.R) && PlayerStats.currentMode != (int)BallMode.Light)//Lätt boll
         {
             if(PlayerStats.lightFormCount > 0)
             {
@@ -84,7 +84,7 @@ public class BallModeController : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Keypad4))  //Kall boll
+        if (Input.GetKeyDown(KeyCode.F))  //Kall boll
         {
             if(PlayerStats.currentMode != (int)BallMode.Ice && IceReady)
             {
@@ -93,12 +93,12 @@ public class BallModeController : MonoBehaviour
             
         }
 
-        if (Input.GetKeyDown(KeyCode.Keypad5))//DEBUG ONLY
-        {
-            newParticle = Instantiate(fireballEffect, gameObject.transform.position, particleRotation);
-            Destroy(newParticle, 5);
-            TurnIntoFireball();
-        }
+        //if (Input.GetKeyDown(KeyCode.Keypad5)) //>>DEBUG ONLY<<
+        //{
+        //    newParticle = Instantiate(fireballEffect, gameObject.transform.position, particleRotation);
+        //    Destroy(newParticle, 5);
+        //    TurnIntoFireball();
+        //}
 
         if (newParticle != null)
         {
