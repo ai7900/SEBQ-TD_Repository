@@ -44,16 +44,6 @@ public class PlayerStats : MonoBehaviour
     {
         LevelScore = 100 * collectiblesPickedUp * ((float)collectiblesPickedUp / 20) - 700 * deathCount * ((float)deathCount / 8) + TimeBonus;
     }
-
-    public void AddScore(int value)
-    {
-        LevelScore += value;
-    }
-
-    public void SubtractScore(int value)
-    {
-        LevelScore -= value;
-    }
     
     public void CalculateTotalScore()
     {
