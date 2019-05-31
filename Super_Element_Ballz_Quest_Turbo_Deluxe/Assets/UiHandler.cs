@@ -28,6 +28,7 @@ public class UiHandler : MonoBehaviour
     private Text scoreText;
 
     private PlayerStats playerStats;
+    Animator animator;
 
     [HideInInspector]
     public static float timeSpent;
@@ -42,6 +43,7 @@ public class UiHandler : MonoBehaviour
         originalCollectionPos = moveCollectibles.transform.position;
 
         playerStats = GameObject.FindGameObjectWithTag("GameController").GetComponent<PlayerStats>();
+        animator = moveCollectibles.GetComponent<Animator>();
     }
 
     void Update()
@@ -56,33 +58,33 @@ public class UiHandler : MonoBehaviour
         seconds = (timeSpent % 60).ToString("f0");
         scoreText.text = playerStats.LevelScore.ToString();
 
-        if (timeSpent < collectibleTimer)
+    
+
+        if(timeSpent > collectibleTimer)
         {
-            showCollectibles = true;
-        }
-        else
-        {
-            showCollectibles = false;
+            HideCollectibles();
         }
 
-        try
-        {
-            if (showCollectibles)
-            {
-                moveCollectibles.transform.position = Vector3.MoveTowards(showCollectiblePos.position, originalCollectionPos, 0.1f * Time.deltaTime);
-            }
-            else if (!showCollectibles)
-            {
-                moveCollectibles.transform.position = Vector3.MoveTowards(originalCollectionPos, showCollectiblePos.position, 0.1f * Time.deltaTime);
-            }
-        }
-        catch (Exception e)
-        {
-            Debug.Log(e.Message);
-        }
     }
     public void ShowCollectibles()
     {
-        collectibleTimer = Time.time + collectibleStartTimer;
+        collectibleTimer = timeSpent + collectibleStartTimer;
+        if (moveCollectibles != null)
+        {
+            if (animator != null)
+            {
+                animator.SetBool("open", true);
+            }
+        }
+    }
+    public void HideCollectibles()
+    {
+        if (moveCollectibles != null)
+        {
+            if (animator != null)
+            {
+                animator.SetBool("open", false);
+            }
+        }
     }
 }
