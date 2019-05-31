@@ -19,13 +19,13 @@ public class PlayerStats : MonoBehaviour
     public static int collectiblesPickedUp;
 
     [HideInInspector]
-    public double LevelScore { get; private set; }
+    public int LevelScore { get; private set; }
 
     [HideInInspector]
-    public static double TotalScore { get; private set; }
+    public static int TotalScore { get; private set; }
 
     [HideInInspector]
-    public float TimeBonus { get; set; }
+    public int TimeBonus { get; set; }
 
     [SerializeField]
     private int startingLightCount;
@@ -38,15 +38,16 @@ public class PlayerStats : MonoBehaviour
         heavyFormCount = startingHeavyCount;
         collectiblesPickedUp = 0;
         deathCount = 0;
+        TimeBonus = 0;
     }
 
     private void FixedUpdate()
     {
-        LevelScore = 100 * collectiblesPickedUp * ((float)collectiblesPickedUp / 20) - 700 * deathCount * ((float)deathCount / 8) + TimeBonus;
+        LevelScore = (int)(100 * collectiblesPickedUp * ((float)collectiblesPickedUp / 20) - 700 * deathCount * ((float)deathCount / 8));
     }
     
     public void CalculateTotalScore()
     {
-        TotalScore += LevelScore;
+        TotalScore += LevelScore + TimeBonus;
     }
 }

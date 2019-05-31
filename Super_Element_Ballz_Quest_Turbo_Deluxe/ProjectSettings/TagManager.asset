@@ -18,6 +18,7 @@ TagManager:
   - HeadCamera
   - Water
   - Ice
+  - LevelCompleteUI
   layers:
   - Default
   - TransparentFX

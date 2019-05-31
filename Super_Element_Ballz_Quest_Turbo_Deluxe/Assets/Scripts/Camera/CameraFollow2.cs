@@ -72,7 +72,7 @@ public class CameraFollow2 : MonoBehaviour
         }
         catch(Exception e)
         {
-            Debug.Log(e.Message);
+
         }
     }
 }

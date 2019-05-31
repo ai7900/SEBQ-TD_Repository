@@ -58,7 +58,7 @@ public class GameMaster : MonoBehaviour
     {
         if (timeSpent < parTime)
         {
-            playerStats.TimeBonus = parTime - timeSpent * 1.85f;
+            playerStats.TimeBonus = (int)(parTime - (timeSpent * 1.85f));
         }
         else
         {
@@ -66,8 +66,7 @@ public class GameMaster : MonoBehaviour
         }
         playerStats.CalculateTotalScore();
         player.SetActive(false);
-        playerStats.TimeBonus = 0;
-        sceneFader.FadeTo(nextLevel);
+        sceneFader.StartFadeOut();
     }
 
     //Metod som startar om den nuvarande nivån och lägger till ett dödsfall för spelaren
