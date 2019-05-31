@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Finalized Scenes/MainMenu_2.0.unity
     guid: 1077b132ea5cf67448d3cb613c0c380d
   - enabled: 1
+    path: Assets/Scenes/Branch_Scenes/HeavyTut.unity
+    guid: 2ffada234ad0d7e47bffdb287c829cc5
+  - enabled: 1
     path: Assets/Scenes/Finalized Scenes/LevelTutorial.unity
     guid: 8ed80070991249d4dae6c85855e90c47
   - enabled: 1

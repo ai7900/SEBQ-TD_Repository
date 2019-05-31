@@ -46,12 +46,12 @@ MonoBehaviour:
   soundList:
   - name: CoinCollect
     clip: {fileID: 8300000, guid: 6e6752e700f456942a6f2cc04aad2ab0, type: 3}
-    volume: 0.525
+    volume: 0.4
     pitch: 1
     source: {fileID: 0}
   - name: LevelTheme
-    clip: {fileID: 8300000, guid: 0bcd94637c4af5e46b17b15447592b7a, type: 3}
-    volume: 0.3
+    clip: {fileID: 8300000, guid: 64b4a469315aaf947ace62f22bd4f0e5, type: 3}
+    volume: 0.5
     pitch: 1
     source: {fileID: 0}
   - name: TransformAirSFX
@@ -96,7 +96,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: ImpactSFX
     clip: {fileID: 8300000, guid: 9ceb0395213f9544683868d1086222bc, type: 3}
-    volume: 0.25
+    volume: 0
     pitch: 0.4
     source: {fileID: 0}
   - name: PauseSFX
