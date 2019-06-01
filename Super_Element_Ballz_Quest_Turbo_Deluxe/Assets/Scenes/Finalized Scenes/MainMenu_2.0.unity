@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -10746,7 +10746,22 @@ PrefabInstance:
       propertyPath: curve.m_Curve.Array.data[1].outSlope
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5031228843072304913, guid: 258f1001fcadf68439e23532b0ef6d11,
+        type: 3}
+      propertyPath: topImg
+      value: 
+      objectReference: {fileID: 1268632830}
+    - target: {fileID: 5031228843072304913, guid: 258f1001fcadf68439e23532b0ef6d11,
+        type: 3}
+      propertyPath: midImg
+      value: 
+      objectReference: {fileID: 1268632830}
     - target: {fileID: 8978604830278028078, guid: 258f1001fcadf68439e23532b0ef6d11,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8978604829225854028, guid: 258f1001fcadf68439e23532b0ef6d11,
         type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -10754,11 +10769,6 @@ PrefabInstance:
     - target: {fileID: 8978604829225854018, guid: 258f1001fcadf68439e23532b0ef6d11,
         type: 3}
       propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8978604829225854028, guid: 258f1001fcadf68439e23532b0ef6d11,
-        type: 3}
-      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -27553,6 +27563,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3659524592241645466, guid: 8ce213c17f725c34fa531f80316e7709,
+        type: 3}
+      propertyPath: soundList.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 64b4a469315aaf947ace62f22bd4f0e5, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ce213c17f725c34fa531f80316e7709, type: 3}
 --- !u!4 &658100662 stripped
@@ -55145,6 +55160,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1093261340}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1268632830 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8978604829225854018, guid: 258f1001fcadf68439e23532b0ef6d11,
+    type: 3}
+  m_PrefabInstance: {fileID: 301306357}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1271177980
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -93193,7 +93220,6 @@ MonoBehaviour:
   rb: {fileID: 0}
   waterLevel: 0
   floatHeight: 1.5
-  bounceDamp: 0.05
 --- !u!199 &3198597606347286156
 ParticleSystemRenderer:
   serializedVersion: 6

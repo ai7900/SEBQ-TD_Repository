@@ -24,6 +24,8 @@ public class GameMaster : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+
+        sceneFader = GameObject.FindGameObjectWithTag("SceneFader").GetComponent<SceneFader>();
         Cursor.lockState = CursorLockMode.Locked;
         try
         {
@@ -79,5 +81,10 @@ public class GameMaster : MonoBehaviour
     public void QuitToMain()
     {
         sceneFader.FadeTo(menuScene);
+    }
+
+    public void LoadNextLevel()
+    {
+        sceneFader.FadeTo(nextLevel);
     }
 }

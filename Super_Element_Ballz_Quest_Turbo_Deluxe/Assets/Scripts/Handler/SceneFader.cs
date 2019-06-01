@@ -5,7 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class SceneFader : MonoBehaviour
 {
-    public Image img;
+    [SerializeField]
+    public Image midImg;
+    [SerializeField]
+    private Image topImg;
+
     public AnimationCurve curve;
 
     [SerializeField]
@@ -37,7 +41,7 @@ public class SceneFader : MonoBehaviour
         {
             t -= Time.deltaTime;
             float a = curve.Evaluate(t);
-            img.color = new Color(0f, 0f, 0f, a);
+            midImg.color = new Color(0f, 0f, 0f, a);
             yield return 0;
         }
     }
@@ -51,7 +55,7 @@ public class SceneFader : MonoBehaviour
         {
             t += Time.deltaTime;
             float a = curve.Evaluate(t);
-            img.color = new Color(0f, 0f, 0f, a);
+            topImg.color = new Color(0f, 0f, 0f, a);
             yield return 0;
         }
 
@@ -66,7 +70,7 @@ public class SceneFader : MonoBehaviour
         {
             t += Time.deltaTime;
             float a = curve.Evaluate(t);
-            img.color = new Color(0f, 0f, 0f, a);
+            midImg.color = new Color(0f, 0f, 0f, a);
             yield return 0;
         }
 

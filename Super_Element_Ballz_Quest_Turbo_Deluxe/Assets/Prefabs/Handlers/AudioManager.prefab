@@ -120,7 +120,17 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
   - name: ScoreTick
-    clip: {fileID: 8300000, guid: f757b925d6053d2488fbda5f9240efd4, type: 3}
+    clip: {fileID: 8300000, guid: 4ee2c24b4363dd6408ba8d2c4f844dc4, type: 3}
+    volume: 0.4
+    pitch: 1.5
+    source: {fileID: 0}
+  - name: TimeBonusTick
+    clip: {fileID: 8300000, guid: 891fe13bda24d8e458b20e964e209168, type: 3}
+    volume: 0.3
+    pitch: 1
+    source: {fileID: 0}
+  - name: HeavyImpactSFX
+    clip: {fileID: 8300000, guid: 97d87d963a6b57d4ebc8821f4c5a1a87, type: 3}
     volume: 0.5
     pitch: 1
     source: {fileID: 0}
