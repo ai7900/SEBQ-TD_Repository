@@ -6,9 +6,9 @@ public class CameraChanger : MonoBehaviour
 {
     [SerializeField]
     [Header("Camera Settings")]
-    public Camera adjustCamera;
+    private Camera adjustCamera;
     [SerializeField]
-    public Camera adjustCameraThirdPerson;
+    private Camera adjustCameraThirdPerson;
 
     // Update is called once per frame
     private void Update()

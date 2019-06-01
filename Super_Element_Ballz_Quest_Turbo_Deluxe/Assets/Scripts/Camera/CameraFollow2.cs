@@ -5,23 +5,28 @@ using UnityEngine;
 
 public class CameraFollow2 : MonoBehaviour
 {
-
-    public float cameraMoveSpeed = 120.0f;
-    public GameObject cameraFollowObject;
-    Vector3 followPos;
-    public float clampAngle = 80.0f;
-    public float inputSensitivity = 150.0f;
-    public GameObject cameraObj;
-    public GameObject playerObj;
-    public float camDistanceXToPlayer;
-    public float camDistanceYToPlayer;
-    public float camDistanceZToPlayer;
-    public float mouseX;
-    public float mouseY;
-    public float finalInputX;
-    public float finalInputZ;
-    public float smoothX;
-    public float smoothY;
+    [SerializeField]
+    private float cameraMoveSpeed = 120.0f;
+    [SerializeField]
+    private GameObject cameraFollowObject;
+    private Vector3 followPos;
+    [SerializeField]
+    private float clampAngle = 80.0f;
+    [SerializeField]
+    private float inputSensitivity = 150.0f;
+    [SerializeField]
+    private GameObject cameraObj;
+    [SerializeField]
+    private GameObject playerObj;
+    private float camDistanceXToPlayer;
+    private float camDistanceYToPlayer;
+    private float camDistanceZToPlayer;
+    private float mouseX;
+    private float mouseY;
+    private float finalInputX;
+    private float finalInputZ;
+    private float smoothX;
+    private float smoothY;
     private float rotY = 0.0f;
     private float rotX = 0.0f;
 

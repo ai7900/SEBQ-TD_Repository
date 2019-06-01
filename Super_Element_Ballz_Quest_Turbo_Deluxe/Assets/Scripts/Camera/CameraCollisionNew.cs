@@ -4,22 +4,26 @@ using UnityEngine;
 
 public class CameraCollisionNew : MonoBehaviour
 {
-    public float minDistance = 1.0f;
-    public float maxDistance = 4.0f;
-    public float smooth = 10.0f;
+    [SerializeField]
+    private float minDistance = 1.0f;
+    [SerializeField]
+    private float maxDistance = 4.0f;
+    [SerializeField]
+    private float smooth = 10.0f;
     private Vector3 dollyDir;
-    public Vector3 dollyDirAdjusted;
-    public float distance;
+    private Vector3 dollyDirAdjusted;
+    [SerializeField]
+    private float distance;
 
     // Start is called before the first frame update
-    void Awake()
+    private void Awake()
     {
         dollyDir = transform.localPosition.normalized;
         distance = transform.localPosition.magnitude;
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         Vector3 desiredCameraPos = transform.parent.TransformPoint(dollyDir * maxDistance);
         RaycastHit hit;
