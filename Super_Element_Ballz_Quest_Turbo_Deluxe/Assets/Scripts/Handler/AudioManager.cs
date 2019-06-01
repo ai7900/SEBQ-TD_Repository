@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public Sound[] soundList;
+    public static Sound[] soundList;
 
     
     // Start is called before the first frame update
@@ -23,7 +23,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void Play(string name)
+    public static void Play(string name)
     {
         Sound s = Array.Find(soundList, sound => sound.name == name);
         if(s == null)
@@ -38,7 +38,7 @@ public class AudioManager : MonoBehaviour
 
     }
 
-    public void Stop(string name)
+    public static void Stop(string name)
     {
         Sound s = Array.Find(soundList, sound => sound.name == name);
         if (s == null)
@@ -49,7 +49,7 @@ public class AudioManager : MonoBehaviour
 
     }
 
-    public void ChangeVolume(float volume, string name)
+    public static void ChangeVolume(float volume, string name)
     {
         try
         {

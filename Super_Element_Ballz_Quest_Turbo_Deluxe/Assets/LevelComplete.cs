@@ -93,8 +93,14 @@ public class LevelComplete : MonoBehaviour
         yield return 0;
     }
 
-    private void OnGUI()
+    private void PlayWoosh1()
     {
-        GUI.Label(new Rect(20, Screen.height - 30, 500, 200), "timebonus? = " + playerStats.TimeBonus.ToString() + " timebonusamount.text = " + timeBonusAmount.text);
+        AudioManager.Play("WooshSFX1");
     }
+
+    private void PlayWoosh2()
+    {
+        AudioManager.Play("WooshSFX2");
+    }
+
 }
