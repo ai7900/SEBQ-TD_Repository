@@ -23,12 +23,4 @@ public class ImpactEffect : MonoBehaviour
         }
     }
 
-    //private void OnCollisionStay(Collision collision)
-    //{
-    //    if(collision.relativeVelocity.magnitude >= 3.5)
-    //    {
-    //        FindObjectOfType<AudioManager>().Play("ImpactSFX");
-    //    }
-    //}
-
 }

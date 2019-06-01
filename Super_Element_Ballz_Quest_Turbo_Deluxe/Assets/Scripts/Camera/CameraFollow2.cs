@@ -30,7 +30,7 @@ public class CameraFollow2 : MonoBehaviour
     private float rotY = 0.0f;
     private float rotX = 0.0f;
 
-    void Start()
+    private void Start()
     {
         Vector3 rot = transform.localRotation.eulerAngles;
         rotY = rot.y;
@@ -39,7 +39,7 @@ public class CameraFollow2 : MonoBehaviour
         Cursor.visible = false;
     }
 
-    void Update()
+    private void Update()
     {
         try
         {
@@ -63,11 +63,11 @@ public class CameraFollow2 : MonoBehaviour
         transform.rotation = localRotation;
     }
 
-    void LateUpdate()
+    private void LateUpdate()
     {
         CameraUpdater();
     }
-    void CameraUpdater()
+    private void CameraUpdater()
     {
         try
         {

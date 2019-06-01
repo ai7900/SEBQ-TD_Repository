@@ -17,7 +17,7 @@ public class Crusher : MonoBehaviour
     private float minHeight = 0.4f;
     private bool chargeUp;
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         chargeUp = true;
         speed = new Vector3 (0, ySpeed, 0);
@@ -26,7 +26,7 @@ public class Crusher : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         gameObject.transform.position += speed * Time.deltaTime;
         if (gameObject.transform.position.y > maxHeight)
@@ -38,7 +38,7 @@ public class Crusher : MonoBehaviour
             speed = speedUp;
         }
     }
-    void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag ==("Player"))
         {
