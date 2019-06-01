@@ -50,7 +50,7 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
   - name: LevelTheme
-    clip: {fileID: 8300000, guid: 64b4a469315aaf947ace62f22bd4f0e5, type: 3}
+    clip: {fileID: 8300000, guid: 0bcd94637c4af5e46b17b15447592b7a, type: 3}
     volume: 0.5
     pitch: 1
     source: {fileID: 0}
@@ -106,6 +106,21 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: UnPauseSFX
     clip: {fileID: 8300000, guid: d82e42fdb73923841b66efc7c1c1e77e, type: 3}
+    volume: 0.25
+    pitch: 1
+    source: {fileID: 0}
+  - name: WooshSFX1
+    clip: {fileID: 8300000, guid: aad065282424bc447ab4aa5bfad7d426, type: 3}
+    volume: 0.25
+    pitch: 1
+    source: {fileID: 0}
+  - name: WooshSFX2
+    clip: {fileID: 8300000, guid: e31ead8ac9de58a4c8653abb16c68424, type: 3}
+    volume: 0.25
+    pitch: 1
+    source: {fileID: 0}
+  - name: ScoreTick
+    clip: {fileID: 8300000, guid: f757b925d6053d2488fbda5f9240efd4, type: 3}
     volume: 0.25
     pitch: 1
     source: {fileID: 0}
