@@ -81,6 +81,7 @@ public class LevelComplete : MonoBehaviour
 
     private IEnumerator AnimateIncreaseTimeBonus()
     {
+        StartCoroutine(PlayTimeTick());
         while (timeBonusAmount.text != playerStats.TimeBonus.ToString())
         {
             timeBonusAdded++;
@@ -103,6 +104,15 @@ public class LevelComplete : MonoBehaviour
         while (totalScoreAmount.text != totalScoreTarget.ToString())
         {
             PlaySound("ScoreTick");
+            yield return new WaitForSeconds(.075f);
+        }
+    }
+
+    private IEnumerator PlayTimeTick()
+    {
+        while (timeBonusAmount.text != playerStats.TimeBonus.ToString())
+        {
+            PlaySound("TimeBonusTick");
             yield return new WaitForSeconds(.075f);
         }
     }
