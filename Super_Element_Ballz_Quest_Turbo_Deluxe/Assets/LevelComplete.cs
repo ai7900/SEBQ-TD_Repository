@@ -47,7 +47,7 @@ public class LevelComplete : MonoBehaviour
     private IEnumerator AnimateTotalScore()
     {
         yield return new WaitForSeconds(.5f);
-
+        StartCoroutine(PlayScoreTick());
         while (totalScoreAmount.text != totalScoreTarget.ToString())
         {
             if(timeBonusAdded > 0)
@@ -93,14 +93,17 @@ public class LevelComplete : MonoBehaviour
         yield return 0;
     }
 
-    private void PlayWoosh1()
+    private void PlaySound(string sound)
     {
-        AudioManager.Play("WooshSFX1");
+        AudioManager.Play(sound);
     }
 
-    private void PlayWoosh2()
+    private IEnumerator PlayScoreTick()
     {
-        AudioManager.Play("WooshSFX2");
+        while (totalScoreAmount.text != totalScoreTarget.ToString())
+        {
+            PlaySound("ScoreTick");
+            yield return new WaitForSeconds(.075f);
+        }
     }
-
 }
