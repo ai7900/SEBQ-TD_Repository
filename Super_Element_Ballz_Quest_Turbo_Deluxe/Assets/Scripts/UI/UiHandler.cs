@@ -35,7 +35,7 @@ public class UiHandler : MonoBehaviour
 
     private string minutes;
     private string seconds;
-    void Start()
+    private void Start()
     {
         timeSpent = 0;
         collectibleStartTimer = 4.0f;
@@ -46,7 +46,7 @@ public class UiHandler : MonoBehaviour
         animator = moveCollectibles.GetComponent<Animator>();
     }
 
-    void Update()
+    private void Update()
     {
         collectibleText.text = "x" + PlayerStats.collectiblesPickedUp;
         deathCounterText.text = "x" + PlayerStats.deathCount;

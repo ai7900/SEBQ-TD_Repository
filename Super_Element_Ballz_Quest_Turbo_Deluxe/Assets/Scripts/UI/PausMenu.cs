@@ -9,13 +9,13 @@ public class PausMenu : MonoBehaviour
     private GameObject pauseMenuUi;
     
     
-    void Start()
+    private void Start()
     {
         pausedGame = false;
         pauseMenuUi.SetActive(false);
     }
 
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
