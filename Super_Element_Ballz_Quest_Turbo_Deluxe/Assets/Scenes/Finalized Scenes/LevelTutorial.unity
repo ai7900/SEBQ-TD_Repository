@@ -3517,10 +3517,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2513387224008082147}
-    - target: {fileID: 1318633839, guid: 9e34cd2c5ee43644695bccf7c57c81d4, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1216584389, guid: 9e34cd2c5ee43644695bccf7c57c81d4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -3536,6 +3532,10 @@ PrefabInstance:
     - target: {fileID: 1896506173, guid: 9e34cd2c5ee43644695bccf7c57c81d4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: QuitToMain
+      objectReference: {fileID: 0}
+    - target: {fileID: 1318633839, guid: 9e34cd2c5ee43644695bccf7c57c81d4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e34cd2c5ee43644695bccf7c57c81d4, type: 3}
@@ -4753,6 +4753,11 @@ PrefabInstance:
       propertyPath: sceneFader
       value: 
       objectReference: {fileID: 978940205}
+    - target: {fileID: 2513387224008082147, guid: 64db90e6adf33dd4e9f6019c291867b6,
+        type: 3}
+      propertyPath: nextLevel
+      value: LightTut
+      objectReference: {fileID: 0}
     - target: {fileID: 2157237858070106416, guid: 64db90e6adf33dd4e9f6019c291867b6,
         type: 3}
       propertyPath: deathCounterText
