@@ -30,9 +30,14 @@ public class AudioManager : MonoBehaviour
         {
             return;
         }
+<<<<<<< HEAD
         else if(s.name == "LevelTheme" || s.name == "FireLoop" || s.name == "FireBall")
+=======
+        else if(s.name == "WinterTheme" || s.name == "test")
+>>>>>>> Mattias_levelBranch
         {
             s.source.loop = true;
+            Debug.Log("play");
         }
             s.source.Play(0);
 
