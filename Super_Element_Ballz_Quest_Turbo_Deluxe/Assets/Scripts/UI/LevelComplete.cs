@@ -60,19 +60,19 @@ public class LevelComplete : MonoBehaviour
     private IEnumerator AnimateTotalScore()
     {
         yield return new WaitForSeconds(.5f);
-        StartCoroutine(PlayScoreTick());
-        while (totalScoreAmount.text != totalScoreTarget.ToString())
-        {
-            if(timeBonusAdded > 0)
+            StartCoroutine(PlayScoreTick());
+            while (totalScoreAmount.text != totalScoreTarget.ToString())
             {
-                timeBonusAdded--;
-                timeBonusAmount.text = timeBonusAdded.ToString();
-                totalScoreValue++;
-            }
-            
-            if(ingameScoreValue > 0)
+                if (timeBonusAdded > 0)
+                {
+                    timeBonusAdded--;
+                    timeBonusAmount.text = timeBonusAdded.ToString();
+                    totalScoreValue++;
+                }
+
+            if (ingameScoreValue > 0)
             {
-                if(ingameScoreValue > 500)
+                if (ingameScoreValue > 500)
                 {
                     ingameScoreValue -= 5;
                     totalScoreValue += 5;
@@ -82,14 +82,27 @@ public class LevelComplete : MonoBehaviour
                     ingameScoreValue--;
                     totalScoreValue++;
                 }
-
-                scoreAmount.text = ingameScoreValue.ToString();
-
             }
+
+            else if (ingameScoreValue < 0)
+            {
+                if(ingameScoreValue < -500)
+                {
+                    ingameScoreValue += 5;
+                    totalScoreValue -= 5;
+                }
+                else
+                {
+                    ingameScoreValue++; ;
+                    totalScoreValue--;
+                }
+            }
+            scoreAmount.text = ingameScoreValue.ToString();
             yield return new WaitForSeconds(.005f);
             totalScoreAmount.text = totalScoreValue.ToString();
 
-        }
+            }
+        
         previousTotalScore = totalScoreValue;
         animator.enabled = false;
         contButton.interactable = true;
