@@ -15,7 +15,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &3659524592241645467
 Transform:
@@ -50,18 +50,18 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
   - name: LevelTheme
-    clip: {fileID: 8300000, guid: 64b4a469315aaf947ace62f22bd4f0e5, type: 3}
-    volume: 0.5
+    clip: {fileID: 8300000, guid: 0bcd94637c4af5e46b17b15447592b7a, type: 3}
+    volume: 0.4
     pitch: 1
     source: {fileID: 0}
   - name: TransformAirSFX
     clip: {fileID: 8300000, guid: 7a620af3f4a19f74c9370b6b6db7f61c, type: 3}
-    volume: 0.551
+    volume: 0.55
     pitch: 1
     source: {fileID: 0}
   - name: Ambience
     clip: {fileID: 8300000, guid: 8185e16e6d8341f4f80744a5ae5bbe3a, type: 3}
-    volume: 0.03
+    volume: 0.05
     pitch: 1
     source: {fileID: 0}
   - name: TransformStoneSFX
@@ -76,7 +76,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: FireLoop
     clip: {fileID: 8300000, guid: 4aae12e0ec6b5454aa1f87a7ff35f1b4, type: 3}
-    volume: 0.5
+    volume: 0.6
     pitch: 0.9
     source: {fileID: 0}
   - name: FireIgnite
@@ -86,18 +86,18 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: FireExtinguish
     clip: {fileID: 8300000, guid: bef889adb74a296429829261c92a3aca, type: 3}
-    volume: 0.35
+    volume: 0.4
     pitch: 1
     source: {fileID: 0}
   - name: FireBall
     clip: {fileID: 8300000, guid: 4aae12e0ec6b5454aa1f87a7ff35f1b4, type: 3}
-    volume: 0.35
+    volume: 0.4
     pitch: 1
     source: {fileID: 0}
   - name: ImpactSFX
     clip: {fileID: 8300000, guid: 9ceb0395213f9544683868d1086222bc, type: 3}
     volume: 0
-    pitch: 0.4
+    pitch: 1
     source: {fileID: 0}
   - name: PauseSFX
     clip: {fileID: 8300000, guid: 717e2a21c6d0a234bb09c5e7f1c84303, type: 3}
@@ -107,5 +107,30 @@ MonoBehaviour:
   - name: UnPauseSFX
     clip: {fileID: 8300000, guid: d82e42fdb73923841b66efc7c1c1e77e, type: 3}
     volume: 0.25
+    pitch: 1
+    source: {fileID: 0}
+  - name: WooshSFX1
+    clip: {fileID: 8300000, guid: aad065282424bc447ab4aa5bfad7d426, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+  - name: WooshSFX2
+    clip: {fileID: 8300000, guid: e31ead8ac9de58a4c8653abb16c68424, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+  - name: ScoreTick
+    clip: {fileID: 8300000, guid: 4ee2c24b4363dd6408ba8d2c4f844dc4, type: 3}
+    volume: 0.4
+    pitch: 1.5
+    source: {fileID: 0}
+  - name: TimeBonusTick
+    clip: {fileID: 8300000, guid: 891fe13bda24d8e458b20e964e209168, type: 3}
+    volume: 0.3
+    pitch: 1
+    source: {fileID: 0}
+  - name: HeavyImpactSFX
+    clip: {fileID: 8300000, guid: 97d87d963a6b57d4ebc8821f4c5a1a87, type: 3}
+    volume: 0.5
     pitch: 1
     source: {fileID: 0}

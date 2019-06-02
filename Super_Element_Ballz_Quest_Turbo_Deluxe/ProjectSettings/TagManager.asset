@@ -18,6 +18,9 @@ TagManager:
   - HeadCamera
   - Water
   - Ice
+  - LevelCompleteUI
+  - OverlayCanvas
+  - SceneFader
   layers:
   - Default
   - TransparentFX

@@ -32,12 +32,12 @@ public class Pickup : MonoBehaviour
         if (gameObject.CompareTag("LightPickup"))
         {
             PlayerStats.lightFormCount++;
-            FindObjectOfType<AudioManager>().Play("AbilityPickup");
+            AudioManager.Play("AbilityPickup");
         }
         if (gameObject.CompareTag("HeavyPickup"))
         {
             PlayerStats.heavyFormCount++;
-            FindObjectOfType<AudioManager>().Play("AbilityPickup");
+            AudioManager.Play("AbilityPickup");
         }
         
         Destroy(gameObject);

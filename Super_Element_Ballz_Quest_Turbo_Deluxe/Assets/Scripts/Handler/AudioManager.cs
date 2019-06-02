@@ -8,11 +8,14 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public Sound[] soundList;
+    private static Sound[] staticSoundList;
 
     
     // Start is called before the first frame update
-    void Awake()
+    private void Awake()
     {
+        staticSoundList = new Sound[soundList.Length];
+
         foreach(Sound s in soundList)
         {
             s.source = gameObject.AddComponent<AudioSource>();
@@ -21,11 +24,16 @@ public class AudioManager : MonoBehaviour
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
         }
+
+        for (int i = 0; i < soundList.Length; i++)
+        {
+            staticSoundList[i] = soundList[i];
+        }
     }
 
-    public void Play(string name)
+    public static void Play(string name)
     {
-        Sound s = Array.Find(soundList, sound => sound.name == name);
+        Sound s = Array.Find(staticSoundList, sound => sound.name == name);
         if(s == null)
         {
             return;
@@ -41,9 +49,9 @@ public class AudioManager : MonoBehaviour
 
     }
 
-    public void Stop(string name)
+    public static void Stop(string name)
     {
-        Sound s = Array.Find(soundList, sound => sound.name == name);
+        Sound s = Array.Find(staticSoundList, sound => sound.name == name);
         if (s == null)
         {
             return;
@@ -52,11 +60,11 @@ public class AudioManager : MonoBehaviour
 
     }
 
-    public void ChangeVolume(float volume, string name)
+    public static void ChangeVolume(float volume, string name)
     {
         try
         {
-            Sound s = Array.Find(soundList, sound => sound.name == name);
+            Sound s = Array.Find(staticSoundList, sound => sound.name == name);
             s.volume = volume;
         }
         catch(Exception e)

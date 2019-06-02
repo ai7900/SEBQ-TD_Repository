@@ -13351,14 +13351,28 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: QuitToMain
       objectReference: {fileID: 0}
+    - target: {fileID: 1318633839, guid: 9e34cd2c5ee43644695bccf7c57c81d4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216584389, guid: 9e34cd2c5ee43644695bccf7c57c81d4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 86037116}
+    - target: {fileID: 1216584389, guid: 9e34cd2c5ee43644695bccf7c57c81d4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadNextLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 1896506173, guid: 9e34cd2c5ee43644695bccf7c57c81d4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 86037116}
+    - target: {fileID: 1896506173, guid: 9e34cd2c5ee43644695bccf7c57c81d4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitToMain
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e34cd2c5ee43644695bccf7c57c81d4, type: 3}
---- !u!1 &278433645 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6163552688320612418, guid: 9e34cd2c5ee43644695bccf7c57c81d4,
-    type: 3}
-  m_PrefabInstance: {fileID: 278433644}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &278433646 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1242861786, guid: 9e34cd2c5ee43644695bccf7c57c81d4,
@@ -13398,12 +13412,6 @@ MonoBehaviour:
 --- !u!1 &278433649 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1477082500, guid: 9e34cd2c5ee43644695bccf7c57c81d4,
-    type: 3}
-  m_PrefabInstance: {fileID: 278433644}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &278433650 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1076505573, guid: 9e34cd2c5ee43644695bccf7c57c81d4,
     type: 3}
   m_PrefabInstance: {fileID: 278433644}
   m_PrefabAsset: {fileID: 0}
@@ -35517,7 +35525,7 @@ PrefabInstance:
         type: 3}
       propertyPath: levelWonUI
       value: 
-      objectReference: {fileID: 278433645}
+      objectReference: {fileID: 0}
     - target: {fileID: 3698809779900484765, guid: e71a4f158bd607c4ba9cdec5e93383d5,
         type: 3}
       propertyPath: sceneFader
@@ -35627,7 +35635,7 @@ PrefabInstance:
         type: 3}
       propertyPath: showCollectiblePos
       value: 
-      objectReference: {fileID: 278433650}
+      objectReference: {fileID: 0}
     - target: {fileID: 3819170361137014722, guid: e71a4f158bd607c4ba9cdec5e93383d5,
         type: 3}
       propertyPath: moveCollectibles

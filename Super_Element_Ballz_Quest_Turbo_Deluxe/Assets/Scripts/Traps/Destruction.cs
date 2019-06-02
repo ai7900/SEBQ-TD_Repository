@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Destruction : MonoBehaviour
 {
-    public GameObject destroyedVersion;
+    [SerializeField]
+    private GameObject destroyedVersion;
     [SerializeField]
     private float objectStrength;
     private Rigidbody playerRb;
 
 
-    void OnTriggerEnter(Collider collider)
+    private void OnTriggerEnter(Collider collider)
     {
         if (collider.gameObject.CompareTag("Player"))
         {

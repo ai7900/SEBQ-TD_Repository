@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 5031228843072304913}
   m_Layer: 0
   m_Name: SceneFader
-  m_TagString: Untagged
+  m_TagString: SceneFader
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,7 +118,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f807b8ce5acb2424d8edfbc9c4a7ed67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  img: {fileID: 8978604829225854018}
+  midImg: {fileID: 0}
+  topImg: {fileID: 0}
   curve:
     serializedVersion: 2
     m_Curve:
@@ -143,6 +144,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  levelCompleteGO: {fileID: 0}
+  hud: {fileID: 0}
 --- !u!1 &8978604830278028078
 GameObject:
   m_ObjectHideFlags: 0

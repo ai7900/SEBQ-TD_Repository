@@ -5,8 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class SceneFader : MonoBehaviour
 {
-    public Image img;
+    [SerializeField]
+    public Image midImg;
+    [SerializeField]
+    private Image topImg;
+
     public AnimationCurve curve;
+
+    [SerializeField]
+    private GameObject levelCompleteGO;
+
+    [SerializeField]
+    private GameObject hud;
 
     private void Start()
     {
@@ -15,7 +25,12 @@ public class SceneFader : MonoBehaviour
 
     public void FadeTo(string scene)
     {
-        StartCoroutine(FadeOut(scene));
+        StartCoroutine(FadeOutToNextScene(scene));
+    }
+
+    public void StartFadeOut()
+    {
+        StartCoroutine(FadeOut());
     }
 
     IEnumerator FadeIn()
@@ -26,12 +41,13 @@ public class SceneFader : MonoBehaviour
         {
             t -= Time.deltaTime;
             float a = curve.Evaluate(t);
-            img.color = new Color(0f, 0f, 0f, a);
+            midImg.color = new Color(0f, 0f, 0f, a);
             yield return 0;
         }
     }
 
-    IEnumerator FadeOut(string scene)
+    //Borde endast användas vid byte från meny till annan scen.
+    IEnumerator FadeOutToNextScene(string scene)
     {
         float t = 0f;
 
@@ -39,10 +55,29 @@ public class SceneFader : MonoBehaviour
         {
             t += Time.deltaTime;
             float a = curve.Evaluate(t);
-            img.color = new Color(0f, 0f, 0f, a);
+            topImg.color = new Color(0f, 0f, 0f, a);
             yield return 0;
         }
 
         SceneManager.LoadScene(scene);
+    }
+
+    IEnumerator FadeOut()
+    {
+        float t = 0f;
+
+        while (t < 1f)
+        {
+            t += Time.deltaTime;
+            float a = curve.Evaluate(t);
+            midImg.color = new Color(0f, 0f, 0f, a);
+            yield return 0;
+        }
+
+        levelCompleteGO.SetActive(true);
+
+        yield return new WaitForSeconds(3);
+
+        hud.gameObject.SetActive(false);
     }
 }

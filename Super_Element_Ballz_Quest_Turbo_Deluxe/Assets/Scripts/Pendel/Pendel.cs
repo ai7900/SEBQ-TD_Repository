@@ -12,21 +12,21 @@ public class Pendel : MonoBehaviour
     [SerializeField]
     private float startTime = 0.0f;
 
-    void Start()
+    private void Start()
     {
         start = PendulumRotation(angle);
         end = PendulumRotation(-angle);
     }
-    void ResetTimer()
+    private void ResetTimer()
     {
         startTime = 0.0f;
         
     }
 
-    Quaternion PendulumRotation(float angle)
+    private Quaternion PendulumRotation(float angle)
     {
-        var pendulumRotation = transform.rotation;
-        var angleZ = pendulumRotation.eulerAngles.z + angle;
+        Quaternion pendulumRotation = transform.rotation;
+        float angleZ = pendulumRotation.eulerAngles.z + angle;
 
         if (angleZ > 180)
             angleZ -= 360;
@@ -36,7 +36,7 @@ public class Pendel : MonoBehaviour
         return pendulumRotation;
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         startTime += Time.deltaTime;
         transform.rotation = Quaternion.Lerp(start, end, (Mathf.Sin(startTime * speed * Mathf.PI / 2) + 1.0f)/2.0f);

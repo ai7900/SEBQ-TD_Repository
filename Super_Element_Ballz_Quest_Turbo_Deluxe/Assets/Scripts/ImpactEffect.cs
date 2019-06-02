@@ -12,23 +12,15 @@ public class ImpactEffect : MonoBehaviour
     private void Update()
     {
         float volume = ballMovement.GetVolume()/20;
-        FindObjectOfType<AudioManager>().ChangeVolume(volume, "ImpactSFX");
+        AudioManager.ChangeVolume(volume, "ImpactSFX");
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.relativeVelocity.magnitude >= 5)
         {
-            FindObjectOfType<AudioManager>().Play("ImpactSFX");
+            AudioManager.Play("ImpactSFX");
         }
     }
-
-    //private void OnCollisionStay(Collision collision)
-    //{
-    //    if(collision.relativeVelocity.magnitude >= 3.5)
-    //    {
-    //        FindObjectOfType<AudioManager>().Play("ImpactSFX");
-    //    }
-    //}
 
 }
