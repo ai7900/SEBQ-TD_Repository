@@ -292,7 +292,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-3008
+  m_Name: pb_Mesh-15504
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -1944,6 +1944,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 506352834}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &514880768 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1896506173, guid: 9e34cd2c5ee43644695bccf7c57c81d4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1161887364}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &518224126 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6052145716032164342, guid: c310563b5d55f104aafa10fcfeb91d6b,
@@ -2217,7 +2229,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-3006
+  m_Name: pb_Mesh-15502
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -3794,6 +3806,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2513387224008082147}
+    - target: {fileID: 1318633844, guid: 9e34cd2c5ee43644695bccf7c57c81d4, type: 3}
+      propertyPath: contButton
+      value: 
+      objectReference: {fileID: 1575676094}
+    - target: {fileID: 1318633844, guid: 9e34cd2c5ee43644695bccf7c57c81d4, type: 3}
+      propertyPath: menuButton
+      value: 
+      objectReference: {fileID: 514880768}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e34cd2c5ee43644695bccf7c57c81d4, type: 3}
 --- !u!4 &1193387062 stripped
@@ -4676,6 +4696,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 981229073}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1575676094 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1216584389, guid: 9e34cd2c5ee43644695bccf7c57c81d4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1161887364}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1584178761
 PrefabInstance:
   m_ObjectHideFlags: 0

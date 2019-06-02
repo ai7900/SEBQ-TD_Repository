@@ -40,15 +40,6 @@ public class GameMaster : MonoBehaviour
 
         playerStats = GetComponent<PlayerStats>();
 
-        try
-        {
-            FindObjectOfType<AudioManager>().Play("AwesomeTheme");
-        }
-        catch (Exception e)
-        {
-            Debug.Log(e.Message);
-        }
-
     }
 
     // Update is called once per frame
