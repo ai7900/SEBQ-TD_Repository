@@ -35,9 +35,9 @@ public class GameMaster : MonoBehaviour
             Debug.Log(e.Message);
         }
 
-<<<<<<< HEAD
+
         playerStats = GetComponent<PlayerStats>();
-=======
+
         try
         {
             FindObjectOfType<AudioManager>().Play("AwesomeTheme");
@@ -46,7 +46,7 @@ public class GameMaster : MonoBehaviour
         {
             Debug.Log(e.Message);
         }
->>>>>>> Mattias_levelBranch
+
     }
 
     // Update is called once per frame

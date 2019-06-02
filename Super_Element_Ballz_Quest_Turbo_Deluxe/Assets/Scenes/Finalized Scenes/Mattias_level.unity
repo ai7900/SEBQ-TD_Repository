@@ -15110,7 +15110,7 @@ PrefabInstance:
     - target: {fileID: 3659524592241645466, guid: 8ce213c17f725c34fa531f80316e7709,
         type: 3}
       propertyPath: soundList.Array.data[1].name
-      value: AwesomeTheme
+      value: LevelTheme
       objectReference: {fileID: 0}
     - target: {fileID: 3659524592241645466, guid: 8ce213c17f725c34fa531f80316e7709,
         type: 3}
@@ -30936,7 +30936,6 @@ MonoBehaviour:
   rb: {fileID: 0}
   waterLevel: 0
   floatHeight: 1.5
-  bounceDamp: 0.05
 --- !u!1 &7704536534781148217
 GameObject:
   m_ObjectHideFlags: 0
