@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -65982,12 +65982,13 @@ MonoBehaviour:
   playUI: {fileID: 986732273}
   levelSelectTitleUI: {fileID: 335699220}
   levelName:
-  - HeavyTut
-  - LevelTutorial
+  - LightTut
+  - PyramidLevel
   - IceLevel
   - IceLevel2
   - IceLevel3
-  - DemoScene
+  - Mattias_level
+  - WaterLevel
 --- !u!4 &1556782157
 Transform:
   m_ObjectHideFlags: 0

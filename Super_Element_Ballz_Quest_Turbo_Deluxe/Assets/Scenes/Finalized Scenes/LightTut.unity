@@ -24794,7 +24794,7 @@ PrefabInstance:
     - target: {fileID: 5043240506095878759, guid: 3668dddf39df5034b9b4f22797dbdbf8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -149.81
+      value: -136.93
       objectReference: {fileID: 0}
     - target: {fileID: 5043240506095878759, guid: 3668dddf39df5034b9b4f22797dbdbf8,
         type: 3}
@@ -30022,10 +30022,18 @@ PrefabInstance:
     - target: {fileID: 932288802, guid: 9e34cd2c5ee43644695bccf7c57c81d4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 1156634053}
+    - target: {fileID: 932288802, guid: 9e34cd2c5ee43644695bccf7c57c81d4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RestartLevel
       objectReference: {fileID: 0}
     - target: {fileID: 2085738841, guid: 9e34cd2c5ee43644695bccf7c57c81d4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 1156634053}
+    - target: {fileID: 2085738841, guid: 9e34cd2c5ee43644695bccf7c57c81d4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitToMain
       objectReference: {fileID: 0}
     - target: {fileID: 1216584389, guid: 9e34cd2c5ee43644695bccf7c57c81d4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

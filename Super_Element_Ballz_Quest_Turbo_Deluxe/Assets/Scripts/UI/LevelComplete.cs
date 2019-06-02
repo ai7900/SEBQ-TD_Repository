@@ -63,21 +63,32 @@ public class LevelComplete : MonoBehaviour
             StartCoroutine(PlayScoreTick());
             while (totalScoreAmount.text != totalScoreTarget.ToString())
             {
-                if (timeBonusAdded > 0)
+            if (timeBonusAdded > 0)
+            {
+                if (timeBonusAdded > 500)
                 {
-                    if(timeBonusAdded > 500
-                    )
+                    timeBonusAdded -= 15;
+                    totalScoreValue += 15;
+                }
+                else if (timeBonusAdded > 200)
+                {
+                    timeBonusAdded -= 100;
+                    totalScoreValue += 100;
+                }
+                else
+                {
                     timeBonusAdded--;
-                    timeBonusAmount.text = timeBonusAdded.ToString();
                     totalScoreValue++;
                 }
+                timeBonusAmount.text = timeBonusAdded.ToString();
+            }
 
             if (ingameScoreValue > 0)
             {
                 if (ingameScoreValue > 500)
                 {
-                    ingameScoreValue -= 5;
-                    totalScoreValue += 5;
+                    ingameScoreValue -= 15;
+                    totalScoreValue += 15;
                 }
                 else if(ingameScoreValue > 2000)
                 {
@@ -95,8 +106,8 @@ public class LevelComplete : MonoBehaviour
             {
                 if(ingameScoreValue < -500)
                 {
-                    ingameScoreValue += 5;
-                    totalScoreValue -= 5;
+                    ingameScoreValue += 15;
+                    totalScoreValue -= 15;
                 }
                 else if (ingameScoreValue > 2000)
                 {
@@ -126,6 +137,7 @@ public class LevelComplete : MonoBehaviour
         StartCoroutine(PlayTimeTick());
         while (timeBonusAmount.text != playerStats.TimeBonus.ToString())
         {
+
             timeBonusAdded++;
             timeBonusAmount.text = timeBonusAdded.ToString();
             yield return new WaitForSeconds(.005f);
