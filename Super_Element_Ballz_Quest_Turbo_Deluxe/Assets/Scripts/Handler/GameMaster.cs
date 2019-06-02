@@ -49,12 +49,6 @@ public class GameMaster : MonoBehaviour
         {
             player = GameObject.FindWithTag("Player");
         }
-        //MouseSettings();
-
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            RestartLevel();
-        }
     }
 
     //Denna metoden ska hantera vad som händer när nivån klaras av
@@ -62,7 +56,7 @@ public class GameMaster : MonoBehaviour
     {
         if (timeSpent < parTime)
         {
-            playerStats.TimeBonus = (int)((parTime - timeSpent) * 3.85f);
+            playerStats.TimeBonus = (int)((parTime - timeSpent) * (parTime - timeSpent) * 1.35f);
         }
         else
         {

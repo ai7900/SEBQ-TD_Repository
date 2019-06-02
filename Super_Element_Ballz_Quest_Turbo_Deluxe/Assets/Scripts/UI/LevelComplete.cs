@@ -65,6 +65,8 @@ public class LevelComplete : MonoBehaviour
             {
                 if (timeBonusAdded > 0)
                 {
+                    if(timeBonusAdded > 500
+                    )
                     timeBonusAdded--;
                     timeBonusAmount.text = timeBonusAdded.ToString();
                     totalScoreValue++;
@@ -76,6 +78,11 @@ public class LevelComplete : MonoBehaviour
                 {
                     ingameScoreValue -= 5;
                     totalScoreValue += 5;
+                }
+                else if(ingameScoreValue > 2000)
+                {
+                    ingameScoreValue -= 100;
+                    totalScoreValue += 100;
                 }
                 else
                 {
@@ -90,6 +97,11 @@ public class LevelComplete : MonoBehaviour
                 {
                     ingameScoreValue += 5;
                     totalScoreValue -= 5;
+                }
+                else if (ingameScoreValue > 2000)
+                {
+                    ingameScoreValue += 100;
+                    totalScoreValue -= 100;
                 }
                 else
                 {

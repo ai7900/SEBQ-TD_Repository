@@ -130,7 +130,7 @@ MonoBehaviour:
   groundForceFactor: 24
   maxSpeed: 10
   movementSoundEffect: {fileID: 8300000, guid: 40fa0b5a789c17c46aa14e2b00e9d5cf, type: 3}
-  airborneForceFactor: 8
+  airborneForceFactor: 24
   submergedForceFactor: 10
   target: {fileID: 6686324402544290770}
 --- !u!114 &3257336175173787072
